@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Us - Engineers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { corePlugins: { preflight: false } }</script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="container-xl nav-inner">
+      <a href="index.html" class="brand"><i class="bi bi-terminal"></i>ENGINEERS</a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="join-us.html" class="active" data-i18n="nav.join">Join Us</a></li>
+        <li><a href="events.html" data-i18n="nav.events">Events & Activities</a></li>
+        <li><a href="competitions.html" data-i18n="nav.competitions">Competitions</a></li>
+        <li><a href="classwork.html" data-i18n="nav.classwork">Reports & Docs</a></li>
+        <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
+        <li><a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button id="langToggle" class="tool-btn lang-btn"><span>TH</span></button>
+        <button id="themeToggle" class="tool-btn"><i class="bi bi-moon-stars"></i></button>
+        <button id="navToggle" class="nav-toggle"><i class="bi bi-list"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-banner" style="background-image:url('assets/img/banner-joinus.JPG')">
+    <div class="container-xl">
+      <div class="eyebrow"><i class="bi bi-door-open"></i><span data-i18n="admission.eyebrow">Admission</span></div>
+      <h1 data-i18n="admission.title">Criteria and Selection Process</h1>
+      <p class="lead mt-3" data-i18n="join.sub">What we look for and the steps to join the AI Engineering major.</p>
+    </div>
+  </section>
+
+  <div class="breadcrumb">
+    <div class="container-xl">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <span class="sep"><i class="bi bi-chevron-right"></i></span>
+      <span class="current" data-i18n="nav.join">Join Us</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="container-xl">
+      <div class="panel panel--filled mb-4">
+        <div class="panel-top">
+          <div class="panel-icon"><i class="bi bi-clipboard-check"></i></div>
+          <h3 data-i18n="admission.req_title">Requirements for all applicants</h3>
+        </div>
+
+        <p class="info-label mt-4 mb-1" data-i18n="admission.req_gpa_label">Cumulative GPA (5 semesters)</p>
+        <p class="info-value" data-i18n="admission.req_gpa_value">≥ 2.00 - identical requirement for internal
+          and external applicants</p>
+
+        <p class="info-label mb-2 mt-4" data-i18n="admission.score_title">Score weighting</p>
+        <div class="score-grid score-grid--row">
+          <div class="score-cell">
+            <div class="score-pct">25%</div>
+            <div class="score-name"><i class="bi bi-infinity"></i><span
+                data-i18n="admission.s_math">Mathematics</span></div>
+          </div>
+          <div class="score-cell">
+            <div class="score-pct">25%</div>
+            <div class="score-name"><i class="bi bi-lightning-charge"></i><span
+                data-i18n="admission.s_sci">Science</span></div>
+          </div>
+          <div class="score-cell">
+            <div class="score-pct">25%</div>
+            <div class="score-name"><i class="bi bi-translate"></i><span data-i18n="admission.s_eng">English</span>
+            </div>
+          </div>
+          <div class="score-cell">
+            <div class="score-pct">10%</div>
+            <div class="score-name"><i class="bi bi-chat-dots"></i><span
+                data-i18n="admission.s_int">Interview</span></div>
+          </div>
+          <div class="score-cell">
+            <div class="score-pct">10%</div>
+            <div class="score-name"><i class="bi bi-alphabet-uppercase"></i><span data-i18n="admission.s_th">Thai
+                Language</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-strip mb-4">
+        <div class="stat-cell">
+          <div class="stat-num" data-i18n="admission.stat1_num">~25</div>
+          <div class="stat-label" data-i18n="admission.stat1_label">Students per cohort</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" data-i18n="admission.stat2_num">~10</div>
+          <div class="stat-label" data-i18n="admission.stat2_label">Internal seats (PSM)</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" data-i18n="admission.stat3_num">~15</div>
+          <div class="stat-label" data-i18n="admission.stat3_label">External seats</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" data-i18n="admission.stat4_num">M.4</div>
+          <div class="stat-label" data-i18n="admission.stat4_label">Entry level</div>
+        </div>
+      </div>
+
+      <p class="fw-medium mb-2 mt-5" style="font-size:.9rem" data-i18n="admission.faq_title">Frequently asked questions</p>
+      <div id="faqList">
+        <div class="faq-item">
+          <button class="faq-q"><span data-i18n="admission.q1">Is prior programming experience required?</span><i
+              class="bi bi-plus-lg"></i></button>
+          <div class="faq-a">
+            <p data-i18n="admission.a1">No. There is no practical examination, and instructors introduce the
+              fundamentals from the beginning of the program.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span data-i18n="admission.q2">Is a portfolio required?</span><i
+              class="bi bi-plus-lg"></i></button>
+          <div class="faq-a">
+            <p data-i18n="admission.a2">Not mandatory, though recommended. Computer-related work receives additional
+              consideration during review.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span data-i18n="admission.q3">What should a portfolio include?</span><i
+              class="bi bi-plus-lg"></i></button>
+          <div class="faq-a">
+            <p data-i18n="admission.a3">Academic record, extracurricular activities, projects, and competition results -
+              computer-related work is given priority.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span data-i18n="admission.q4">How many students are admitted per cohort?</span><i
+              class="bi bi-plus-lg"></i></button>
+          <div class="faq-a">
+            <p data-i18n="admission.a4">Approximately 25 students - around 10 seats reserved for internal (PSM) students
+              and 15 for external applicants.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span data-i18n="admission.q5">How does this differ from the Computer Science
+              major?</span><i class="bi bi-plus-lg"></i></button>
+          <div class="faq-a">
+            <p data-i18n="admission.a5">The curriculum emphasizes applied, hands-on learning - from foundational
+              engineering and programming to real-world problem solving with robotics and microcontrollers - including
+              coursework certified by FIBO, KMUTT.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span data-i18n="admission.q6">What activities are offered?</span><i
+              class="bi bi-plus-lg"></i></button>
+          <div class="faq-a">
+            <p data-i18n="admission.a6">A wide range, including study visits, workshops, and participation in robotics
+              and project competitions.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span data-i18n="admission.q7">Where do graduates go next?</span><i
+              class="bi bi-plus-lg"></i></button>
+          <div class="faq-a">
+            <p data-i18n="admission.a7">Over 72% of alumni are admitted through TCAS Round 1, most continuing into
+              engineering faculties.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="container-xl">
+      <div class="foot-brand"><span class="brand-icon"><i class="bi bi-terminal"></i></span>ENGINEERS</div>
+      <p class="foot-tagline" data-i18n="common.footer_tagline">A repository for the AI Engineering major - our work,
+        debugs, blogs, and reports in one place.</p>
+      <nav class="foot-nav">
+        <a href="index.html" data-i18n="nav.home">Home</a><span>&middot;</span>
+        <a href="join-us.html" data-i18n="nav.join">Join Us</a><span>&middot;</span>
+        <a href="events.html" data-i18n="nav.events">Events & Activities</a><span>&middot;</span>
+        <a href="competitions.html" data-i18n="nav.competitions">Competitions</a><span>&middot;</span>
+        <a href="classwork.html" data-i18n="nav.classwork">Reports & Docs</a><span>&middot;</span>
+        <a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a><span>&middot;</span>
+        <a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a>
+      </nav>
+      <hr class="foot-divider">
+      <div class="foot-bottom">
+        <p data-i18n="common.footer_credit">Mathayom 4 – 6 &middot; AI Engineering Major</p>
+        <p data-i18n="common.footer_copy">&copy; 2026 Engineers</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

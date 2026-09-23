@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events & Activities - Engineers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { corePlugins: { preflight: false } }</script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="container-xl nav-inner">
+      <a href="index.html" class="brand"><i class="bi bi-terminal"></i>ENGINEERS</a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="join-us.html" data-i18n="nav.join">Join Us</a></li>
+        <li><a href="events.html" class="active" data-i18n="nav.events">Events & Activities</a></li>
+        <li><a href="competitions.html" data-i18n="nav.competitions">Competitions</a></li>
+        <li><a href="classwork.html" data-i18n="nav.classwork">Reports & Docs</a></li>
+        <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
+        <li><a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button id="langToggle" class="tool-btn lang-btn"><span>TH</span></button>
+        <button id="themeToggle" class="tool-btn"><i class="bi bi-moon-stars"></i></button>
+        <button id="navToggle" class="nav-toggle"><i class="bi bi-list"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-banner" style="background-image:url('assets/img/banner-events.jpg')">
+    <div class="container-xl">
+      <div class="eyebrow"><i class="bi bi-calendar-event"></i><span data-i18n="events.eyebrow">Events &
+          Activities</span></div>
+      <h1 data-i18n="events.title">Events & Activities</h1>
+      <p class="lead mt-3" data-i18n="events.sub">Workshops, guest talks, and things we run outside of class.</p>
+    </div>
+  </section>
+
+  <div class="breadcrumb">
+    <div class="container-xl">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <span class="sep"><i class="bi bi-chevron-right"></i></span>
+      <span class="current" data-i18n="nav.events">Events & Activities</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="container-xl">
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="event-card h-100 d-flex flex-column">
+            <div class="event-img">
+              <img src="assets/img/majorcamp.JPG" alt="Major Camp">
+            </div>
+            <div class="event-body d-flex flex-column flex-grow-1">
+              <span class="event-date" data-i18n="events.e5_date">MAR 2026</span>
+              <h3 data-i18n="events.e5_title">Major Camp (3 Days, 2 Nights)</h3>
+              <p data-i18n="events.e5_desc">An annual retreat bringing M.4 through M.6 students together for team
+                activities and a farewell to graduating seniors.</p>
+              <a href="https://www.facebook.com/share/r/1CH4vP17Ec/" target="_blank" rel="noopener"
+                class="event-fb mt-auto"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on
+                  Facebook</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="event-card h-100 d-flex flex-column">
+            <div class="event-img">
+              <img src="assets/img/openhouse.jpg" alt="Open House SPSM">
+            </div>
+            <div class="event-body d-flex flex-column flex-grow-1">
+              <span class="event-date" data-i18n="events.e4_date">JAN 2026</span>
+              <h3 data-i18n="events.e4_title">Open House SPSM</h3>
+              <p data-i18n="events.e4_desc">Live demonstrations and booth activities introducing the AI Engineering
+                major to prospective students and their families.</p>
+              <a href="https://www.facebook.com/share/p/1EcyQykhr3/" target="_blank" rel="noopener"
+                class="event-fb mt-auto"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on
+                  Facebook</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="event-card h-100 d-flex flex-column">
+            <div class="event-img">
+              <img src="assets/img/srt.jpg" alt="SRT Red Line Maintenance Facility">
+            </div>
+            <div class="event-body d-flex flex-column flex-grow-1">
+              <span class="event-date" data-i18n="events.e7_date">NOV 2025</span>
+              <h3 data-i18n="events.e7_title">Field Trip - SRT Red Line Maintenance Facility</h3>
+              <p data-i18n="events.e7_desc">A site visit to the SRT Red Line Maintenance Facility at Bang Sue, studying
+                the rolling stock, signaling, and power systems behind Bangkok's rail network.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="event-card h-100 d-flex flex-column">
+            <div class="event-img">
+              <img src="assets/img/fieldtrip.jpg" alt="Field Trip - Innovation in Motion">
+            </div>
+            <div class="event-body d-flex flex-column flex-grow-1">
+              <span class="event-date" data-i18n="events.e3_date">NOV 2025</span>
+              <h3 data-i18n="events.e3_title">Field Trip - Innovation in Motion</h3>
+              <p data-i18n="events.e3_desc">A cross-major field trip pairing AI Engineering and EV Engineering students
+                to design integrated electric and autonomous vehicle systems.</p>
+              <a href="https://www.facebook.com/share/p/1HocvBncbT/" target="_blank" rel="noopener"
+                class="event-fb mt-auto"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on
+                  Facebook</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="event-card h-100 d-flex flex-column">
+            <div class="event-img">
+              <img src="assets/img/eec.jpg" alt="EEC Automation Park & Analog Devices">
+            </div>
+            <div class="event-body d-flex flex-column flex-grow-1">
+              <span class="event-date" data-i18n="events.e6_date">OCT 2025</span>
+              <h3 data-i18n="events.e6_title">Field Trip - EEC Automation Park & Analog Devices</h3>
+              <p data-i18n="events.e6_desc">A cross-major visit to the Eastern Economic Corridor in Chonburi, touring an
+                industrial automation park and a semiconductor manufacturing facility.</p>
+              <a href="https://www.facebook.com/share/p/1M2nU2i7Kk/" target="_blank" rel="noopener"
+                class="event-fb mt-auto"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on
+                  Facebook</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="event-card h-100 d-flex flex-column">
+            <div class="event-img">
+              <img src="assets/img/ciracore.jpg" alt="AI Programming Workshop">
+            </div>
+            <div class="event-body d-flex flex-column flex-grow-1">
+              <span class="event-date" data-i18n="events.e2_date">OCT 2025</span>
+              <h3 data-i18n="events.e2_title">AI Programming Workshop - CiRA CORE</h3>
+              <p data-i18n="events.e2_desc">An intensive AI programming workshop for M.4 students led by instructors
+                from a partner technology institute, covering dataset preparation, model training, and hardware
+                integration.</p>
+              <a href="https://www.facebook.com/share/p/193ohYFACK/" target="_blank" rel="noopener"
+                class="event-fb mt-auto"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on
+                  Facebook</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="event-card h-100 d-flex flex-column">
+            <div class="event-img">
+              <img src="assets/img/senior.JPG" alt="Freshmen Welcoming">
+            </div>
+            <div class="event-body d-flex flex-column flex-grow-1">
+              <span class="event-date" data-i18n="events.e1_date">JUL 2025</span>
+              <h3 data-i18n="events.e1_title">Freshmen Welcoming - Code Family Reveal</h3>
+              <p data-i18n="events.e1_desc">A mentorship activity in which upperclassmen reveal their identities to
+                incoming M.4 students, forming the peer-support network that carries through the major.</p>
+              <a href="https://www.facebook.com/share/p/19Xn2A9uJM/" target="_blank" rel="noopener"
+                class="event-fb mt-auto"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on
+                  Facebook</span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="container-xl">
+      <div class="foot-brand"><span class="brand-icon"><i class="bi bi-terminal"></i></span>ENGINEERS</div>
+      <p class="foot-tagline" data-i18n="common.footer_tagline">A repository for the AI Engineering major - our work,
+        debugs, blogs, and reports in one place.</p>
+      <nav class="foot-nav">
+        <a href="index.html" data-i18n="nav.home">Home</a><span>&middot;</span>
+        <a href="join-us.html" data-i18n="nav.join">Join Us</a><span>&middot;</span>
+        <a href="events.html" data-i18n="nav.events">Events & Activities</a><span>&middot;</span>
+        <a href="competitions.html" data-i18n="nav.competitions">Competitions</a><span>&middot;</span>
+        <a href="classwork.html" data-i18n="nav.classwork">Reports & Docs</a><span>&middot;</span>
+        <a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a><span>&middot;</span>
+        <a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a>
+      </nav>
+      <hr class="foot-divider">
+      <div class="foot-bottom">
+        <p data-i18n="common.footer_credit">Mathayom 4 – 6 &middot; AI Engineering Major</p>
+        <p data-i18n="common.footer_copy">&copy; 2026 Engineers</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

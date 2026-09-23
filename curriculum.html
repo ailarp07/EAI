@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curriculum Structure - Engineers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { corePlugins: { preflight: false } }</script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container-xl nav-inner">
+    <a href="index.html" class="brand"><i class="bi bi-terminal"></i>ENGINEERS</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="join-us.html" data-i18n="nav.join">Join Us</a></li>
+      <li><a href="events.html" data-i18n="nav.events">Events & Activities</a></li>
+      <li><a href="competitions.html" data-i18n="nav.competitions">Competitions</a></li>
+      <li><a href="classwork.html" data-i18n="nav.classwork">Reports & Docs</a></li>
+      <li><a href="curriculum.html" class="active" data-i18n="nav.curriculum">Curriculum</a></li>
+      <li><a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button id="langToggle" class="tool-btn lang-btn"><span>TH</span></button>
+      <button id="themeToggle" class="tool-btn"><i class="bi bi-moon-stars"></i></button>
+      <button id="navToggle" class="nav-toggle"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-banner" style="background-image:url('assets/img/banner-curriculum.jpg')">
+  <div class="container-xl">
+    <div class="eyebrow"><i class="bi bi-diagram-3"></i><span data-i18n="curr.eyebrow">Curriculum Structure</span></div>
+    <h1 data-i18n="curr.title">โครงสร้างหลักสูตร วิชาเอกวิศวกรรมปัญญาประดิษฐ์ (AI)</h1>
+  </div>
+</section>
+
+<div class="breadcrumb">
+  <div class="container-xl">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <span class="sep"><i class="bi bi-chevron-right"></i></span>
+    <span class="current" data-i18n="nav.curriculum">Curriculum</span>
+  </div>
+</div>
+
+<section class="pt-4">
+  <div class="container-xl">
+    <div class="tab-btns">
+      <button class="tab-btn active" data-tab="m4s1" data-i18n="curr.tab_m4s1">M.4 เทอม 1</button>
+      <button class="tab-btn" data-tab="m4s2" data-i18n="curr.tab_m4s2">M.4 เทอม 2</button>
+      <button class="tab-btn" data-tab="m5s1" data-i18n="curr.tab_m5s1">M.5 เทอม 1</button>
+      <button class="tab-btn" data-tab="m5s2" data-i18n="curr.tab_m5s2">M.5 เทอม 2</button>
+      <button class="tab-btn" data-tab="m6s1" data-i18n="curr.tab_m6s1">M.6 เทอม 1</button>
+      <button class="tab-btn" data-tab="m6s2" data-i18n="curr.tab_m6s2">M.6 เทอม 2</button>
+      <button class="tab-btn" data-tab="grad" data-i18n="curr.grad_tab">เกณฑ์จบหลักสูตร</button>
+    </div>
+
+    <div class="tab-panel active" data-panel="m4s1">
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th data-i18n="curr.h_code">รหัสวิชา</th><th data-i18n="curr.h_subject">รายวิชา</th><th data-i18n="curr.h_credit">หน่วยกิต</th><th data-i18n="curr.h_hours">คาบ/สัปดาห์</th></tr></thead>
+          <tbody>
+            <tr><td>ท31101</td><td><span data-i18n="curr.s1">ภาษาไทย 7</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ค31101</td><td><span data-i18n="curr.s2">คณิตศาสตร์ 7</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ว31104</td><td><span data-i18n="curr.s3">วิทยาศาสตร์กายภาพ 1</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ส31101</td><td><span data-i18n="curr.s4">สังคมศึกษา ศาสนาและวัฒนธรรม 7</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>อ31101</td><td><span data-i18n="curr.s5">ภาษาอังกฤษ 7</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>พ31101</td><td><span data-i18n="curr.s6">สุขศึกษา 7</span></td><td>0.5</td><td>1</td></tr>
+            <tr><td>พ31103</td><td><span data-i18n="curr.s7">พลศึกษา 7</span></td><td>0.5</td><td>1</td></tr>
+            <tr><td>ศ31101</td><td><span data-i18n="curr.s8">ศิลปะ 7</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ส31105</td><td><span data-i18n="curr.s9">ประวัติศาสตร์ (7)</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_core">รวม (พื้นฐาน)</b></td><td><b>8.0</b></td><td><b>16</b></td></tr>
+            <tr><td>อ31221</td><td><span data-i18n="curr.s10">ภาษาอังกฤษฟัง-พูดเพื่อสื่อสาร 1</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ค31207</td><td><span data-i18n="curr.s11">คณิตศาสตร์เพิ่มเติม 1(1)</span></td><td>2.0</td><td>4</td></tr>
+            <tr><td>ว31218</td><td><span data-i18n="curr.s12">ฟิสิกส์สำหรับวิศวกรรม 1</span></td><td>2.0</td><td>4</td></tr>
+            <tr><td>ว31273</td><td><span data-i18n="curr.s13">การเขียนโปรแกรมภาษาไพธอน</span></td><td>1.5</td><td>3</td></tr>
+            <tr><td>ว30291</td><td><span data-i18n="curr.s14">วงจรไฟฟ้าและไมโครคอนโทรลเลอร์</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_elective">รวม (เพิ่มเติม)</b></td><td><b>7.5</b></td><td><b>15</b></td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_total">รวมหน่วยกิต - คาบ/ภาคเรียน</b></td><td><b>15.5</b></td><td><b>40</b></td></tr>
+          </tbody>
+        </table></div>
+    </div>
+
+    <div class="tab-panel" data-panel="m4s2">
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th data-i18n="curr.h_code">รหัสวิชา</th><th data-i18n="curr.h_subject">รายวิชา</th><th data-i18n="curr.h_credit">หน่วยกิต</th><th data-i18n="curr.h_hours">คาบ/สัปดาห์</th></tr></thead>
+          <tbody>
+            <tr><td>ท31102</td><td><span data-i18n="curr.s15">ภาษาไทย 8</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ค31102</td><td><span data-i18n="curr.s16">คณิตศาสตร์ 8</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ว31105</td><td><span data-i18n="curr.s17">วิทยาศาสตร์ชีวภาพ 1</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ส31102</td><td><span data-i18n="curr.s18">สังคมศึกษา ศาสนาและวัฒนธรรม 8</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>อ31102</td><td><span data-i18n="curr.s19">ภาษาอังกฤษ 8</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>พ31102</td><td><span data-i18n="curr.s20">สุขศึกษา 8</span></td><td>0.5</td><td>1</td></tr>
+            <tr><td>พ31104</td><td><span data-i18n="curr.s21">พลศึกษา 8</span></td><td>0.5</td><td>1</td></tr>
+            <tr><td>ศ31102</td><td><span data-i18n="curr.s22">ศิลปะ 8</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_core">รวม (พื้นฐาน)</b></td><td><b>7.0</b></td><td><b>14</b></td></tr>
+            <tr><td>อ31222</td><td><span data-i18n="curr.s23">ภาษาอังกฤษฟัง-พูดเพื่อสื่อสาร 2</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ว31272</td><td><span data-i18n="curr.s24">วิทยาการคำนวณ 4</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ค31208</td><td><span data-i18n="curr.s25">คณิตศาสตร์เพิ่มเติม 2(1)</span></td><td>2.0</td><td>4</td></tr>
+            <tr><td>ว31219</td><td><span data-i18n="curr.s26">ฟิสิกส์สำหรับวิศวกรรม 2</span></td><td>2.0</td><td>4</td></tr>
+            <tr><td>ว30252</td><td><span data-i18n="curr.s27">พื้นฐานปัญญาประดิษฐ์</span></td><td>1.5</td><td>3</td></tr>
+            <tr><td>ว30256</td><td><span data-i18n="curr.s28">ฟิสิกส์ในเทคโนโลยีหุ่นยนต์</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_elective">รวม (เพิ่มเติม)</b></td><td><b>8.5</b></td><td><b>17</b></td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_total">รวมหน่วยกิต - คาบ/ภาคเรียน</b></td><td><b>15.5</b></td><td><b>40</b></td></tr>
+          </tbody>
+        </table></div>
+    </div>
+
+    <div class="tab-panel" data-panel="m5s1">
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th data-i18n="curr.h_code">รหัสวิชา</th><th data-i18n="curr.h_subject">รายวิชา</th><th data-i18n="curr.h_credit">หน่วยกิต</th><th data-i18n="curr.h_hours">คาบ/สัปดาห์</th></tr></thead>
+          <tbody>
+            <tr><td>ท32101</td><td><span data-i18n="curr.s29">ภาษาไทย 9</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ค32101</td><td><span data-i18n="curr.s30">คณิตศาสตร์ 9</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ว32103</td><td><span data-i18n="curr.s31">วิทยาศาสตร์กายภาพ 2</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ส32101</td><td><span data-i18n="curr.s32">สังคมศึกษา ศาสนาและวัฒนธรรม 9</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>อ32101</td><td><span data-i18n="curr.s33">ภาษาอังกฤษ 9</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>พ32101</td><td><span data-i18n="curr.s34">สุขศึกษา 9</span></td><td>0.5</td><td>1</td></tr>
+            <tr><td>พ32102</td><td><span data-i18n="curr.s35">พลศึกษา 9</span></td><td>0.5</td><td>1</td></tr>
+            <tr><td>ศ32101</td><td><span data-i18n="curr.s36">ศิลปะ 9</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ส32105</td><td><span data-i18n="curr.s37">ประวัติศาสตร์ (8)</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_core">รวม (พื้นฐาน)</b></td><td><b>8.0</b></td><td><b>16</b></td></tr>
+            <tr><td>อ32221</td><td><span data-i18n="curr.s38">ภาษาอังกฤษฟัง-พูดเพื่อสื่อสาร 3</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ค32208</td><td><span data-i18n="curr.s39">คณิตศาสตร์เพิ่มเติม 3(1)</span></td><td>2.0</td><td>4</td></tr>
+            <tr><td>ว32218</td><td><span data-i18n="curr.s40">ฟิสิกส์สำหรับวิศวกรรม 3</span></td><td>2.0</td><td>4</td></tr>
+            <tr><td>ว30265</td><td><span data-i18n="curr.s41">การประมวลผลภาพ</span></td><td>1.5</td><td>3</td></tr>
+            <tr><td>ว30257</td><td><span data-i18n="curr.s42">ไมโครคอนโทรลเลอร์และปัญญาประดิษฐ์</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_elective">รวม (เพิ่มเติม)</b></td><td><b>7.5</b></td><td><b>15</b></td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_total">รวมหน่วยกิต - คาบ/ภาคเรียน</b></td><td><b>15.5</b></td><td><b>40</b></td></tr>
+          </tbody>
+        </table></div>
+    </div>
+
+    <div class="tab-panel" data-panel="m5s2">
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th data-i18n="curr.h_code">รหัสวิชา</th><th data-i18n="curr.h_subject">รายวิชา</th><th data-i18n="curr.h_credit">หน่วยกิต</th><th data-i18n="curr.h_hours">คาบ/สัปดาห์</th></tr></thead>
+          <tbody>
+            <tr><td>ท32102</td><td><span data-i18n="curr.s43">ภาษาไทย 10</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ค32102</td><td><span data-i18n="curr.s44">คณิตศาสตร์ 10</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ว32104</td><td><span data-i18n="curr.s45">วิทยาศาสตร์ชีวภาพ 2</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ส32102</td><td><span data-i18n="curr.s46">สังคมศึกษา ศาสนาและวัฒนธรรม 10</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>อ32102</td><td><span data-i18n="curr.s47">ภาษาอังกฤษ 10</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ง32102</td><td><span data-i18n="curr.s48">การงานอาชีพ 7</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_core">รวม (พื้นฐาน)</b></td><td><b>6.0</b></td><td><b>12</b></td></tr>
+            <tr><td>อ32222</td><td><span data-i18n="curr.s49">ภาษาอังกฤษฟัง-พูดเพื่อสื่อสาร 4</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ค32209</td><td><span data-i18n="curr.s50">คณิตศาสตร์เพิ่มเติม 4(1)</span></td><td>2.0</td><td>4</td></tr>
+            <tr><td>ว32219</td><td><span data-i18n="curr.s51">ฟิสิกส์สำหรับวิศวกรรม 4</span></td><td>2.0</td><td>4</td></tr>
+            <tr><td>ว32280</td><td><span data-i18n="curr.s52">วิศวกรรมเคมี 1</span></td><td>1.5</td><td>3</td></tr>
+            <tr><td>ว30261</td><td><span data-i18n="curr.s53">การเขียนโปรแกรมปัญญาประดิษฐ์ 1</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ว30263</td><td><span data-i18n="curr.s54">การประยุกต์ใช้ปัญญาประดิษฐ์</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_elective">รวม (เพิ่มเติม)</b></td><td><b>8.5</b></td><td><b>17</b></td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_total">รวมหน่วยกิต - คาบ/ภาคเรียน</b></td><td><b>14.5</b></td><td><b>40</b></td></tr>
+          </tbody>
+        </table></div>
+    </div>
+
+    <div class="tab-panel" data-panel="m6s1">
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th data-i18n="curr.h_code">รหัสวิชา</th><th data-i18n="curr.h_subject">รายวิชา</th><th data-i18n="curr.h_credit">หน่วยกิต</th><th data-i18n="curr.h_hours">คาบ/สัปดาห์</th></tr></thead>
+          <tbody>
+            <tr><td>ท33101</td><td><span data-i18n="curr.s55">ภาษาไทย 11</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ค33101</td><td><span data-i18n="curr.s56">คณิตศาสตร์ 11</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ว33101</td><td><span data-i18n="curr.s57">โลก ดาราศาสตร์และอวกาศ</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ส33101</td><td><span data-i18n="curr.s58">สังคมศึกษา ศาสนาและวัฒนธรรม 11</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>อ33101</td><td><span data-i18n="curr.s59">ภาษาอังกฤษ 11</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ง33101</td><td><span data-i18n="curr.s60">การงานอาชีพ 8</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_core">รวม (พื้นฐาน)</b></td><td><b>6.0</b></td><td><b>12</b></td></tr>
+            <tr><td>อ33218</td><td><span data-i18n="curr.s61">ภาษาอังกฤษฟัง-พูดเพื่อสื่อสาร 5</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ส30254</td><td><span data-i18n="curr.s62">ประเด็นทางสังคม</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ค33208</td><td><span data-i18n="curr.s63">คณิตศาสตร์เพิ่มเติม 5(1)</span></td><td>2.0</td><td>4</td></tr>
+            <tr><td>ว33220</td><td><span data-i18n="curr.s64">ฟิสิกส์สำหรับวิศวกรรม 5</span></td><td>2.0</td><td>4</td></tr>
+            <tr><td>-</td><td><span data-i18n="curr.s65">วิศวกรรมเคมี 2</span></td><td>1.5</td><td>3</td></tr>
+            <tr><td>ว30258</td><td><span data-i18n="curr.s66">โครงงานวิชาเอกวิศวกรรมปัญญาประดิษฐ์</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>อ33236</td><td><span data-i18n="curr.s67">ภาษาอังกฤษบูรณาการทักษะเฉพาะด้าน 5</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_elective">รวม (เพิ่มเติม)</b></td><td><b>9.5</b></td><td><b>19</b></td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_total">รวมหน่วยกิต - คาบ/ภาคเรียน</b></td><td><b>15.5</b></td><td><b>40</b></td></tr>
+          </tbody>
+        </table></div>
+    </div>
+
+    <div class="tab-panel" data-panel="m6s2">
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th data-i18n="curr.h_code">รหัสวิชา</th><th data-i18n="curr.h_subject">รายวิชา</th><th data-i18n="curr.h_credit">หน่วยกิต</th><th data-i18n="curr.h_hours">คาบ/สัปดาห์</th></tr></thead>
+          <tbody>
+            <tr><td>ท33102</td><td><span data-i18n="curr.s68">ภาษาไทย 12</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ค33102</td><td><span data-i18n="curr.s69">คณิตศาสตร์ 12</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ว33104</td><td><span data-i18n="curr.s70">โลกและการเปลี่ยนแปลง</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ส33102</td><td><span data-i18n="curr.s71">สังคมศึกษา ศาสนาและวัฒนธรรม 12</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>อ33102</td><td><span data-i18n="curr.s72">ภาษาอังกฤษ 12</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ง33102</td><td><span data-i18n="curr.s73">การงานอาชีพ 9</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_core">รวม (พื้นฐาน)</b></td><td><b>6.0</b></td><td><b>12</b></td></tr>
+            <tr><td>อ33219</td><td><span data-i18n="curr.s74">ภาษาอังกฤษฟัง-พูดเพื่อสื่อสาร 6</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ค33209</td><td><span data-i18n="curr.s75">คณิตศาสตร์เพิ่มเติม 6(1)</span></td><td>2.0</td><td>4</td></tr>
+            <tr><td>ว30245</td><td><span data-i18n="curr.s76">ภาษาอังกฤษเพื่อการศึกษาต่อ</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>-</td><td><span data-i18n="curr.s77">วิศวกรรมเคมี 3</span></td><td>1.5</td><td>3</td></tr>
+            <tr><td>ว33273</td><td><span data-i18n="curr.s78">เทคโนโลยีปัญญาประดิษฐ์</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td>ว33214</td><td><span data-i18n="curr.s79">ปฏิบัติการด้านเทคโนโลยีพื้นฐานวิศวกรรม</span></td><td>1.0</td><td>2</td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_elective">รวม (เพิ่มเติม)</b></td><td><b>8.0</b></td><td><b>17</b></td></tr>
+            <tr><td colspan="2"><b data-i18n="curr.sum_total">รวมหน่วยกิต - คาบ/ภาคเรียน</b></td><td><b>14.0</b></td><td><b>40</b></td></tr>
+          </tbody>
+        </table></div>
+    </div>
+
+    <div class="tab-panel" data-panel="grad">
+        <p class="comp-note" data-i18n="curr.grad_note">นักเรียนสาขาวิชาเอกวิศวกรรมปัญญาประดิษฐ์ (AI) ทุกคนต้องผ่านเกณฑ์การจบวิชาเอกภายในภาคเรียนที่ 1 ของระดับชั้นมัธยมศึกษาปีที่ 6 ดังนี้</p>
+        <ul class="lesson-list">
+          <li data-i18n="curr.grad1">เข้าร่วมกิจกรรมค่ายวิชาเอก อย่างน้อย 1 ครั้ง ตลอด 3 ปีการศึกษา และร่วมจัดงานวิชาการแนะนำวิชาเอก</li>
+          <li data-i18n="curr.grad2">เข้าร่วมกิจกรรมพัฒนาทักษะ อย่างน้อย 2 รายการ (แสดงหลักฐานการเข้าร่วมกิจกรรม)</li>
+          <li data-i18n="curr.grad3">เข้าร่วมประกวดนวัตกรรม/สิ่งประดิษฐ์ด้านวิศวกรรม คอมพิวเตอร์ หรือเทคโนโลยี อย่างใดอย่างหนึ่ง หรือเข้าร่วมการแข่งขันในด้านเดียวกัน</li>
+          <li data-i18n="curr.grad4">เข้าร่วมกิจกรรมศึกษาดูงานในภาครัฐหรือเอกชนที่เกี่ยวข้องกับวิศวกรรม คอมพิวเตอร์ หรือเทคโนโลยี ที่โรงเรียนจัดให้</li>
+          <li data-i18n="curr.grad5">พัฒนาโครงงานตามความสนใจของนักเรียน และจัดนิทรรศการนำเสนอโครงงานภายในหรือภายนอกโรงเรียน</li>
+          <li data-i18n="curr.grad6">แสดงผลการทดสอบมาตรฐานภาษาอังกฤษอย่างน้อย 1 รายการ (เช่น IELTS, TOEIC, CU-TEP, TU-GET) ยื่นต่ออาจารย์ประจำวิชาเอกภายใน ม.6 เทอม 1 (ไม่กำหนดเกณฑ์ขั้นต่ำของคะแนน)</li>
+        </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container-xl">
+    <div class="foot-brand"><span class="brand-icon"><i class="bi bi-terminal"></i></span>ENGINEERS</div>
+    <p class="foot-tagline" data-i18n="common.footer_tagline">A repository for the AI Engineering major - our work, debugs, blogs, and reports in one place.</p>
+    <nav class="foot-nav">
+      <a href="index.html" data-i18n="nav.home">Home</a><span>&middot;</span>
+      <a href="join-us.html" data-i18n="nav.join">Join Us</a><span>&middot;</span>
+      <a href="events.html" data-i18n="nav.events">Events & Activities</a><span>&middot;</span>
+      <a href="competitions.html" data-i18n="nav.competitions">Competitions</a><span>&middot;</span>
+      <a href="classwork.html" data-i18n="nav.classwork">Reports & Docs</a><span>&middot;</span>
+      <a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a><span>&middot;</span>
+      <a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a>
+    </nav>
+    <hr class="foot-divider">
+    <div class="foot-bottom">
+      <p data-i18n="common.footer_credit">Mathayom 4 – 6 &middot; AI Engineering Major</p>
+      <p data-i18n="common.footer_copy">&copy; 2026 Engineers</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/translations.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

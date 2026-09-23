@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competitions - Engineers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { corePlugins: { preflight: false } }</script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container-xl nav-inner">
+    <a href="index.html" class="brand"><i class="bi bi-terminal"></i>ENGINEERS</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="join-us.html" data-i18n="nav.join">Join Us</a></li>
+      <li><a href="events.html" data-i18n="nav.events">Events & Activities</a></li>
+      <li><a href="competitions.html" class="active" data-i18n="nav.competitions">Competitions</a></li>
+      <li><a href="classwork.html" data-i18n="nav.classwork">Reports & Docs</a></li>
+      <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
+      <li><a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button id="langToggle" class="tool-btn lang-btn"><span>TH</span></button>
+      <button id="themeToggle" class="tool-btn"><i class="bi bi-moon-stars"></i></button>
+      <button id="navToggle" class="nav-toggle"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-banner" style="background-image:url('assets/img/banner-competitions.jpg')">
+  <div class="container-xl">
+    <div class="eyebrow"><i class="bi bi-trophy"></i><span data-i18n="competitions.eyebrow">Competitions</span></div>
+    <h1 data-i18n="competitions.title">Competitions</h1>
+    <p class="lead mt-3" data-i18n="competitions.sub">Contests we've entered, and what came of them.</p>
+  </div>
+</section>
+
+<div class="breadcrumb">
+  <div class="container-xl">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <span class="sep"><i class="bi bi-chevron-right"></i></span>
+    <span class="current" data-i18n="nav.competitions">Competitions</span>
+  </div>
+</div>
+
+<section>
+  <div class="container-xl">
+
+    <div class="comp-item">
+      <button class="comp-row"><span class="date" data-i18n="competitions.c3_date">2026</span><div><h3 data-i18n="competitions.c3_title">Samsung Solve for Tomorrow</h3><span class="meta" data-i18n="competitions.c3_meta">Top 20 nationwide - team Ailarp, "Edu_Hub" AI tutoring platform</span></div><i class="bi bi-chevron-down chevron"></i></button>
+      <div class="comp-detail"><div class="comp-detail-inner">
+        <div class="comp-detail-img"><img src="https://scontent.fbkk35-1.fna.fbcdn.net/v/t39.30808-6/775183703_1525288816307129_3520417850865393523_n.jpg" alt="Samsung Solve for Tomorrow" onerror="this.closest('.comp-detail-img').remove()"></div>
+        <div class="comp-detail-body">
+          <span class="comp-badge"><i class="bi bi-trophy"></i><span data-i18n="competitions.c3_badge">Top 20 Nationwide</span></span>
+          <p class="comp-note" data-i18n="competitions.c3_note">Samsung's national STEM innovation contest for Thai high-school teams, judged on solving real-world problems with technology.</p>
+          <p class="comp-winner"><strong>Ailarp</strong> <span data-i18n="competitions.c3_winner">advanced to the Top 20 nationwide with "Edu_Hub," an AI tutoring platform.</span></p>
+          <p class="comp-people-label" data-i18n="competitions.c3_team_label">Team Ailarp - Edu_Hub</p>
+          <ul class="comp-people">
+            <li><i class="bi bi-person-fill"></i><div><b>นายรพี รัตนมนูญพร</b></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นางสาวปรียารัศมิ์ เด่นนินนาท</b></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นางสาวนฤชล ศักดิ์สุริยา</b></div></li>
+          </ul>
+          <p class="comp-note" data-i18n="competitions.c3_prev">Last year, a senior team took first place in this same contest.</p>
+          <p class="comp-people-label" data-i18n="competitions.c3_prev_team_label">Team Ailarp</p>
+          <ul class="comp-people">
+            <li><i class="bi bi-person-fill"></i><div><b>นายชวิน สุมิตร</b></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นางสาวอธิตานันท์ ธนโชคจินดาวัฒน์</b></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นายปิยพัชร์ สุปัญญาโชติสกุล</b></div></li>
+          </ul>
+          <div class="comp-links">
+            <a href="https://solvefortomorrow.in.th/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-box-arrow-up-right"></i><span data-i18n="competitions.official_site">Official site</span></a>
+            <a href="https://www.facebook.com/share/p/18p9xxuK8w/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on Facebook</span></a>
+            <a href="https://www.facebook.com/share/p/1DywqzAigX/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-trophy"></i><span data-i18n="competitions.c3_prev_link">Last year's first place</span></a>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="comp-item">
+      <button class="comp-row"><span class="date" data-i18n="competitions.c2_date">2026</span><div><h3 data-i18n="competitions.c2_title">National Software Contest (NSC 28)</h3><span class="meta" data-i18n="competitions.c2_meta">Development grant awarded - ThaiAI Lens, TAMROI</span></div><i class="bi bi-chevron-down chevron"></i></button>
+      <div class="comp-detail"><div class="comp-detail-inner">
+        <div class="comp-detail-img"><img src="https://scontent.fbkk35-1.fna.fbcdn.net/v/t39.30808-6/779292117_1561911915732084_8165035375163237787_n.jpg" alt="National Software Contest" onerror="this.closest('.comp-detail-img').remove()"></div>
+        <div class="comp-detail-body">
+          <span class="comp-badge"><i class="bi bi-cash-coin"></i><span data-i18n="competitions.c2_badge">Development Grant</span></span>
+          <p class="comp-note" data-i18n="competitions.c2_note">Thailand's long-running National Software Contest, run by NSTDA, funding student software projects from prototype to launch.</p>
+          <p class="comp-winner"><strong>ThaiAI Lens</strong> <span data-i18n="competitions.c2_w1">- interactive web app for AI learning</span><br><strong>TAMROI</strong> <span data-i18n="competitions.c2_w2">- game-based web app for Thai history education</span></p>
+          <p class="comp-people-label" data-i18n="competitions.c2_team1_label">Team Cap Moo - ThaiAI Lens</p>
+          <ul class="comp-people">
+            <li><i class="bi bi-person-fill"></i><div><b>นายชวิน สุมิตร</b></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นางสาวอธิตานันท์ ธนโชคจินดาวัฒน์</b></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นายปิยพัชร์ สุปัญญาโชติสกุล</b></div></li>
+          </ul>
+          <p class="comp-people-label" data-i18n="competitions.c2_team2_label">TAMROI</p>
+          <ul class="comp-people">
+            <li><i class="bi bi-person-fill"></i><div><b>นางสาวรชยา เชวงกิจวณิช</b></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นายปภาวิชญ์ แซ่หลิว</b></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นายรพี รัตนมนูญพร</b></div></li>
+          </ul>
+          <div class="comp-links">
+            <a href="https://nsc.siit.tu.ac.th/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-box-arrow-up-right"></i><span data-i18n="competitions.official_site">Official site</span></a>
+            <a href="https://www.facebook.com/share/p/1E6rz5KhSM/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on Facebook</span></a>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="comp-item">
+      <button class="comp-row"><span class="date" data-i18n="competitions.c10_date">JUL 2026</span><div><h3 data-i18n="competitions.c10_title">World Robot Olympiad (WRO) - Central Region</h3><span class="meta" data-i18n="competitions.c10_meta">3rd place gold medal, RoboMission Senior - team Ebi Mayo</span></div><i class="bi bi-chevron-down chevron"></i></button>
+      <div class="comp-detail"><div class="comp-detail-inner">
+        <div class="comp-detail-img"><img src="https://scontent.fbkk35-1.fna.fbcdn.net/v/t39.30808-6/777331934_1562397929016816_4312689220198735792_n.jpg" alt="WRO Central Region" onerror="this.closest('.comp-detail-img').remove()"></div>
+        <div class="comp-detail-body">
+          <span class="comp-badge"><i class="bi bi-award"></i><span data-i18n="competitions.c10_badge">Gold Medal - 3rd Place</span></span>
+          <p class="comp-note" data-i18n="competitions.wro_note">An international robotics olympiad for youth, competing across LEGO-based robotics categories.</p>
+          <p class="comp-winner"><strong>Ebi Mayo</strong> <span data-i18n="competitions.c10_winner">won the bronze medal in RoboMission Senior at the Central Region round.</span></p>
+          <p class="comp-people-label" data-i18n="competitions.ebimayo_team_label">Team Ebi Mayo</p>
+          <ul class="comp-people">
+            <li><i class="bi bi-person-fill"></i><div><b>นายจักรคณัตม์ ปัทมชัยยันต์</b></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นายธวันทร ตันตลานุกุล</b></div></li>
+          </ul>
+          <div class="comp-links">
+            <a href="https://wro-association.org/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-box-arrow-up-right"></i><span data-i18n="competitions.official_site">Official site</span></a>
+            <a href="https://www.facebook.com/share/p/1GpaFa75Mt/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on Facebook</span></a>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="comp-item">
+      <button class="comp-row"><span class="date" data-i18n="competitions.c8_date">MAY 2026</span><div><h3 data-i18n="competitions.c8_title">INNOVEDEX - Robotics Competition</h3><span class="meta" data-i18n="competitions.c8_meta">Gold medal, Sorter-Stationary Robot - team Ebi Mayo</span></div><i class="bi bi-chevron-down chevron"></i></button>
+      <div class="comp-detail"><div class="comp-detail-inner">
+        <div class="comp-detail-img"><img src="https://scontent.fbkk35-1.fna.fbcdn.net/v/t39.30808-6/719484579_1501557848434158_5537698564675073559_n.jpg" alt="INNOVEDEX" onerror="this.closest('.comp-detail-img').remove()"></div>
+        <div class="comp-detail-body">
+          <span class="comp-badge"><i class="bi bi-award"></i><span data-i18n="competitions.c8_badge">Gold Medal</span></span>
+          <p class="comp-note" data-i18n="competitions.c8_note">A regional robotics competition testing automation and mechanical design across contest categories.</p>
+          <p class="comp-winner"><strong>Ebi Mayo</strong> <span data-i18n="competitions.c8_winner">won gold in the Sorter–Stationary Robot category.</span></p>
+          <p class="comp-people-label" data-i18n="competitions.ebimayo_team_label">Team Ebi Mayo</p>
+          <ul class="comp-people">
+            <li><i class="bi bi-person-fill"></i><div><b>นายจักรคณัตม์ ปัทมชัยยันต์</b></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นายธวันทร ตันตลานุกุล</b></div></li>
+          </ul>
+          <div class="comp-links">
+            <a href="https://www.facebook.com/share/p/1J6MdQCm4V/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on Facebook</span></a>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="comp-item">
+      <button class="comp-row"><span class="date" data-i18n="competitions.c1_date">MAY 2026</span><div><h3 data-i18n="competitions.c1_title">CEDT Innovation Summit - Hackathon</h3><span class="meta" data-i18n="competitions.c1_meta">Gold award, Industry Tech Track - team SPSMlnwZa007</span></div><i class="bi bi-chevron-down chevron"></i></button>
+      <div class="comp-detail"><div class="comp-detail-inner">
+        <div class="comp-detail-body">
+          <span class="comp-badge"><i class="bi bi-award"></i><span data-i18n="competitions.c1_badge">Gold Award</span></span>
+          <p class="comp-note" data-i18n="competitions.c1_note">Chulalongkorn Engineering's annual innovation hackathon, pitting student teams against real industry and EdTech problem statements.</p>
+          <p class="comp-people-label" data-i18n="competitions.c1_team1_label">Team SPSMlnwZa007 - Industry Tech, Gold</p>
+          <ul class="comp-people">
+            <li><i class="bi bi-person-fill"></i><div><b>นายนวีย์ธรรศ ทรัพย์แสง</b></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นายพุฒิพงศ์ พุทธวิถี</b></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นางสาวเมธาพร กิตติวัณณะกุล</b></div></li>
+          </ul>
+          <div class="comp-links">
+            <a href="https://cis.cedt.community/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-box-arrow-up-right"></i><span data-i18n="competitions.official_site">Official site</span></a>
+            <a href="https://www.facebook.com/share/p/1dnXqjm9WG/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on Facebook</span></a>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="comp-item">
+      <button class="comp-row"><span class="date" data-i18n="competitions.c5_date">NOV 2025</span><div><h3 data-i18n="competitions.c5_title">POSN Computer Camp (Batch 26)</h3><span class="meta" data-i18n="competitions.c5_meta">Selected into the national Olympiad computer camp</span></div><i class="bi bi-chevron-down chevron"></i></button>
+      <div class="comp-detail"><div class="comp-detail-inner">
+        <div class="comp-detail-img"><img src="https://scontent.fbkk35-1.fna.fbcdn.net/v/t39.30808-6/575102841_122281313456133723_7335811424020573976_n.jpg" alt="POSN Computer Camp" onerror="this.closest('.comp-detail-img').remove()"></div>
+        <div class="comp-detail-body">
+          <span class="comp-badge"><i class="bi bi-check-circle"></i><span data-i18n="competitions.c5_badge">Selected</span></span>
+          <p class="comp-note" data-i18n="competitions.c5_note">The national Computer Science Olympiad camp (POSN), selecting Thailand's top young programmers for advanced training.</p>
+          <p class="comp-winner" data-i18n="competitions.c5_people">Selected students advanced to the Camp 2 round of the program.</p>
+          <div class="comp-links">
+            <a href="https://posn.or.th/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-box-arrow-up-right"></i><span data-i18n="competitions.official_site">Official site</span></a>
+            <a href="https://www.facebook.com/share/p/1ETAPD6dwD/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on Facebook</span></a>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="comp-item">
+      <button class="comp-row"><span class="date" data-i18n="competitions.c4_date">SEP 2025</span><div><h3 data-i18n="competitions.c4_title">Thailand Cyber Top Talent</h3><span class="meta" data-i18n="competitions.c4_meta">Selected as Bangkok representatives</span></div><i class="bi bi-chevron-down chevron"></i></button>
+      <div class="comp-detail"><div class="comp-detail-inner">
+        <div class="comp-detail-img"><img src="https://scontent.fbkk35-1.fna.fbcdn.net/v/t39.30808-6/540787903_798825792537335_8984877142392500940_n.jpg" alt="Thailand Cyber Top Talent" onerror="this.closest('.comp-detail-img').remove()"></div>
+        <div class="comp-detail-body">
+          <span class="comp-badge"><i class="bi bi-geo-alt"></i><span data-i18n="competitions.c4_badge">Bangkok Representatives</span></span>
+          <p class="comp-note" data-i18n="competitions.c4_note">A national cybersecurity talent contest identifying Thailand's top young security researchers by province.</p>
+          <ul class="comp-people">
+            <li><i class="bi bi-person-fill"></i><div><b>นายปุญภากร โพธินาลัน</b> <span data-i18n="competitions.c4_m1">- EE major</span></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นายณัฏฐ์นนท์ กนกกันฑพงษ์</b> <span data-i18n="competitions.c4_m2">- AI major</span></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นายตรง ศรีนุตพงษ์</b> <span data-i18n="competitions.c4_m2">- AI major</span></div></li>
+          </ul>
+          <div class="comp-links">
+            <a href="https://www.facebook.com/share/p/198QgyPnT2/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on Facebook</span></a>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="comp-item">
+      <button class="comp-row"><span class="date" data-i18n="competitions.c6_date">JUL 2025</span><div><h3 data-i18n="competitions.c6_title">AI Builders</h3><span class="meta" data-i18n="competitions.c6_meta">Awarded projects presented at SCBX Next Tech</span></div><i class="bi bi-chevron-down chevron"></i></button>
+      <div class="comp-detail"><div class="comp-detail-inner">
+        <div class="comp-detail-body">
+          <span class="comp-badge"><i class="bi bi-award"></i><span data-i18n="competitions.c6_badge">Awarded</span></span>
+          <p class="comp-note" data-i18n="competitions.c6_note">A nonprofit AI education program where students build and present real machine-learning projects to industry judges.</p>
+          <ul class="comp-people">
+            <li><i class="bi bi-person-fill"></i><div><b>นายชวิน สุมิตร</b> <span>- LoRA-Boost</span></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นายนวีย์ธรรศ ทรัพย์แสง</b> <span>- Piano Technique Classifier</span></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นางสาวรชยา เชวงกิจวณิช</b> <span>- Thai-ANC Phase 1</span></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นายวชิรวิทย์ เจริญกิจปีติ</b> <span>- Solar Panel Inspection</span></div></li>
+          </ul>
+          <div class="comp-links">
+            <a href="https://ai-builders.github.io/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-box-arrow-up-right"></i><span data-i18n="competitions.official_site">Official site</span></a>
+            <a href="https://www.facebook.com/share/p/1LmCxVXbUS/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on Facebook</span></a>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="comp-item">
+      <button class="comp-row"><span class="date" data-i18n="competitions.c7_date">APR 2025</span><div><h3 data-i18n="competitions.c7_title">Super AI Engineer - Season 5</h3><span class="meta" data-i18n="competitions.c7_meta">Advanced to Level 2, applied AI curriculum</span></div><i class="bi bi-chevron-down chevron"></i></button>
+      <div class="comp-detail"><div class="comp-detail-inner">
+        <div class="comp-detail-img"><img src="https://scontent.fbkk35-1.fna.fbcdn.net/v/t39.30808-6/488720236_1156064779650135_4904480336492091966_n.jpg" alt="Super AI Engineer" onerror="this.closest('.comp-detail-img').remove()"></div>
+        <div class="comp-detail-body">
+          <span class="comp-badge"><i class="bi bi-graph-up-arrow"></i><span data-i18n="competitions.c7_badge">Advanced - Level 2</span></span>
+          <p class="comp-note" data-i18n="competitions.c7_note">A national applied-AI training program run by AIAT, advancing top participants to real-world project levels.</p>
+          <ul class="comp-people">
+            <li><i class="bi bi-person-fill"></i><div><b>นางสาวชลนา เครือวุฒิกุล</b></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นางสาวณัชชา เงาประเสริฐวงศ์</b></div></li>
+            <li><i class="bi bi-person-fill"></i><div><b>นายตะวัน บู่ทอง</b></div></li>
+          </ul>
+          <div class="comp-links">
+            <a href="https://superai.aiat.or.th/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-box-arrow-up-right"></i><span data-i18n="competitions.official_site">Official site</span></a>
+            <a href="https://www.facebook.com/share/p/1GP7pjJ9i9/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on Facebook</span></a>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="comp-item">
+      <button class="comp-row"><span class="date" data-i18n="competitions.c9_date">DEC 2024</span><div><h3 data-i18n="competitions.c9_title">MakeX Robotics - Global Final</h3><span class="meta" data-i18n="competitions.c9_meta">3rd runner-up (Shenzhen) - team Sukorn Motor</span></div><i class="bi bi-chevron-down chevron"></i></button>
+      <div class="comp-detail"><div class="comp-detail-inner">
+        <div class="comp-detail-body">
+          <span class="comp-badge"><i class="bi bi-award"></i><span data-i18n="competitions.c9_badge">3rd Runner-up</span></span>
+          <p class="comp-note" data-i18n="competitions.c9_note">A global robotics competition series culminating in an international final.</p>
+          <p class="comp-winner"><strong>Sukorn Motor</strong> <span data-i18n="competitions.c9_winner">placed 3rd runner-up at the Global Final in Shenzhen.</span></p>
+          <div class="comp-links">
+            <a href="https://www.makex.io/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-box-arrow-up-right"></i><span data-i18n="competitions.official_site">Official site</span></a>
+            <a href="https://www.facebook.com/share/p/18tMA6a9ki/" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-facebook"></i><span data-i18n="events.view_fb">View on Facebook</span></a>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container-xl">
+    <div class="foot-brand"><span class="brand-icon"><i class="bi bi-terminal"></i></span>ENGINEERS</div>
+    <p class="foot-tagline" data-i18n="common.footer_tagline">A repository for the AI Engineering major - our work, debugs, blogs, and reports in one place.</p>
+    <nav class="foot-nav">
+      <a href="index.html" data-i18n="nav.home">Home</a><span>&middot;</span>
+      <a href="join-us.html" data-i18n="nav.join">Join Us</a><span>&middot;</span>
+      <a href="events.html" data-i18n="nav.events">Events & Activities</a><span>&middot;</span>
+      <a href="competitions.html" data-i18n="nav.competitions">Competitions</a><span>&middot;</span>
+      <a href="classwork.html" data-i18n="nav.classwork">Reports & Docs</a><span>&middot;</span>
+      <a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a><span>&middot;</span>
+      <a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a>
+    </nav>
+    <hr class="foot-divider">
+    <div class="foot-bottom">
+      <p data-i18n="common.footer_credit">Mathayom 4 – 6 &middot; AI Engineering Major</p>
+      <p data-i18n="common.footer_copy">&copy; 2026 Engineers</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/translations.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

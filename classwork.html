@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reports & Documentation - Engineers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { corePlugins: { preflight: false } }</script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container-xl nav-inner">
+    <a href="index.html" class="brand"><i class="bi bi-terminal"></i>ENGINEERS</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="join-us.html" data-i18n="nav.join">Join Us</a></li>
+      <li><a href="events.html" data-i18n="nav.events">Events & Activities</a></li>
+      <li><a href="competitions.html" data-i18n="nav.competitions">Competitions</a></li>
+      <li><a href="classwork.html" class="active" data-i18n="nav.classwork">Reports & Docs</a></li>
+      <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
+      <li><a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button id="langToggle" class="tool-btn lang-btn"><span>TH</span></button>
+      <button id="themeToggle" class="tool-btn"><i class="bi bi-moon-stars"></i></button>
+      <button id="navToggle" class="nav-toggle"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-banner" style="background-image:url('assets/img/banner-classwork.jpg')">
+  <div class="container-xl">
+    <div class="eyebrow"><i class="bi bi-code-slash"></i><span data-i18n="classwork.eyebrow">Reports & Documentation</span></div>
+    <h1 data-i18n="classwork.title">Reports & Documentation</h1>
+    <p class="lead mt-3" data-i18n="classwork.sub">Assignments, labs, and projects from coursework.</p>
+  </div>
+</section>
+
+<div class="breadcrumb">
+  <div class="container-xl">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <span class="sep"><i class="bi bi-chevron-right"></i></span>
+    <span class="current" data-i18n="nav.classwork">Reports & Docs</span>
+  </div>
+</div>
+
+<section class="pb-0" id="m4">
+  <div class="container-xl">
+    <div class="grade-head">
+      <i class="bi bi-1-circle"></i>
+      <div><h2 data-i18n="classwork.curr_m4_title">M.4</h2><p class="lead" data-i18n="classwork.curr_m4_sub">Foundations - code, circuits, and first robots.</p></div>
+    </div>
+
+    <a class="comp-row" href="report.html?id=basic-python"><span class="date">1</span><div><h3 data-i18n="classwork.curr_m4_t1">Basic Python</h3><span class="meta">W01-W11 weekly exercises, terminal ATM final exam, Tkinter study-planner capstone</span></div><i class="bi bi-arrow-right chevron"></i></a>
+    <a class="comp-row" href="report.html?id=circuits-gpio"><span class="date">2</span><div><h3>Basic Circuits, Arduino &amp; GPIO</h3><span class="meta">Ohm's Law, series/parallel circuits, board &amp; breadboard basics, PWM, servo, ultrasonic, I2C LCD</span></div><i class="bi bi-arrow-right chevron"></i></a>
+    <a class="comp-row" href="report.html?id=physics-robotics"><span class="date">3</span><div><h3 data-i18n="classwork.curr_m4_t5">Physics in Robotics</h3><span class="meta">ESP32 differential-drive robot, Onshape CAD, Dynamixel motor protocol</span></div><i class="bi bi-arrow-right chevron"></i></a>
+    <a class="comp-row" href="report.html?id=line-chatbot"><span class="date">4</span><div><h3 data-i18n="classwork.curr_m4_t6">LINE Chatbot</h3><span class="meta">Dialogflow intents, Apps Script webhook, Sheets database, Flex Message cards</span></div><i class="bi bi-arrow-right chevron"></i></a>
+  </div>
+</section>
+
+<hr class="divider container-xl">
+
+<section class="pb-0" id="m5">
+  <div class="container-xl">
+    <div class="grade-head">
+      <i class="bi bi-2-circle"></i>
+      <div><h2 data-i18n="classwork.curr_m5_title">M.5</h2><p class="lead" data-i18n="classwork.curr_m5_sub">Applied AI - single-board computers and vision.</p></div>
+    </div>
+
+    <a class="comp-row" href="report.html?id=raspi-vision"><span class="date">1</span><div><h3 data-i18n="classwork.w1_title">Raspberry Pi Vision &amp; GPIO Labs</h3><span class="meta" data-i18n="classwork.w1_meta">Hand-tracking, servo control, YOLOv8 object detection</span></div><i class="bi bi-arrow-right chevron"></i></a>
+
+    <a class="comp-row" href="report.html?id=opencv"><span class="date">2</span><div><h3 data-i18n="classwork.w4_title">Computer Vision with OpenCV</h3><span class="meta" data-i18n="classwork.w4_meta">Image processing, face &amp; hand detection, YOLO object detection</span></div><i class="bi bi-arrow-right chevron"></i></a>
+
+    <a class="comp-row" href="report.html?id=deep-learning"><span class="date">3</span><div><h3 data-i18n="classwork.curr_m5_t3">Deep Learning</h3><span class="meta">AI vs ML vs DL, neural network anatomy, CNN/RNN/Transformer/LLM, training &amp; evaluation</span></div><i class="bi bi-arrow-right chevron"></i></a>
+    <div class="comp-item">
+      <button class="comp-row"><span class="date">4</span><div><h3 data-i18n="classwork.curr_m5_t4">AI Research</h3></div><i class="bi bi-chevron-down chevron"></i></button>
+      <div class="comp-detail"><div class="comp-detail-inner report-inner"><ul class="lesson-list">
+        <li>Research Methods</li>
+        <li>Dataset Collection</li>
+        <li>Experiment Design</li>
+        <li>Model Comparison</li>
+        <li>Paper Writing</li>
+      </ul></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider container-xl">
+
+<section id="m6">
+  <div class="container-xl">
+    <div class="grade-head">
+      <i class="bi bi-3-circle"></i>
+      <div><h2 data-i18n="classwork.curr_m6_title">M.6</h2><p class="lead" data-i18n="classwork.curr_m6_sub">Capstone - independent research and robotics.</p></div>
+    </div>
+
+    <div class="comp-item">
+      <button class="comp-row"><span class="date">1</span><div><h3 data-i18n="classwork.curr_m6_t1">Research</h3></div><i class="bi bi-chevron-down chevron"></i></button>
+      <div class="comp-detail"><div class="comp-detail-inner report-inner"><p class="comp-note" data-i18n="classwork.soon">Write-up coming soon.</p></div></div>
+    </div>
+    <div class="comp-item">
+      <button class="comp-row"><span class="date">2</span><div><h3 data-i18n="classwork.curr_m6_t2">ROS</h3></div><i class="bi bi-chevron-down chevron"></i></button>
+      <div class="comp-detail"><div class="comp-detail-inner report-inner"><ul class="lesson-list">
+        <li>ROS Basics &amp; Architecture</li>
+        <li>Topics &amp; Services</li>
+        <li>URDF &amp; Robot Model</li>
+        <li>Navigation Stack</li>
+        <li>Gazebo Simulation</li>
+      </ul></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider container-xl">
+
+<section>
+  <div class="container-xl">
+    <div class="panel panel--filled panel--cta text-center">
+      <div class="panel-icon mx-auto"><i class="bi bi-journal-plus"></i></div>
+      <h3 data-i18n="classwork.contribute_title">Have more to add?</h3>
+      <p class="mt-2 mb-4" data-i18n="classwork.contribute_desc">Past-year reports, notes, or study material worth sharing - contribute directly or reach out to the site maintainers.</p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="https://github.com/eai-spsm" target="_blank" rel="noopener" class="btn-line btn-line--light"><i class="bi bi-github"></i><span>GitHub</span></a>
+        <a href="mailto:raphee.rattanamanoonporn@gmail.com" class="btn-line btn-line--light"><i class="bi bi-envelope"></i><span data-i18n="classwork.contribute_contact">Contact the developer</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container-xl">
+    <div class="foot-brand"><span class="brand-icon"><i class="bi bi-terminal"></i></span>ENGINEERS</div>
+    <p class="foot-tagline" data-i18n="common.footer_tagline">A repository for the AI Engineering major - our work, debugs, blogs, and reports in one place.</p>
+    <nav class="foot-nav">
+      <a href="index.html" data-i18n="nav.home">Home</a><span>&middot;</span>
+      <a href="join-us.html" data-i18n="nav.join">Join Us</a><span>&middot;</span>
+      <a href="events.html" data-i18n="nav.events">Events & Activities</a><span>&middot;</span>
+      <a href="competitions.html" data-i18n="nav.competitions">Competitions</a><span>&middot;</span>
+      <a href="classwork.html" data-i18n="nav.classwork">Reports & Docs</a><span>&middot;</span>
+      <a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a><span>&middot;</span>
+      <a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a>
+    </nav>
+    <hr class="foot-divider">
+    <div class="foot-bottom">
+      <p data-i18n="common.footer_credit">Mathayom 4 – 6 &middot; AI Engineering Major</p>
+      <p data-i18n="common.footer_copy">&copy; 2026 Engineers</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/translations.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
