@@ -41,16 +41,18 @@
 
   const bars = Object.entries(tally).sort((a, b) => b[1] - a[1]);
   const max = bars.length ? bars[0][1] : 1;
+  const totalStudents = allStudents.filter((s) => s.uni).length;
 
   const chartEl = document.getElementById("uniChart");
   if (chartEl) {
     chartEl.innerHTML = bars
       .map(([label, count]) => {
-        const pct = Math.round((count / max) * 100);
+        const widthPct = Math.round((count / max) * 100);
+        const share = Math.round((count / totalStudents) * 100);
         return `<div class="bar-row" data-code="${label}">
           <span class="bar-label">${label}</span>
-          <div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div>
-          <span class="bar-count">${count}</span>
+          <div class="bar-track"><div class="bar-fill" style="width:${widthPct}%"></div></div>
+          <span class="bar-count">${count}<span class="pct">${share}%</span></span>
         </div>`;
       })
       .join("");
