@@ -399,6 +399,28 @@ section {
   margin: 0;
 }
 
+.alumni-table tr {
+  transition: opacity var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+.alumni-table tr td:first-child {
+  border-left: 2px solid transparent;
+  transition: border-color var(--dur) var(--ease), padding-left var(--dur) var(--ease);
+}
+
+.alumni-table tr.row-match td:first-child {
+  border-left-color: var(--accent);
+  padding-left: 10px;
+}
+
+.alumni-table tr.row-match {
+  background: var(--accent-tint);
+}
+
+.alumni-table tr.row-dim {
+  opacity: .35;
+}
+
 @media (max-width: 700px) {
   .alumni-toolbar {
     align-items: stretch;

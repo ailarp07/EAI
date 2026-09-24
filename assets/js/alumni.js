@@ -14,13 +14,18 @@
       .map((s, i) => {
         const uni = s.uni || "-";
         const fac = s.fac || "-";
-        return `<tr><td>${i + 1}</td><td>${s.name}</td><td>${uni}</td><td>${fac}</td></tr>`;
+        const code = (s.code || "").toLowerCase();
+        const searchKey = `${s.name} ${s.uni} ${s.fac}`.toLowerCase();
+        return `<tr data-code="${code}" data-search="${searchKey.replace(/"/g, "&quot;")}"><td>${i + 1}</td><td>${s.name}</td><td>${uni}</td><td>${fac}</td></tr>`;
       })
       .join("");
     tbody.innerHTML = rows;
   });
 
-  // ---- search: live match count across all generations ----
+  const allRows = document.querySelectorAll("#alumniGen1 tr, #alumniGen2 tr, #alumniGen3 tr, #alumniGen4 tr, #alumniGen5 tr");
+
+  // ---- search: highlights matching rows (left border) and dims the rest,
+  // in every generation's table, plus a live match count ----
   const input = document.getElementById("alumniSearch");
   const countEl = document.getElementById("alumniSearchCount");
   if (input) {
@@ -28,19 +33,21 @@
       const q = input.value.trim().toLowerCase();
 
       if (!q) {
+        allRows.forEach((row) => row.classList.remove("row-match", "row-dim"));
         if (countEl) countEl.textContent = "";
         return;
       }
 
-      const matches = allStudents.filter((s) => {
-        const code = (s.code || "").toLowerCase();
-        const uni = (s.uni || "").toLowerCase();
-        const name = (s.name || "").toLowerCase();
-        return code.startsWith(q) || uni.includes(q) || name.includes(q);
+      let matchCount = 0;
+      allRows.forEach((row) => {
+        const isMatch = row.dataset.code.startsWith(q) || row.dataset.search.includes(q);
+        row.classList.toggle("row-match", isMatch);
+        row.classList.toggle("row-dim", !isMatch);
+        if (isMatch) matchCount++;
       });
 
       if (countEl) {
-        countEl.textContent = matches.length + " student" + (matches.length === 1 ? "" : "s") + " match";
+        countEl.textContent = matchCount + " student" + (matchCount === 1 ? "" : "s") + " match";
       }
     });
   }
