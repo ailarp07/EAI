@@ -159,17 +159,19 @@ p {
   color: inherit;
 }
 
+.brand .brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
 .brand i {
-  font-size: 1.05rem;
-  color: var(--accent)
-}
-
-.nav.solid .brand i,
-.nav.no-banner .brand i {
-  color: var(--accent)
-}
-
-.nav:not(.solid):not(.no-banner) .brand i {
+  font-size: .95rem;
   color: #fff
 }
 
@@ -1558,20 +1560,24 @@ section {
   color: var(--muted);
   letter-spacing: .08em;
   text-transform: uppercase;
-  margin-bottom: 8px
+  margin-top: 18px;
+  margin-bottom: 10px
 }
 
 .comp-people {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
   margin: 0 0 14px;
   padding: 0
 }
 
 .comp-people li {
   display: flex;
-  align-items: flex-start;
-  gap: 9px;
-  padding: 5px 0;
+  align-items: center;
+  gap: 7px;
+  padding: 0;
   font-size: .82rem;
   line-height: 1.5
 }
@@ -1579,7 +1585,6 @@ section {
 .comp-people li i {
   color: var(--accent);
   font-size: .72rem;
-  margin-top: 5px;
   flex-shrink: 0
 }
 
