@@ -44,30 +44,62 @@
   const totalStudents = allStudents.filter((s) => s.uni).length;
 
   // Same program gets written differently year to year (Thai name, English
-  // name, "(นานาชาติ)" tag, institute abbreviation...) - fold the common
-  // ones into one label so the breakdown counts the program, not the wording.
+  // name, "(นานาชาติ)" tag, institute abbreviation, Sandbox spelling...) -
+  // fold the common ones into one label so the breakdown counts the
+  // program, not the wording. CEDT (the Computer Eng + Digital Tech
+  // Sandbox program) has to be checked BEFORE plain Computer Engineering,
+  // since its Thai text always contains "คอมพิวเตอร์" too.
   const FAC_CLUSTERS = [
-    [/robotics.*(&|and)?\s*ai|หุ่นยนต์.*ปัญญาประดิษฐ์/i, "Robotics & AI (RAI)"],
+    [/เทคโนโลยีดิจิ(ทั|ตั)ล.*sandbox|sandbox.*เทคโนโลยีดิจิ(ทั|ตั)ล|\bcedt\b/i, "Computer Engineering & Digital Tech (CEDT)"],
+    [/robotics.*(&|and)?\s*ai|หุ่นยนต์.*ปัญญาประดิษฐ์/i, "Robotics & AI"],
     [/หุ่นยนต์ภาคสนาม|\bfibo\b/i, "Field Robotics Institute (FIBO)"],
-    [/aerospace|อากาศยาน/i, "Aerospace Engineering (AERO)"],
-    [/computer engineering|วิศวกรรมคอมพิวเตอร์(?!.*sandbox)/i, "Computer Engineering"],
+    [/aerospace|อากาศยาน/i, "Aerospace Engineering"],
+    [/computer engineering|วิศวกรรมคอมพิวเตอร์/i, "Computer Engineering"],
   ];
+
+  // ISE (International School of Engineering) is CU's real name for its
+  // international engineering programs - only prefix it for those; every
+  // other international program just gets a plain "(Int'l)" suffix.
+  const ENGINEERING_LABELS = new Set([
+    "Robotics & AI",
+    "Aerospace Engineering",
+    "Computer Engineering",
+    "Computer Engineering & Digital Tech (CEDT)",
+    "Field Robotics Institute (FIBO)",
+  ]);
+
+  const INTL_PATTERN = /นานาชาติ|international|\bise\b|\bsiie\b|\(intl?\)/i;
+  const INTL_TAG_STRIP = /\s*[(（]\s*(หลักสูตร)?นานาชาติ\s*[)）]|\s*[(（]\s*international( program)?\s*[)）]|\s*[(（]\s*intl?\.?\s*[)）]/gi;
 
   function normalizeFac(raw) {
     const fac = (raw || "Not specified").replace(/\s+/g, " ").trim();
-    for (const [pattern, label] of FAC_CLUSTERS) {
-      if (pattern.test(fac)) return label;
+    const isIntl = INTL_PATTERN.test(fac);
+    let label = fac;
+    let clustered = false;
+    for (const [pattern, canonical] of FAC_CLUSTERS) {
+      if (pattern.test(fac)) {
+        label = canonical;
+        clustered = true;
+        break;
+      }
     }
-    return fac;
+    if (!isIntl) return { label, isIntl };
+    if (!clustered) label = label.replace(INTL_TAG_STRIP, "").trim();
+    label = ENGINEERING_LABELS.has(label) ? `ISE ${label}` : `${label} (Int'l)`;
+    return { label, isIntl };
   }
 
   function facBreakdown(bucket) {
     const tally = {};
     (bucketMembers[bucket] || []).forEach((s) => {
-      const fac = normalizeFac(s.fac);
-      tally[fac] = (tally[fac] || 0) + 1;
+      const { label, isIntl } = normalizeFac(s.fac);
+      if (!tally[label]) tally[label] = { count: 0, isIntl };
+      tally[label].count += 1;
     });
-    return Object.entries(tally).sort((a, b) => b[1] - a[1]);
+    return Object.entries(tally).sort((a, b) => {
+      if (a[1].isIntl !== b[1].isIntl) return a[1].isIntl ? -1 : 1;
+      return b[1].count - a[1].count;
+    });
   }
 
   const chartEl = document.getElementById("uniChart");
@@ -77,7 +109,7 @@
         const widthPct = Math.round((count / max) * 100);
         const share = Math.round((count / totalStudents) * 100);
         const facs = facBreakdown(label)
-          .map(([fac, n]) => `<li><i class="bi bi-dot"></i><div><b>${fac}</b>${n > 1 ? `<span> - ${n} students</span>` : ""}</div></li>`)
+          .map(([fac, info]) => `<li><i class="bi bi-dot"></i><div><b>${fac}</b>${info.count > 1 ? `<span> - ${info.count} students</span>` : ""}</div></li>`)
           .join("");
         return `<div class="bar-item">
           <button class="bar-row" data-code="${label}">
