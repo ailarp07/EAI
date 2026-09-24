@@ -1,224 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Engineers - AI Engineering Major</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config = { corePlugins: { preflight: false } }</script>
-<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineers - AI Engineering Major</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { corePlugins: { preflight: false } }</script>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
-<nav class="nav">
-  <div class="container-xl nav-inner">
-    <a href="index.html" class="brand"><span class="brand-icon"><i class="bi bi-terminal"></i></span>ENGINEERS</a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
-      <li><a href="join-us.html" data-i18n="nav.join">Join Us</a></li>
-      <li><a href="events.html" data-i18n="nav.events">Events & Activities</a></li>
-      <li><a href="competitions.html" data-i18n="nav.competitions">Competitions</a></li>
-      <li><a href="classwork.html" data-i18n="nav.classwork">Reports & Docs</a></li>
-      <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
-      <li><a href="alumni.html" data-i18n="nav.alumni">Alumni</a></li>
-      <li><a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a></li>
-    </ul>
-    <div class="nav-tools">
-      <button id="langToggle" class="tool-btn lang-btn"><span>TH</span></button>
-      <button id="themeToggle" class="tool-btn"><i class="bi bi-moon-stars"></i></button>
-      <button id="navToggle" class="nav-toggle"><i class="bi bi-list"></i></button>
+  <nav class="nav">
+    <div class="container-xl nav-inner">
+      <a href="index.html" class="brand"><span class="brand-icon"><i class="bi bi-terminal"></i></span>ENGINEERS</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+        <li><a href="join-us.html" data-i18n="nav.join">Join Us</a></li>
+        <li><a href="events.html" data-i18n="nav.events">Events & Activities</a></li>
+        <li><a href="competitions.html" data-i18n="nav.competitions">Competitions</a></li>
+        <li><a href="classwork.html" data-i18n="nav.classwork">Reports & Docs</a></li>
+        <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
+        <li><a href="alumni.html" data-i18n="nav.alumni">Alumni</a></li>
+        <li><a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button id="langToggle" class="tool-btn lang-btn"><span>TH</span></button>
+        <button id="themeToggle" class="tool-btn"><i class="bi bi-moon-stars"></i></button>
+        <button id="navToggle" class="nav-toggle"><i class="bi bi-list"></i></button>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<section class="hero-banner" style="background-image:url('assets/img/banner-alumni.jpg')">
-  <div class="container-xl">
-    <h1 data-i18n="home.hero_title">Engineers</h1>
-    <p class="lead mt-3" style="max-width:560px" data-i18n="home.hero_sub">A repository for our work, debugs, blogs, and reports - everything the AI Engineering major builds, breaks, and writes down.</p>
-    <div class="d-flex gap-3 mt-4">
-      <a href="join-us.html" class="btn-accent"><span data-i18n="home.cta_join">How to join</span><i class="bi bi-arrow-right"></i></a>
-      <a href="events.html" class="btn-line" style="border-color:#fff;color:#fff"><span data-i18n="home.cta_events">See activities</span></a>
+  <section class="hero-banner" style="background-image:url('assets/img/banner.jpg')">
+    <div class="container-xl">
+      <h1 data-i18n="home.hero_title">Engineers</h1>
+      <p class="lead mt-3" style="max-width:560px" data-i18n="home.hero_sub">A repository for our work, debugs, blogs,
+        and reports - everything the AI Engineering major builds, breaks, and writes down.</p>
+      <div class="d-flex gap-3 mt-4">
+        <a href="join-us.html" class="btn-accent"><span data-i18n="home.cta_join">How to join</span><i
+            class="bi bi-arrow-right"></i></a>
+        <a href="events.html" class="btn-line" style="border-color:#fff;color:#fff"><span
+            data-i18n="home.cta_events">See activities</span></a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<hr class="divider container-xl mt-5">
+  <hr class="divider container-xl mt-5">
 
-<!-- ── About the Major ─────────────────────────────── -->
-<section>
-  <div class="container-xl">
-    <div class="row g-5">
-      <div class="col-lg-5">
-        <div class="eyebrow"><i class="bi bi-info-circle"></i><span data-i18n="about.eyebrow">About the Major</span></div>
-        <h2 class="mb-4" data-i18n="about.title">What is AI Engineering?</h2>
+  <!-- ── About the Major ─────────────────────────────── -->
+  <section>
+    <div class="container-xl">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <div class="eyebrow"><i class="bi bi-info-circle"></i><span data-i18n="about.eyebrow">About the Major</span>
+          </div>
+          <h2 class="mb-4" data-i18n="about.title">What is AI Engineering?</h2>
 
-        <div class="info-row">
-          <i class="bi bi-mortarboard"></i>
-          <div>
-            <div class="info-label" data-i18n="about.l_name">Major Name</div>
-            <div class="info-value" data-i18n="about.v_name">Artificial Intelligence Engineering</div>
+          <div class="info-row">
+            <i class="bi bi-mortarboard"></i>
+            <div>
+              <div class="info-label" data-i18n="about.l_name">Major Name</div>
+              <div class="info-value" data-i18n="about.v_name">Artificial Intelligence Engineering</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <i class="bi bi-building"></i>
+            <div>
+              <div class="info-label" data-i18n="about.l_school">School</div>
+              <div class="info-value" data-i18n="about.v_school">Satit Prasarnmit Demonstration School (Secondary
+                Division)</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <i class="bi bi-people"></i>
+            <div>
+              <div class="info-label" data-i18n="about.l_open">Open For</div>
+              <div class="info-value" data-i18n="about.v_open">Mathayom 4 – 6 (Grades 10 – 12)</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <i class="bi bi-geo-alt"></i>
+            <div>
+              <div class="info-label" data-i18n="about.l_loc">Location</div>
+              <div class="info-value" data-i18n="about.v_loc">Sukhumvit 23, Watthana, Bangkok</div>
+            </div>
           </div>
         </div>
-        <div class="info-row">
-          <i class="bi bi-building"></i>
-          <div>
-            <div class="info-label" data-i18n="about.l_school">School</div>
-            <div class="info-value" data-i18n="about.v_school">Satit Prasarnmit Demonstration School (Secondary Division)</div>
-          </div>
-        </div>
-        <div class="info-row">
-          <i class="bi bi-people"></i>
-          <div>
-            <div class="info-label" data-i18n="about.l_open">Open For</div>
-            <div class="info-value" data-i18n="about.v_open">Mathayom 4 – 6 (Grades 10 – 12)</div>
-          </div>
-        </div>
-        <div class="info-row">
-          <i class="bi bi-geo-alt"></i>
-          <div>
-            <div class="info-label" data-i18n="about.l_loc">Location</div>
-            <div class="info-value" data-i18n="about.v_loc">Sukhumvit 23, Watthana, Bangkok</div>
+
+        <div class="col-lg-7">
+          <div class="panel">
+            <p class="kicker" data-i18n="about.kicker">AI ENGINEERING MAJOR</p>
+            <p class="kicker-th" data-i18n="about.kicker_th">Artificial Intelligence Engineering</p>
+            <p class="body-text" data-i18n="about.body">The Artificial Intelligence Engineering major develops students'
+              knowledge, reasoning, and technical ability across computing, automation, robotics, and artificial
+              intelligence. The curriculum integrates mathematics and science with the design and development of AI
+              systems and software capable of addressing real-world problems, combining theoretical study with applied
+              practice in preparation for higher education.</p>
+            <p class="fw-medium mb-2" style="font-size:.84rem" data-i18n="about.goals_title">Core objectives</p>
+            <ul>
+              <li data-i18n="about.g1">Creative and independent thinking</li>
+              <li data-i18n="about.g2">Ability to present and explain technical knowledge</li>
+              <li data-i18n="about.g3">Problem-solving and analytical thinking</li>
+              <li data-i18n="about.g4">Working understanding of science, engineering, automation, robotics, and AI</li>
+            </ul>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="tag"><i class="bi bi-cpu"></i>AI &amp; Machine Learning</span>
+              <span class="tag">Deep Learning</span>
+              <span class="tag">Advanced Mathematics</span>
+              <span class="tag">Physics</span>
+              <span class="tag">Python</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Embedded Systems</span>
+              <span class="tag">Data Science</span>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="col-lg-7">
-        <div class="panel">
-          <p class="kicker" data-i18n="about.kicker">AI ENGINEERING MAJOR</p>
-          <p class="kicker-th" data-i18n="about.kicker_th">Artificial Intelligence Engineering</p>
-          <p class="body-text" data-i18n="about.body">The Artificial Intelligence Engineering major develops students' knowledge, reasoning, and technical ability across computing, automation, robotics, and artificial intelligence. The curriculum integrates mathematics and science with the design and development of AI systems and software capable of addressing real-world problems, combining theoretical study with applied practice in preparation for higher education.</p>
-          <p class="fw-medium mb-2" style="font-size:.84rem" data-i18n="about.goals_title">Core objectives</p>
-          <ul>
-            <li data-i18n="about.g1">Creative and independent thinking</li>
-            <li data-i18n="about.g2">Ability to present and explain technical knowledge</li>
-            <li data-i18n="about.g3">Problem-solving and analytical thinking</li>
-            <li data-i18n="about.g4">Working understanding of science, engineering, automation, robotics, and AI</li>
-          </ul>
-          <div class="d-flex flex-wrap gap-2">
-            <span class="tag"><i class="bi bi-cpu"></i>AI &amp; Machine Learning</span>
-            <span class="tag">Deep Learning</span>
-            <span class="tag">Advanced Mathematics</span>
-            <span class="tag">Physics</span>
-            <span class="tag">Python</span>
-            <span class="tag">Computer Vision</span>
-            <span class="tag">Embedded Systems</span>
-            <span class="tag">Data Science</span>
-          </div>
+  <!-- ── At a Glance ──────────────────────────────────── -->
+  <section class="pt-0">
+    <div class="container-xl">
+      <div class="glance-grid">
+        <div class="glance-card">
+          <div class="glance-icon glance-icon--yellow"><i class="bi bi-bar-chart"></i></div>
+          <h3 data-i18n="home.stats_title">By the Numbers</h3>
+          <p data-i18n="home.stats_desc">Students per gen, competitions entered, field trips, and more.</p>
+          <button class="see-more" data-modal="modal-stats"><span data-i18n="common.see_more">See more</span><i
+              class="bi bi-chevron-right"></i></button>
+        </div>
+
+        <div class="glance-card">
+          <div class="glance-icon glance-icon--white"><i class="bi bi-mortarboard-fill"></i></div>
+          <h3 data-i18n="home.alumni_teaser">Where Our Alumni Go</h3>
+          <p data-i18n="home.alumni_desc">Universities our graduates go on to, in Thailand and abroad.</p>
+          <button class="see-more" data-modal="modal-alumni"><span data-i18n="common.see_more">See more</span><i
+              class="bi bi-chevron-right"></i></button>
+        </div>
+
+        <div class="glance-card">
+          <div class="glance-icon glance-icon--red"><i class="bi bi-chat-dots"></i></div>
+          <h3 data-i18n="contact.title">Reach Us</h3>
+          <p data-i18n="home.contact_desc">Official channels and who built this site.</p>
+          <button class="see-more" data-modal="modal-contact"><span data-i18n="common.see_more">See more</span><i
+              class="bi bi-chevron-right"></i></button>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── At a Glance ──────────────────────────────────── -->
-<section class="pt-0">
-  <div class="container-xl">
-    <div class="glance-grid">
-      <div class="glance-card">
-        <div class="glance-icon glance-icon--yellow"><i class="bi bi-bar-chart"></i></div>
-        <h3 data-i18n="home.stats_title">By the Numbers</h3>
-        <p data-i18n="home.stats_desc">Students per gen, competitions entered, field trips, and more.</p>
-        <button class="see-more" data-modal="modal-stats"><span data-i18n="common.see_more">See more</span><i class="bi bi-chevron-right"></i></button>
-      </div>
-
-      <div class="glance-card">
-        <div class="glance-icon glance-icon--white"><i class="bi bi-mortarboard-fill"></i></div>
-        <h3 data-i18n="home.alumni_teaser">Where Our Alumni Go</h3>
-        <p data-i18n="home.alumni_desc">Universities our graduates go on to, in Thailand and abroad.</p>
-        <button class="see-more" data-modal="modal-alumni"><span data-i18n="common.see_more">See more</span><i class="bi bi-chevron-right"></i></button>
-      </div>
-
-      <div class="glance-card">
-        <div class="glance-icon glance-icon--red"><i class="bi bi-chat-dots"></i></div>
-        <h3 data-i18n="contact.title">Reach Us</h3>
-        <p data-i18n="home.contact_desc">Official channels and who built this site.</p>
-        <button class="see-more" data-modal="modal-contact"><span data-i18n="common.see_more">See more</span><i class="bi bi-chevron-right"></i></button>
+  <!-- ── Glance popups ────────────────────────────────── -->
+  <div class="popup" id="modal-stats">
+    <div class="popup-card">
+      <button class="popup-close" data-close><i class="bi bi-x-lg"></i></button>
+      <div class="glance-icon glance-icon--yellow"><i class="bi bi-bar-chart"></i></div>
+      <h3 data-i18n="home.stats_title">By the Numbers</h3>
+      <div class="feature-stats">
+        <div><i class="bi bi-people"></i><span class="num">25</span><span class="label"
+            data-i18n="home.stat1_label">Students / gen</span></div>
+        <div><i class="bi bi-collection"></i><span class="num">0-7</span><span class="label"
+            data-i18n="home.stat5_label">Generations (we index from 0)</span></div>
+        <div><i class="bi bi-trophy"></i><span class="num">10+</span><span class="label"
+            data-i18n="home.stat2_label">Competitions entered</span></div>
+        <div><i class="bi bi-geo-alt"></i><span class="num">3-5</span><span class="label"
+            data-i18n="home.stat3_label">Field trips / year</span></div>
+        <div><i class="bi bi-mortarboard"></i><span class="num">&infin;</span><span class="label"
+            data-i18n="home.stat4_label">University pathways</span></div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ── Glance popups ────────────────────────────────── -->
-<div class="popup" id="modal-stats">
-  <div class="popup-card">
-    <button class="popup-close" data-close><i class="bi bi-x-lg"></i></button>
-    <div class="glance-icon glance-icon--yellow"><i class="bi bi-bar-chart"></i></div>
-    <h3 data-i18n="home.stats_title">By the Numbers</h3>
-    <div class="feature-stats">
-      <div><i class="bi bi-people"></i><span class="num">25</span><span class="label" data-i18n="home.stat1_label">Students / gen</span></div>
-      <div><i class="bi bi-collection"></i><span class="num">0-7</span><span class="label" data-i18n="home.stat5_label">Generations (we index from 0)</span></div>
-      <div><i class="bi bi-trophy"></i><span class="num">10+</span><span class="label" data-i18n="home.stat2_label">Competitions entered</span></div>
-      <div><i class="bi bi-geo-alt"></i><span class="num">3-5</span><span class="label" data-i18n="home.stat3_label">Field trips / year</span></div>
-      <div><i class="bi bi-mortarboard"></i><span class="num">&infin;</span><span class="label" data-i18n="home.stat4_label">University pathways</span></div>
+  <div class="popup" id="modal-alumni">
+    <div class="popup-card">
+      <button class="popup-close" data-close><i class="bi bi-x-lg"></i></button>
+      <div class="glance-icon glance-icon--white"><i class="bi bi-mortarboard-fill"></i></div>
+      <h3 data-i18n="home.alumni_teaser">Where Our Alumni Go</h3>
+      <div class="feature-alumni">
+        <div class="alum-row"><i class="bi bi-bank"></i>
+          <div><span class="code">ISE CU</span><span class="full-name">International School of Engineering,
+              Chulalongkorn University</span></div>
+        </div>
+        <div class="alum-row"><i class="bi bi-bank"></i>
+          <div><span class="code">CEDT CU</span><span class="full-name">Computer Engineering and Digital Technology,
+              Chulalongkorn University</span></div>
+        </div>
+        <div class="alum-row"><i class="bi bi-bank"></i>
+          <div><span class="code">FIBO KMUTT</span><span class="full-name">Institute of Field Robotics, King Mongkut's
+              University of Technology Thonburi</span></div>
+        </div>
+        <div class="alum-row"><i class="bi bi-bank"></i>
+          <div><span class="code">RAI KMITL</span><span class="full-name">Robotics and AI Engineering, King Mongkut's
+              Institute of Technology Ladkrabang</span></div>
+        </div>
+        <div class="alum-row"><i class="bi bi-bank"></i>
+          <div><span class="code">AERO KMITL</span><span class="full-name">Aeronautical Engineering, King Mongkut's
+              Institute of Technology Ladkrabang</span></div>
+        </div>
+        <div class="alum-row"><i class="bi bi-bank"></i>
+          <div><span class="code">SIIT TU</span><span class="full-name">Sirindhorn International Institute of
+              Technology, Thammasat University</span></div>
+        </div>
+        <div class="alum-row"><i class="bi bi-globe"></i>
+          <div><span class="code">Tsinghua</span><span class="full-name">Tsinghua University, China</span></div>
+        </div>
+        <div class="alum-row"><i class="bi bi-globe"></i>
+          <div><span class="code">Zhejiang</span><span class="full-name">Zhejiang University, China</span></div>
+        </div>
+      </div>
+      <a href="alumni.html" class="link-arrow mt-4"><span data-i18n="home.alumni_full_list">See every
+          generation</span><i class="bi bi-arrow-right"></i></a>
     </div>
   </div>
-</div>
 
-<div class="popup" id="modal-alumni">
-  <div class="popup-card">
-    <button class="popup-close" data-close><i class="bi bi-x-lg"></i></button>
-    <div class="glance-icon glance-icon--white"><i class="bi bi-mortarboard-fill"></i></div>
-    <h3 data-i18n="home.alumni_teaser">Where Our Alumni Go</h3>
-    <div class="feature-alumni">
-      <div class="alum-row"><i class="bi bi-bank"></i><div><span class="code">ISE CU</span><span class="full-name">International School of Engineering, Chulalongkorn University</span></div></div>
-      <div class="alum-row"><i class="bi bi-bank"></i><div><span class="code">CEDT CU</span><span class="full-name">Computer Engineering and Digital Technology, Chulalongkorn University</span></div></div>
-      <div class="alum-row"><i class="bi bi-bank"></i><div><span class="code">FIBO KMUTT</span><span class="full-name">Institute of Field Robotics, King Mongkut's University of Technology Thonburi</span></div></div>
-      <div class="alum-row"><i class="bi bi-bank"></i><div><span class="code">RAI KMITL</span><span class="full-name">Robotics and AI Engineering, King Mongkut's Institute of Technology Ladkrabang</span></div></div>
-      <div class="alum-row"><i class="bi bi-bank"></i><div><span class="code">AERO KMITL</span><span class="full-name">Aeronautical Engineering, King Mongkut's Institute of Technology Ladkrabang</span></div></div>
-      <div class="alum-row"><i class="bi bi-bank"></i><div><span class="code">SIIT TU</span><span class="full-name">Sirindhorn International Institute of Technology, Thammasat University</span></div></div>
-      <div class="alum-row"><i class="bi bi-globe"></i><div><span class="code">Tsinghua</span><span class="full-name">Tsinghua University, China</span></div></div>
-      <div class="alum-row"><i class="bi bi-globe"></i><div><span class="code">Zhejiang</span><span class="full-name">Zhejiang University, China</span></div></div>
-    </div>
-    <a href="alumni.html" class="link-arrow mt-4"><span data-i18n="home.alumni_full_list">See every generation</span><i class="bi bi-arrow-right"></i></a>
-  </div>
-</div>
-
-<div class="popup" id="modal-contact">
-  <div class="popup-card">
-    <button class="popup-close" data-close><i class="bi bi-x-lg"></i></button>
-    <div class="glance-icon glance-icon--red"><i class="bi bi-chat-dots"></i></div>
-    <h3 data-i18n="contact.title">Reach Us</h3>
-    <p class="info-label mb-1" data-i18n="contact.official_label">Official Channels</p>
-    <a href="https://www.facebook.com/eaispsm" target="_blank" rel="noopener" class="contact-link"><i class="bi bi-facebook"></i><span>Facebook</span><i class="bi bi-arrow-up-right ext"></i></a>
-    <a href="https://www.instagram.com/e.ai_official/" target="_blank" rel="noopener" class="contact-link"><i class="bi bi-instagram"></i><span>Instagram</span><i class="bi bi-arrow-up-right ext"></i></a>
-    <a href="https://www.tiktok.com/@e.ai_official" target="_blank" rel="noopener" class="contact-link"><i class="bi bi-tiktok"></i><span>TikTok</span><i class="bi bi-arrow-up-right ext"></i></a>
-    <a href="https://bit.ly/3jFACxV" target="_blank" rel="noopener" class="contact-link"><i class="bi bi-line"></i><span data-i18n="contact.openchat">LINE Openchat</span><i class="bi bi-arrow-up-right ext"></i></a>
-    <a href="https://sites.google.com/view/eai-official/%E0%B9%80%E0%B8%81%E0%B8%A2%E0%B8%A7%E0%B8%81%E0%B8%9A%E0%B8%A7%E0%B8%8A%E0%B8%B2%E0%B9%80%E0%B8%AD%E0%B8%81" target="_blank" rel="noopener" class="contact-link"><i class="bi bi-globe"></i><span data-i18n="contact.website">Website</span><i class="bi bi-arrow-up-right ext"></i></a>
-    <p class="info-label mb-1 mt-4" data-i18n="contact.dev_label">Site Developer</p>
-    <a href="mailto:raphee.rattanamanoonporn@gmail.com" class="contact-link"><i class="bi bi-envelope"></i><span>raphee.rattanamanoonporn@gmail.com</span></a>
-    <a href="mailto:024329@spsm.ac.th" class="contact-link"><i class="bi bi-envelope"></i><span>024329@spsm.ac.th</span></a>
-    <a href="https://github.com/ray0737" target="_blank" rel="noopener" class="contact-link"><i class="bi bi-github"></i><span>ray0737</span><i class="bi bi-arrow-up-right ext"></i></a>
-  </div>
-</div>
-
-<footer class="foot">
-  <div class="container-xl">
-    <div class="foot-brand"><span class="brand-icon"><i class="bi bi-terminal"></i></span>ENGINEERS</div>
-    <p class="foot-tagline" data-i18n="common.footer_tagline">A repository for the AI Engineering major - our work, debugs, blogs, and reports in one place.</p>
-    <nav class="foot-nav">
-      <a href="index.html" data-i18n="nav.home">Home</a><span>&middot;</span>
-      <a href="join-us.html" data-i18n="nav.join">Join Us</a><span>&middot;</span>
-      <a href="events.html" data-i18n="nav.events">Events & Activities</a><span>&middot;</span>
-      <a href="competitions.html" data-i18n="nav.competitions">Competitions</a><span>&middot;</span>
-      <a href="classwork.html" data-i18n="nav.classwork">Reports & Docs</a><span>&middot;</span>
-      <a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a><span>&middot;</span>
-      <a href="alumni.html" data-i18n="nav.alumni">Alumni</a><span>&middot;</span>
-      <a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a>
-    </nav>
-    <hr class="foot-divider">
-    <div class="foot-bottom">
-      <p data-i18n="common.footer_credit">Mathayom 4 – 6 &middot; AI Engineering Major</p>
-      <p data-i18n="common.footer_copy">&copy; 2026 Engineers</p>
+  <div class="popup" id="modal-contact">
+    <div class="popup-card">
+      <button class="popup-close" data-close><i class="bi bi-x-lg"></i></button>
+      <div class="glance-icon glance-icon--red"><i class="bi bi-chat-dots"></i></div>
+      <h3 data-i18n="contact.title">Reach Us</h3>
+      <p class="info-label mb-1" data-i18n="contact.official_label">Official Channels</p>
+      <a href="https://www.facebook.com/eaispsm" target="_blank" rel="noopener" class="contact-link"><i
+          class="bi bi-facebook"></i><span>Facebook</span><i class="bi bi-arrow-up-right ext"></i></a>
+      <a href="https://www.instagram.com/e.ai_official/" target="_blank" rel="noopener" class="contact-link"><i
+          class="bi bi-instagram"></i><span>Instagram</span><i class="bi bi-arrow-up-right ext"></i></a>
+      <a href="https://www.tiktok.com/@e.ai_official" target="_blank" rel="noopener" class="contact-link"><i
+          class="bi bi-tiktok"></i><span>TikTok</span><i class="bi bi-arrow-up-right ext"></i></a>
+      <a href="https://bit.ly/3jFACxV" target="_blank" rel="noopener" class="contact-link"><i
+          class="bi bi-line"></i><span data-i18n="contact.openchat">LINE Openchat</span><i
+          class="bi bi-arrow-up-right ext"></i></a>
+      <a href="https://sites.google.com/view/eai-official/%E0%B9%80%E0%B8%81%E0%B8%A2%E0%B8%A7%E0%B8%81%E0%B8%9A%E0%B8%A7%E0%B8%8A%E0%B8%B2%E0%B9%80%E0%B8%AD%E0%B8%81"
+        target="_blank" rel="noopener" class="contact-link"><i class="bi bi-globe"></i><span
+          data-i18n="contact.website">Website</span><i class="bi bi-arrow-up-right ext"></i></a>
+      <p class="info-label mb-1 mt-4" data-i18n="contact.dev_label">Site Developer</p>
+      <a href="mailto:raphee.rattanamanoonporn@gmail.com" class="contact-link"><i
+          class="bi bi-envelope"></i><span>raphee.rattanamanoonporn@gmail.com</span></a>
+      <a href="mailto:024329@spsm.ac.th" class="contact-link"><i
+          class="bi bi-envelope"></i><span>024329@spsm.ac.th</span></a>
+      <a href="https://github.com/ray0737" target="_blank" rel="noopener" class="contact-link"><i
+          class="bi bi-github"></i><span>ray0737</span><i class="bi bi-arrow-up-right ext"></i></a>
     </div>
   </div>
-</footer>
 
-<script src="assets/js/translations.js"></script>
-<script src="assets/js/main.js"></script>
+  <footer class="foot">
+    <div class="container-xl">
+      <div class="foot-brand"><span class="brand-icon"><i class="bi bi-terminal"></i></span>ENGINEERS</div>
+      <p class="foot-tagline" data-i18n="common.footer_tagline">A repository for the AI Engineering major - our work,
+        debugs, blogs, and reports in one place.</p>
+      <nav class="foot-nav">
+        <a href="index.html" data-i18n="nav.home">Home</a><span>&middot;</span>
+        <a href="join-us.html" data-i18n="nav.join">Join Us</a><span>&middot;</span>
+        <a href="events.html" data-i18n="nav.events">Events & Activities</a><span>&middot;</span>
+        <a href="competitions.html" data-i18n="nav.competitions">Competitions</a><span>&middot;</span>
+        <a href="classwork.html" data-i18n="nav.classwork">Reports & Docs</a><span>&middot;</span>
+        <a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a><span>&middot;</span>
+        <a href="alumni.html" data-i18n="nav.alumni">Alumni</a><span>&middot;</span>
+        <a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a>
+      </nav>
+      <hr class="foot-divider">
+      <div class="foot-bottom">
+        <p data-i18n="common.footer_credit">Mathayom 4 – 6 &middot; AI Engineering Major</p>
+        <p data-i18n="common.footer_copy">&copy; 2026 Engineers</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
+
 </html>

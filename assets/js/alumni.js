@@ -43,10 +43,28 @@
   const max = bars.length ? bars[0][1] : 1;
   const totalStudents = allStudents.filter((s) => s.uni).length;
 
+  // Same program gets written differently year to year (Thai name, English
+  // name, "(นานาชาติ)" tag, institute abbreviation...) - fold the common
+  // ones into one label so the breakdown counts the program, not the wording.
+  const FAC_CLUSTERS = [
+    [/robotics.*(&|and)?\s*ai|หุ่นยนต์.*ปัญญาประดิษฐ์/i, "Robotics & AI (RAI)"],
+    [/หุ่นยนต์ภาคสนาม|\bfibo\b/i, "Field Robotics Institute (FIBO)"],
+    [/aerospace|อากาศยาน/i, "Aerospace Engineering (AERO)"],
+    [/computer engineering|วิศวกรรมคอมพิวเตอร์(?!.*sandbox)/i, "Computer Engineering"],
+  ];
+
+  function normalizeFac(raw) {
+    const fac = (raw || "Not specified").replace(/\s+/g, " ").trim();
+    for (const [pattern, label] of FAC_CLUSTERS) {
+      if (pattern.test(fac)) return label;
+    }
+    return fac;
+  }
+
   function facBreakdown(bucket) {
     const tally = {};
     (bucketMembers[bucket] || []).forEach((s) => {
-      const fac = s.fac || "Not specified";
+      const fac = normalizeFac(s.fac);
       tally[fac] = (tally[fac] || 0) + 1;
     });
     return Object.entries(tally).sort((a, b) => b[1] - a[1]);

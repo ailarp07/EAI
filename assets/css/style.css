@@ -1229,6 +1229,12 @@ section {
   white-space: nowrap;
 }
 
+.alumni-table td:nth-child(2),
+.alumni-table th:nth-child(2) {
+  width: 26%;
+  min-width: 200px;
+}
+
 .report-table tr:last-child td {
   border-bottom: none;
 }
