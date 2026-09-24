@@ -17,6 +17,12 @@
       for (const key of path) node = node && node[key];
       if (node && node[lang]) el.innerHTML = node[lang];
     });
+    document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
+      const path = el.getAttribute("data-i18n-ph").split(".");
+      let node = translations;
+      for (const key of path) node = node && node[key];
+      if (node && node[lang]) el.placeholder = node[lang];
+    });
     const langLabel = document.querySelector("#langToggle span");
     if (langLabel) langLabel.textContent = lang === "en" ? "TH" : "EN";
   }

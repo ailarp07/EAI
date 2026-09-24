@@ -23,6 +23,9 @@ const translations = {
     h_name: { en: "Name", th: "ชื่อ-นามสกุล" },
     h_uni: { en: "University", th: "มหาวิทยาลัย" },
     h_fac: { en: "Faculty / Major", th: "คณะ/สาขา" },
+    overview_eyebrow: { en: "By University", th: "แยกตามมหาวิทยาลัย" },
+    search_ph: { en: "Search a university - CU, TU, KU, KMITL...", th: "ค้นหามหาวิทยาลัย - จุฬา ธรรมศาสตร์ เกษตร ลาดกระบัง..." },
+    other: { en: "Other / Abroad", th: "อื่น ๆ / ต่างประเทศ" },
   },
 
   home: {
