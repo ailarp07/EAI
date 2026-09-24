@@ -320,6 +320,8 @@ const translations = {
 
     w4_title: { en: "Computer Vision with OpenCV", th: "คอมพิวเตอร์วิทัศน์ด้วย OpenCV" },
     w4_meta: { en: "Image processing, face & hand detection, YOLO object detection", th: "ประมวลผลภาพ ตรวจจับใบหน้าและมือ ตรวจจับวัตถุด้วย YOLO" },
+    w5_title: { en: "M.5 Final Project - Mecanum Drive Robot", th: "โปรเจกต์จบ ม.5 - หุ่นยนต์ขับเคลื่อนแบบ Mecanum" },
+    w5_meta: { en: "4-motor mecanum drive, dead-reckoning guidance, YOLO ball detection", th: "ขับเคลื่อน 4 มอเตอร์แบบ mecanum ติดตามตำแหน่งแบบ dead-reckoning ตรวจจับบอลด้วย YOLO" },
 
     w4_equip_label: { en: "Equipment Used", th: "อุปกรณ์ที่ใช้" },
     w4_equip1_h: { en: "Webcam", th: "เว็บแคม" },

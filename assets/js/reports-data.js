@@ -68,6 +68,37 @@ source venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt</code></pre>
 
+        <h3>Picking the Right Python Interpreter</h3>
+        <p>Same failure mode as picking the wrong interpreter in any editor: the venv can have every package installed correctly and the code still throws <code>ModuleNotFoundError</code>, because VS Code (or whatever's running the script) is actually pointed at a <em>different</em> Python than the one <code>pip install</code> ran against. This project has exactly two Python environments in play - system Python and <code>venv/</code> - and picking the wrong one is the single most common "it works in the terminal but not when I hit Run" bug.</p>
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th>Check</th><th>What it confirms</th></tr></thead>
+          <tbody>
+            <tr><td><code>Ctrl+Shift+P</code> &rarr; <strong>Python: Select Interpreter</strong></td><td>Pick the one listed as <code>./venv/bin/python</code>, not the bare system one - VS Code shows the active interpreter in the bottom-right status bar afterward, so it's a permanent reminder, not a one-time check</td></tr>
+            <tr><td><code>which python3</code> in the integrated terminal</td><td>Only meaningful <em>after</em> <code>source venv/bin/activate</code> - if the path printed doesn't end in <code>venv/bin/python3</code>, the venv isn't actually active in that terminal, regardless of what the editor's status bar claims</td></tr>
+            <tr><td><code>pip list</code> vs <code>python3 -c "import cv2"</code></td><td>If <code>pip list</code> shows the package but the import still fails, the terminal running <code>pip install</code> and the one running the script are two different Python environments - re-check both of the above</td></tr>
+          </tbody>
+        </table></div>
+        <p>The <code>venv/</code> folder itself is never committed (it's in <code>.gitignore</code> along with a leftover <code>env/</code> from early testing) - it has to be recreated locally with <code>./setup.sh</code> or the manual steps above on every fresh clone, on every machine, including a freshly re-flashed Pi.</p>
+
+        <h3>Terminal Command Cheatsheet</h3>
+        <p>The commands reached for constantly once working headless over SSH, beyond the editors above:</p>
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td><code>ls -la</code></td><td>List everything in the current folder, including hidden dotfiles, with permissions</td></tr>
+            <tr><td><code>cd path/</code> / <code>cd ..</code> / <code>cd ~</code></td><td>Move into a folder / up one level / back to the home folder</td></tr>
+            <tr><td><code>pwd</code></td><td>Print the current folder's full path - useful after losing track over a long SSH session</td></tr>
+            <tr><td><code>mkdir -p a/b/c</code></td><td>Create a folder (and any missing parent folders) in one shot</td></tr>
+            <tr><td><code>cp -r src dst</code> / <code>mv src dst</code></td><td>Copy a folder recursively / move or rename a file or folder</td></tr>
+            <tr><td><code>rm -rf folder/</code></td><td>Delete a folder and everything in it, no confirmation - no undo, double-check the path first</td></tr>
+            <tr><td><code>chmod +x setup.sh</code></td><td>Mark a script executable, needed before <code>./setup.sh</code> works at all</td></tr>
+            <tr><td><code>sudo systemctl status ssh</code></td><td>Check whether a background service (SSH, in this case) is actually running</td></tr>
+            <tr><td><code>htop</code></td><td>Live view of CPU/RAM usage per process - the first thing to check when the Pi feels sluggish</td></tr>
+            <tr><td><code>df -h</code></td><td>Disk space free per mounted drive, human-readable (GB/MB instead of raw bytes)</td></tr>
+            <tr><td><code>Ctrl+C</code></td><td>Kill whatever's running in the foreground of that terminal - the standard "get me out of this"</td></tr>
+          </tbody>
+        </table></div>
+
         <h3>Problems We Faced</h3>
         <div class="table-wrap"><table class="report-table">
           <thead><tr><th>Error</th><th>Root cause</th><th>Fix</th></tr></thead>
@@ -100,7 +131,7 @@ pip install -r requirements.txt</code></pre>
         </table></div>
 
         <div class="comp-links">
-          <a href="https://github.com/Ray0737/raspi" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-github"></i><span>View on GitHub</span></a>
+          <a href="https://github.com/eai-spsm/M.5-Classwork" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-github"></i><span>View on GitHub</span></a>
         </div>
       `,
     },
@@ -170,6 +201,37 @@ source venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt</code></pre>
 
+        <h3>เลือก Python Interpreter ให้ถูกตัว</h3>
+        <p>เป็นปัญหาแบบเดียวกับเลือก interpreter ผิดใน editor ไหนก็ได้: venv อาจติดตั้งทุกแพ็กเกจถูกต้องครบแล้ว แต่โค้ดยังฟ้อง <code>ModuleNotFoundError</code> เพราะ VS Code (หรืออะไรก็ตามที่รันสคริปต์) กำลังชี้ไปที่ Python <em>คนละตัว</em> กับที่ตอนรัน <code>pip install</code> ใช้ โปรเจกต์นี้มี Python สองสภาพแวดล้อมให้สับสนได้พอดี คือ system Python กับ <code>venv/</code> - เลือกผิดตัวคือบั๊กที่พบบ่อยที่สุดแบบ "รันใน terminal ได้ แต่กด Run แล้วไม่ทำงาน"</p>
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th>วิธีเช็ก</th><th>ยืนยันอะไร</th></tr></thead>
+          <tbody>
+            <tr><td><code>Ctrl+Shift+P</code> &rarr; <strong>Python: Select Interpreter</strong></td><td>เลือกตัวที่ขึ้นเป็น <code>./venv/bin/python</code> ไม่ใช่ตัว system เปล่า ๆ - หลังจากนั้น VS Code จะโชว์ interpreter ที่ active อยู่ที่แถบสถานะมุมล่างขวาตลอด ไม่ใช่เช็กแค่ครั้งเดียวจบ</td></tr>
+            <tr><td><code>which python3</code> ใน terminal ในตัว</td><td>มีความหมายก็ต่อเมื่อ <em>รันหลัง</em> <code>source venv/bin/activate</code> แล้วเท่านั้น - ถ้า path ที่ขึ้นมาไม่ได้ลงท้ายด้วย <code>venv/bin/python3</code> แปลว่า venv ยังไม่ active จริงใน terminal นั้น ไม่ว่าแถบสถานะของ editor จะแสดงว่าอะไรก็ตาม</td></tr>
+            <tr><td><code>pip list</code> เทียบกับ <code>python3 -c "import cv2"</code></td><td>ถ้า <code>pip list</code> ขึ้นว่ามีแพ็กเกจแล้ว แต่ import ยัง fail แปลว่า terminal ที่รัน <code>pip install</code> กับตัวที่รันสคริปต์เป็นคนละสภาพแวดล้อมกัน - กลับไปเช็กสองข้อบนอีกที</td></tr>
+          </tbody>
+        </table></div>
+        <p>โฟลเดอร์ <code>venv/</code> เองไม่เคย commit เข้า repo (อยู่ใน <code>.gitignore</code> พร้อมกับ <code>env/</code> ที่เหลือจากการทดลองช่วงแรก) - ต้องสร้างใหม่ในเครื่องด้วย <code>./setup.sh</code> หรือทำตามขั้นตอนมือด้านบนทุกครั้งที่ clone ใหม่ ทุกเครื่อง รวมถึง Pi ที่เพิ่ง flash ใหม่ด้วย</p>
+
+        <h3>คำสั่ง Terminal ที่ใช้บ่อย</h3>
+        <p>คำสั่งที่ใช้เป็นประจำเวลาทำงานแบบ headless ผ่าน SSH นอกเหนือจาก editor สองตัวข้างบน:</p>
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th>คำสั่ง</th><th>ทำอะไร</th></tr></thead>
+          <tbody>
+            <tr><td><code>ls -la</code></td><td>แสดงทุกอย่างในโฟลเดอร์ปัจจุบัน รวมไฟล์ที่ซ่อนอยู่ (dotfile) พร้อมสิทธิ์การเข้าถึง</td></tr>
+            <tr><td><code>cd path/</code> / <code>cd ..</code> / <code>cd ~</code></td><td>เข้าโฟลเดอร์ / ถอยขึ้นหนึ่งระดับ / กลับไปโฟลเดอร์ home</td></tr>
+            <tr><td><code>pwd</code></td><td>แสดง path เต็มของโฟลเดอร์ปัจจุบัน - มีประโยชน์เวลาหลงทางหลังต่อ SSH นาน ๆ</td></tr>
+            <tr><td><code>mkdir -p a/b/c</code></td><td>สร้างโฟลเดอร์ (พร้อมโฟลเดอร์แม่ที่ยังไม่มี) ในคำสั่งเดียว</td></tr>
+            <tr><td><code>cp -r src dst</code> / <code>mv src dst</code></td><td>คัดลอกโฟลเดอร์แบบ recursive / ย้ายหรือเปลี่ยนชื่อไฟล์หรือโฟลเดอร์</td></tr>
+            <tr><td><code>rm -rf folder/</code></td><td>ลบโฟลเดอร์และทุกอย่างข้างในทันที ไม่มีถามยืนยัน - กู้คืนไม่ได้ เช็ก path ให้ดีก่อนกด</td></tr>
+            <tr><td><code>chmod +x setup.sh</code></td><td>ทำเครื่องหมายให้สคริปต์รันได้ จำเป็นก่อนที่ <code>./setup.sh</code> จะใช้งานได้เลย</td></tr>
+            <tr><td><code>sudo systemctl status ssh</code></td><td>เช็กว่า background service (ในที่นี้คือ SSH) กำลังรันอยู่จริงไหม</td></tr>
+            <tr><td><code>htop</code></td><td>ดูการใช้ CPU/RAM แบบเรียลไทม์ต่อโปรเซส - สิ่งแรกที่ควรเช็กเวลา Pi รู้สึกอืด</td></tr>
+            <tr><td><code>df -h</code></td><td>พื้นที่ดิสก์ว่างต่อไดรฟ์ที่ mount ไว้ แบบอ่านง่าย (GB/MB แทนไบต์ดิบ)</td></tr>
+            <tr><td><code>Ctrl+C</code></td><td>หยุดสิ่งที่กำลังรันอยู่ใน foreground ของ terminal นั้น - ปุ่มมาตรฐานเวลาอยากออกจากอะไรสักอย่าง</td></tr>
+          </tbody>
+        </table></div>
+
         <h3>ปัญหาที่พบ</h3>
         <div class="table-wrap"><table class="report-table">
           <thead><tr><th>ข้อผิดพลาด</th><th>สาเหตุ</th><th>วิธีแก้</th></tr></thead>
@@ -202,7 +264,214 @@ pip install -r requirements.txt</code></pre>
         </table></div>
 
         <div class="comp-links">
-          <a href="https://github.com/Ray0737/raspi" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-github"></i><span>ดูซอร์สโค้ดบน GitHub</span></a>
+          <a href="https://github.com/eai-spsm/M.5-Classwork" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-github"></i><span>ดูซอร์สโค้ดบน GitHub</span></a>
+        </div>
+      `,
+    },
+  },
+
+  "m5-final-project": {
+    icon: "bi-robot",
+    backAnchor: "m5",
+    en: {
+      eyebrow: "M.5 · Reports & Docs",
+      date: "Semester 1",
+      title: "M.5 Final Project - Mecanum Drive Robot",
+      meta: "4-motor mecanum drive, dead-reckoning guidance, and YOLO camera detection for a ball-touching competition robot.",
+      body: `
+        <p>Built for a ball-touching robot competition: a Raspberry Pi 4 robot on a 4-wheel mecanum base (2x L298N-style driver boards, one per side), with a YOLO-trained camera for ball detection and dead-reckoning position tracking layered on top. The codebase is split into three reusable pieces - <code>movement/</code> for motor control, <code>guidance/</code> for position tracking, <code>perception/</code> for the camera - so the autonomous match logic in <code>main.py</code> can just import and combine them instead of duplicating GPIO code.</p>
+
+        <h3>Hardware</h3>
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th>Component</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td>Raspberry Pi 4</td><td>Main board</td></tr>
+            <tr><td>2x L298N-style driver board</td><td>One per side, each driving 2 DC motors</td></tr>
+            <tr><td>4x DC motor</td><td>2 left, 2 right - the mecanum wheels</td></tr>
+            <tr><td>Push button</td><td>Start button, held on an internal pull-up</td></tr>
+            <tr><td>HC-SR04 ultrasonic sensor</td><td>Distance sensing (obstacle check currently disabled on forward drive)</td></tr>
+            <tr><td>USB webcam</td><td>Feeds the YOLO detection pipeline</td></tr>
+            <tr><td>Battery pack</td><td>Powers the Pi and both driver boards</td></tr>
+          </tbody>
+        </table></div>
+        <p>Orientation convention used throughout the code and wiring: battery side = North (front), Raspberry Pi side = South (back).</p>
+
+        <h3>Wiring (BCM pin numbers)</h3>
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th>Signal</th><th>BCM Pin</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>IN1-IN4</td><td>4, 17, 27, 22</td><td>Board 1 (Left)</td></tr>
+            <tr><td>ENA_L / ENB_L</td><td>12 / 18</td><td>Board 1 PWM enable (IN1/IN2 and IN3/IN4)</td></tr>
+            <tr><td>IN5-IN8</td><td>5, 6, 19, 26</td><td>Board 2 (Right)</td></tr>
+            <tr><td>ENA_R / ENB_R</td><td>13 / 23</td><td>Board 2 PWM enable (IN5/IN6 and IN7/IN8)</td></tr>
+            <tr><td>BTN_PIN</td><td>21</td><td>Start button, other leg to GND</td></tr>
+            <tr><td>TRIG / ECHO</td><td>10 / 9</td><td>Ultrasonic trigger (output) / echo (input)</td></tr>
+          </tbody>
+        </table></div>
+        <div class="report-warn"><i class="bi bi-exclamation-triangle"></i><div><strong>The two driver boards aren't wired symmetrically:</strong> the left board's first channel pair (IN1/IN2) drives the <em>front</em> wheel, but the right board's first channel pair (IN5/IN6) drives the <em>rear</em> wheel. This only surfaced by testing each wheel in isolation - don't assume the same front/rear convention on both sides if the robot ever gets rewired.</div></div>
+
+        <h3>Code Layout</h3>
+        <pre class="code-block"><code>main.py              # entry point: start button -&gt; hands off to match logic
+default_control.py   # keyboard control (testing/manual driving)
+cam_control.py        # live camera view over HTTP (no HDMI needed)
+movement/
+  movement.py          # MecanumDrive - all motor/GPIO logic, forward/strafe/rotate/stop
+guidance/
+  navigator.py         # Navigator - dead-reckoning (x, y, heading) estimate
+  guided_drive.py      # GuidedDrive - MecanumDrive + Navigator combined
+perception/
+  test.py               # YOLO detection on the webcam feed
+  train.py              # trains a YOLO model (run on a PC with a GPU)
+  data/                  # best.pt / data.yaml go here</code></pre>
+        <p><code>MecanumDrive</code> holds every motor pin setup, calibration constant (<code>WHEEL_INVERT</code>, <code>WHEEL_TRIM</code>, speeds), and movement method (<code>forward</code>, <code>strafe_left/right</code>, <code>rotate_left/right</code>, <code>stop</code>, <code>test_wheel</code>, <code>get_distance</code>) - anything that needs to drive the robot imports this instead of duplicating GPIO code. <code>GuidedDrive</code> wraps it with <code>Navigator</code>, so calling a movement method both drives the motors <em>and</em> updates the estimated pose in one call - <code>.pose()</code> returns <code>(x_cm, y_cm, heading_deg)</code> at any time. There are no wheel encoders on this robot, so position tracking is open-loop dead-reckoning: good for "roughly where am I," not precision navigation, and it drifts over a long run from wheel slip and uneven floor.</p>
+
+        <h3>Software Setup &amp; Running</h3>
+        <pre class="code-block"><code>sudo apt update
+sudo apt install python3-pip python3-opencv
+pip3 install RPi.GPIO ultralytics</code></pre>
+        <p>Drop trained weights into <code>perception/data/best.pt</code> (and <code>data.yaml</code> if retraining), then:</p>
+        <pre class="code-block"><code>python3 main.py              # full match program
+python3 default_control.py   # keyboard-driven manual control
+python3 cam_control.py       # live camera stream, no HDMI needed
+python3 perception/test.py   # YOLO detection on the webcam feed</code></pre>
+
+        <h3>Viewing the Camera Without a Monitor</h3>
+        <p>There's no HDMI monitor on the robot, so <code>cv2.imshow()</code> (a desktop window) simply doesn't work over SSH. <code>cam_control.py</code> works around that by serving the webcam as an MJPEG stream over HTTP instead - view-only, no detection running, just for aiming the camera or checking focus.</p>
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th>Step</th><th>What to do</th></tr></thead>
+          <tbody>
+            <tr><td>1. Start the stream</td><td>On the Pi: <code>python3 cam_control.py</code> - it prints a URL like <code>http://&lt;pi-ip&gt;:8080/</code>; find the Pi's IP with <code>hostname -I</code> if needed</td></tr>
+            <tr><td>2. Open it</td><td>In VS Code connected over Remote-SSH: <code>Ctrl+Shift+P</code> &rarr; <strong>Simple Browser: Show</strong>, paste that URL - the feed opens in a tab inside the editor. Any regular browser on the same network works too (phone, laptop)</td></tr>
+            <tr><td>3. Stop it</td><td><code>Ctrl+C</code> on the Pi</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>Keyboard Controls (default_control.py)</h3>
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th>Key</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>W / S</td><td>Drive forward / backward</td></tr>
+            <tr><td>A / D</td><td>Strafe left / right</td></tr>
+            <tr><td>Q / E</td><td>Rotate left (CCW) / right (CW)</td></tr>
+            <tr><td>1 / 2 / 3 / 4</td><td>Spin front-left / front-right / rear-left / rear-right wheel alone (calibration)</td></tr>
+            <tr><td>Space</td><td>Stop all wheels</td></tr>
+            <tr><td>B</td><td>About-face - rotate 180&deg; from current heading</td></tr>
+            <tr><td>R</td><td>Reset tracked position to (0, 0), heading 0</td></tr>
+            <tr><td>+ / -</td><td>Adjust speed by 5 (clamped 20-100)</td></tr>
+            <tr><td>H</td><td>HALT - stops and locks out every other key until pressed again (X still works)</td></tr>
+            <tr><td>X / Ctrl+C</td><td>Quit (also cleans up GPIO)</td></tr>
+          </tbody>
+        </table></div>
+        <p>The tracked position/heading shows live on one updating status line, no key needed to see it. A drive timer starts automatically on the first movement command, pauses while HALTed, and stops for good on quit, printing total drive time on exit.</p>
+
+        <h3>Calibrating the Drive</h3>
+        <p>If W drives diagonally instead of straight, one wheel is physically wired backward - press <strong>1/2/3/4</strong> to spin each wheel in isolation (robot jacked up, wheels off the ground), find the one pushing the wrong way, and flip its entry in <code>WHEEL_INVERT</code> in <code>movement/movement.py</code>.</p>
+        <p>Once straight driving and rotation are clean, A/D (strafe) can still drift - this is normal, since strafing needs much tighter wheel-speed matching than driving straight does. Fix it with <code>WHEEL_TRIM</code> (a per-wheel speed multiplier): press A, see which side the robot rotates toward, and slightly lower the trim (e.g. <code>0.95</code>) on the wheel "winning" that rotation.</p>
+        <div class="report-warn"><i class="bi bi-exclamation-triangle"></i><div><strong>Keep duty cycle (<code>STRAFE_SPEED &times; WHEEL_TRIM</code>) inside roughly 45-60.</strong> Below ~45 some motors don't have enough torque to move (a "dead zone"); above ~60 an electrical glitch on cheap L298N-style boards can flip an H-bridge mid-hold, reversing a wheel's direction while the key is still down - that's a hardware/current issue, not a code bug. Make small trim adjustments (&plusmn;0.05-0.1) at a time.</div></div>
+
+        <div class="comp-links">
+          <a href="https://github.com/eai-spsm/M.5-Classwork" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-github"></i><span>View on GitHub</span></a>
+        </div>
+      `,
+    },
+    th: {
+      eyebrow: "ม.5 · งานในชั้นเรียน",
+      date: "เทอม 1",
+      title: "โปรเจกต์จบ ม.5 - หุ่นยนต์ขับเคลื่อนแบบ Mecanum",
+      meta: "ขับเคลื่อน 4 มอเตอร์แบบ mecanum ติดตามตำแหน่งแบบ dead-reckoning และตรวจจับบอลด้วยกล้อง YOLO สำหรับหุ่นยนต์แข่งแตะบอล",
+      body: `
+        <p>สร้างขึ้นสำหรับการแข่งขันหุ่นยนต์แตะบอล: หุ่นยนต์ Raspberry Pi 4 บนฐานล้อ mecanum 4 ล้อ (บอร์ดขับมอเตอร์แบบ L298N 2 ตัว ข้างละตัว) พร้อมกล้องที่เทรนด้วย YOLO สำหรับตรวจจับบอล และระบบติดตามตำแหน่งแบบ dead-reckoning ซ้อนอยู่ด้านบน โค้ดแบ่งออกเป็นสามส่วนที่ใช้ซ้ำได้ - <code>movement/</code> สำหรับควบคุมมอเตอร์ <code>guidance/</code> สำหรับติดตามตำแหน่ง <code>perception/</code> สำหรับกล้อง - เพื่อให้ตรรกะการแข่งขันอัตโนมัติใน <code>main.py</code> แค่ import แล้วนำมาประกอบกันได้ ไม่ต้องเขียนโค้ด GPIO ซ้ำ</p>
+
+        <h3>อุปกรณ์</h3>
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th>อุปกรณ์</th><th>บทบาท</th></tr></thead>
+          <tbody>
+            <tr><td>Raspberry Pi 4</td><td>บอร์ดหลัก</td></tr>
+            <tr><td>บอร์ดขับมอเตอร์แบบ L298N 2 ตัว</td><td>ข้างละตัว แต่ละตัวขับมอเตอร์ DC 2 ตัว</td></tr>
+            <tr><td>มอเตอร์ DC 4 ตัว</td><td>ซ้าย 2 ขวา 2 - ล้อ mecanum</td></tr>
+            <tr><td>ปุ่มกด</td><td>ปุ่มเริ่ม ต่อแบบ internal pull-up</td></tr>
+            <tr><td>เซนเซอร์ HC-SR04</td><td>วัดระยะทาง (ปิดการเช็กสิ่งกีดขวางตอนเดินหน้าไว้ชั่วคราว)</td></tr>
+            <tr><td>เว็บแคม USB</td><td>ป้อนภาพให้ pipeline ตรวจจับ YOLO</td></tr>
+            <tr><td>แบตเตอรี่</td><td>จ่ายไฟให้ Pi และบอร์ดขับมอเตอร์ทั้งสอง</td></tr>
+          </tbody>
+        </table></div>
+        <p>ทิศทางที่ใช้ตลอดทั้งโค้ดและการเดินสาย: ฝั่งแบตเตอรี่ = เหนือ (หน้า), ฝั่ง Raspberry Pi = ใต้ (หลัง)</p>
+
+        <h3>การเดินสาย (เลขขา BCM)</h3>
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th>สัญญาณ</th><th>ขา BCM</th><th>หมายเหตุ</th></tr></thead>
+          <tbody>
+            <tr><td>IN1-IN4</td><td>4, 17, 27, 22</td><td>บอร์ด 1 (ซ้าย)</td></tr>
+            <tr><td>ENA_L / ENB_L</td><td>12 / 18</td><td>PWM เปิดใช้งานบอร์ด 1 (IN1/IN2 และ IN3/IN4)</td></tr>
+            <tr><td>IN5-IN8</td><td>5, 6, 19, 26</td><td>บอร์ด 2 (ขวา)</td></tr>
+            <tr><td>ENA_R / ENB_R</td><td>13 / 23</td><td>PWM เปิดใช้งานบอร์ด 2 (IN5/IN6 และ IN7/IN8)</td></tr>
+            <tr><td>BTN_PIN</td><td>21</td><td>ปุ่มเริ่ม อีกขาต่อ GND</td></tr>
+            <tr><td>TRIG / ECHO</td><td>10 / 9</td><td>ขาส่งสัญญาณ / รับสัญญาณของอัลตราโซนิก</td></tr>
+          </tbody>
+        </table></div>
+        <div class="report-warn"><i class="bi bi-exclamation-triangle"></i><div><strong>บอร์ดขับมอเตอร์สองตัวไม่ได้เดินสายแบบสมมาตรกัน:</strong> คู่ช่องแรกของบอร์ดซ้าย (IN1/IN2) ขับล้อ <em>หน้า</em> แต่คู่ช่องแรกของบอร์ดขวา (IN5/IN6) กลับขับล้อ <em>หลัง</em> เรื่องนี้เจอได้จากการทดสอบล้อทีละตัวเท่านั้น - อย่าสันนิษฐานว่าทั้งสองฝั่งใช้ธรรมเนียมหน้า/หลังเดียวกันถ้าต้องเดินสายใหม่</div></div>
+
+        <h3>โครงสร้างโค้ด</h3>
+        <pre class="code-block"><code>main.py              # จุดเริ่มโปรแกรม: รอปุ่มเริ่ม -&gt; ส่งต่อให้ตรรกะการแข่งขัน
+default_control.py   # ควบคุมด้วยคีย์บอร์ด (ทดสอบ/ขับเอง)
+cam_control.py        # สตรีมกล้องผ่าน HTTP (ไม่ต้องมีจอ HDMI)
+movement/
+  movement.py          # MecanumDrive - โค้ด motor/GPIO ทั้งหมด เดินหน้า/สไลด์/หมุน/หยุด
+guidance/
+  navigator.py         # Navigator - ประมาณตำแหน่ง (x, y, heading) แบบ dead-reckoning
+  guided_drive.py      # GuidedDrive - รวม MecanumDrive กับ Navigator เข้าด้วยกัน
+perception/
+  test.py               # ตรวจจับด้วย YOLO บนภาพจากเว็บแคม
+  train.py              # เทรนโมเดล YOLO (รันบน PC ที่มี GPU)
+  data/                  # เก็บ best.pt / data.yaml</code></pre>
+        <p><code>MecanumDrive</code> เก็บการตั้งค่าขามอเตอร์ทั้งหมด ค่าคาลิเบรต (<code>WHEEL_INVERT</code>, <code>WHEEL_TRIM</code>, ความเร็ว) และเมธอดการเคลื่อนที่ (<code>forward</code>, <code>strafe_left/right</code>, <code>rotate_left/right</code>, <code>stop</code>, <code>test_wheel</code>, <code>get_distance</code>) - อะไรก็ตามที่ต้องขับหุ่นยนต์ให้ import ตัวนี้แทนการเขียนโค้ด GPIO ซ้ำ <code>GuidedDrive</code> ห่อ <code>MecanumDrive</code> ด้วย <code>Navigator</code> เพื่อให้การเรียกเมธอดเคลื่อนที่หนึ่งครั้งทั้งขับมอเตอร์ <em>และ</em> อัปเดตตำแหน่งที่ประมาณไว้ไปพร้อมกัน - <code>.pose()</code> คืนค่า <code>(x_cm, y_cm, heading_deg)</code> ได้ทุกเมื่อ หุ่นยนต์ตัวนี้ไม่มี wheel encoder จึงเป็นการติดตามตำแหน่งแบบ open-loop dead-reckoning: เหมาะกับ "ประมาณว่าอยู่ตรงไหน" ไม่ใช่การนำทางแม่นยำ และจะคลาดเคลื่อนมากขึ้นเมื่อวิ่งนาน ๆ จากล้อลื่นและพื้นไม่เรียบ</p>
+
+        <h3>ติดตั้งซอฟต์แวร์และรัน</h3>
+        <pre class="code-block"><code>sudo apt update
+sudo apt install python3-pip python3-opencv
+pip3 install RPi.GPIO ultralytics</code></pre>
+        <p>ใส่ weight ที่เทรนแล้วลงใน <code>perception/data/best.pt</code> (และ <code>data.yaml</code> ถ้าจะเทรนใหม่) จากนั้น:</p>
+        <pre class="code-block"><code>python3 main.py              # โปรแกรมแข่งขันเต็มรูปแบบ
+python3 default_control.py   # ควบคุมด้วยคีย์บอร์ด
+python3 cam_control.py       # สตรีมกล้องสด ไม่ต้องมี HDMI
+python3 perception/test.py   # ตรวจจับด้วย YOLO บนภาพจากเว็บแคม</code></pre>
+
+        <h3>ดูภาพกล้องโดยไม่มีจอ</h3>
+        <p>หุ่นยนต์ไม่มีจอ HDMI ต่ออยู่ ดังนั้น <code>cv2.imshow()</code> (หน้าต่างเดสก์ท็อป) จึงใช้งานผ่าน SSH ไม่ได้ <code>cam_control.py</code> แก้ปัญหานี้ด้วยการสตรีมภาพเว็บแคมเป็น MJPEG ผ่าน HTTP แทน - ดูได้อย่างเดียว ไม่มีการตรวจจับรันอยู่ ใช้แค่เล็งกล้องหรือเช็กโฟกัส</p>
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th>ขั้นตอน</th><th>สิ่งที่ต้องทำ</th></tr></thead>
+          <tbody>
+            <tr><td>1. เริ่มสตรีม</td><td>บน Pi: <code>python3 cam_control.py</code> - จะพิมพ์ URL แบบ <code>http://&lt;pi-ip&gt;:8080/</code> ออกมา หา IP ของ Pi ด้วย <code>hostname -I</code> ถ้ายังไม่รู้</td></tr>
+            <tr><td>2. เปิดดู</td><td>ใน VS Code ที่เชื่อมต่อผ่าน Remote-SSH: <code>Ctrl+Shift+P</code> &rarr; <strong>Simple Browser: Show</strong> แล้ววาง URL นั้น - ภาพจะเปิดในแท็บภายใน editor เลย หรือเปิดผ่านเบราว์เซอร์ทั่วไปบนเครือข่ายเดียวกันก็ได้ (มือถือ แล็ปท็อป)</td></tr>
+            <tr><td>3. หยุดสตรีม</td><td>กด <code>Ctrl+C</code> บน Pi</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>ควบคุมด้วยคีย์บอร์ด (default_control.py)</h3>
+        <div class="table-wrap"><table class="report-table">
+          <thead><tr><th>ปุ่ม</th><th>การทำงาน</th></tr></thead>
+          <tbody>
+            <tr><td>W / S</td><td>เดินหน้า / ถอยหลัง</td></tr>
+            <tr><td>A / D</td><td>สไลด์ซ้าย / ขวา</td></tr>
+            <tr><td>Q / E</td><td>หมุนซ้าย (ทวนเข็ม) / หมุนขวา (ตามเข็ม)</td></tr>
+            <tr><td>1 / 2 / 3 / 4</td><td>หมุนล้อหน้าซ้าย / หน้าขวา / หลังซ้าย / หลังขวา ทีละล้อ (สำหรับคาลิเบรต)</td></tr>
+            <tr><td>Space</td><td>หยุดล้อทั้งหมด</td></tr>
+            <tr><td>B</td><td>กลับหลังหัน - หมุน 180&deg; จาก heading ปัจจุบัน</td></tr>
+            <tr><td>R</td><td>รีเซ็ตตำแหน่งที่ติดตามเป็น (0, 0), heading 0</td></tr>
+            <tr><td>+ / -</td><td>ปรับความเร็วทีละ 5 (จำกัดช่วง 20-100)</td></tr>
+            <tr><td>H</td><td>HALT - หยุดและล็อกปุ่มอื่นทั้งหมดจนกว่าจะกดซ้ำ (X ยังใช้ได้)</td></tr>
+            <tr><td>X / Ctrl+C</td><td>ออกจากโปรแกรม (เคลียร์ GPIO ให้ด้วย)</td></tr>
+          </tbody>
+        </table></div>
+        <p>ตำแหน่ง/heading ที่ติดตามอยู่จะแสดงสดบนบรรทัดสถานะที่อัปเดตตลอด ไม่ต้องกดปุ่มเพื่อดู ตัวจับเวลาขับจะเริ่มอัตโนมัติตอนสั่งเคลื่อนที่ครั้งแรก หยุดชั่วคราวตอน HALT และหยุดถาวรตอนออกโปรแกรม พร้อมพิมพ์เวลารวมที่ขับออกมาตอนจบ</p>
+
+        <h3>คาลิเบรตระบบขับเคลื่อน</h3>
+        <p>ถ้ากด W แล้ววิ่งเฉียงแทนที่จะตรง แปลว่าล้อใดล้อหนึ่งเดินสายกลับด้าน - กด <strong>1/2/3/4</strong> เพื่อหมุนแต่ละล้อทีละตัว (ยกหุ่นยนต์ให้ล้อลอยจากพื้น) หาล้อที่ดันผิดทาง แล้วสลับค่าของล้อนั้นใน <code>WHEEL_INVERT</code> ที่ <code>movement/movement.py</code></p>
+        <p>เมื่อเดินหน้า/ถอยหลัง/หมุนตรงแล้ว A/D (สไลด์) อาจยังเบี้ยวอยู่ - เป็นเรื่องปกติ เพราะการสไลด์ต้องการความเร็วล้อที่ตรงกันแม่นยำกว่าการเดินตรงมาก แก้ด้วย <code>WHEEL_TRIM</code> (ตัวคูณความเร็วต่อล้อ): กด A ดูว่าหุ่นยนต์หมุนไปฝั่งไหน แล้วลดค่า trim ของล้อฝั่งที่ "ชนะ" การหมุนนั้นลงเล็กน้อย (เช่น <code>0.95</code>)</p>
+        <div class="report-warn"><i class="bi bi-exclamation-triangle"></i><div><strong>รักษา duty cycle (<code>STRAFE_SPEED &times; WHEEL_TRIM</code>) ให้อยู่ในช่วงประมาณ 45-60</strong> ต่ำกว่า ~45 มอเตอร์บางตัวจะแรงบิดไม่พอจนไม่ขยับ ("dead zone") สูงกว่า ~60 บอร์ดแบบ L298N ราคาประหยัดอาจเกิดไฟฟ้ากระตุกจน H-bridge สลับสถานะกลางคันขณะกดปุ่มค้างอยู่ ทำให้ล้อกลับทิศ - นี่คือปัญหาฮาร์ดแวร์/กระแสไฟ ไม่ใช่บั๊กโค้ด ปรับ trim ทีละน้อย (&plusmn;0.05-0.1)</div></div>
+
+        <div class="comp-links">
+          <a href="https://github.com/eai-spsm/M.5-Classwork" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-github"></i><span>ดูซอร์สโค้ดบน GitHub</span></a>
         </div>
       `,
     },
@@ -463,7 +732,7 @@ float rpm_unit = (1.0/(2.0*PI_VAL*wheelr)) * (60000.0/t);
       title: "Computer Vision with OpenCV - A Learning Path",
       meta: "A tutorial-style walkthrough from opening a picture to trained face recognition and YOLO detection.",
       body: `
-        <p>This is a guide to how OpenCV coursework builds up in practice, stage by stage, based on real coursework (<a href="https://github.com/Ray0737/computer_vision" target="_blank" rel="noopener">Ray0737/computer_vision</a>, written and run in VS Code) - starting from just opening a picture and ending with a trained face-recognition system and a fine-tuned object detector.</p>
+        <p>This is a guide to how OpenCV coursework builds up in practice, stage by stage, based on real coursework (<a href="https://github.com/eai-spsm/M.5-Classwork" target="_blank" rel="noopener">eai-spsm/M.5-Classwork</a>, written and run in VS Code) - starting from just opening a picture and ending with a trained face-recognition system and a fine-tuned object detector.</p>
 
         <h3>Stage 1: Reading &amp; Displaying</h3>
         <p>Everything starts with loading an image or a video frame into memory and putting it on screen - the "hello world" of the whole subject. A window pops up showing the picture, or for video, a continuous loop pulls one frame at a time from a webcam or file and redraws the window until a key is pressed to quit. Resizing an image before displaying it is one of the first practical lessons, since a full-resolution photo is often bigger than the screen.</p>
@@ -527,7 +796,7 @@ float rpm_unit = (1.0/(2.0*PI_VAL*wheelr)) * (60000.0/t);
       title: "Computer Vision ด้วย OpenCV - เส้นทางการเรียนรู้",
       meta: "แนวทางสอนแบบทีละขั้น จากการเปิดรูปภาพจนถึงการรู้จำใบหน้าและตรวจจับวัตถุด้วย YOLO",
       body: `
-        <p>นี่คือแนวทางว่างานในวิชา OpenCV ค่อย ๆ ไต่ระดับขึ้นอย่างไรในทางปฏิบัติ ทีละขั้น อิงจากงานจริงในชั้นเรียน (<a href="https://github.com/Ray0737/computer_vision" target="_blank" rel="noopener">Ray0737/computer_vision</a> เขียนและรันใน VS Code) - เริ่มจากแค่เปิดรูปภาพ ไปจบที่ระบบรู้จำใบหน้าที่เทรนแล้วและตัวตรวจจับวัตถุที่ fine-tune แล้ว</p>
+        <p>นี่คือแนวทางว่างานในวิชา OpenCV ค่อย ๆ ไต่ระดับขึ้นอย่างไรในทางปฏิบัติ ทีละขั้น อิงจากงานจริงในชั้นเรียน (<a href="https://github.com/eai-spsm/M.5-Classwork" target="_blank" rel="noopener">eai-spsm/M.5-Classwork</a> เขียนและรันใน VS Code) - เริ่มจากแค่เปิดรูปภาพ ไปจบที่ระบบรู้จำใบหน้าที่เทรนแล้วและตัวตรวจจับวัตถุที่ fine-tune แล้ว</p>
 
         <h3>ขั้นที่ 1: อ่านและแสดงผล</h3>
         <p>ทุกอย่างเริ่มจากโหลดภาพหรือเฟรมวิดีโอเข้าหน่วยความจำแล้วแสดงบนหน้าจอ - นี่คือ "hello world" ของทั้งวิชา หน้าต่างจะเด้งขึ้นมาแสดงภาพ หรือสำหรับวิดีโอ ลูปต่อเนื่องจะดึงเฟรมทีละเฟรมจากเว็บแคมหรือไฟล์แล้ววาดหน้าต่างใหม่จนกว่าจะกดปุ่มเพื่อออก การปรับขนาดภาพก่อนแสดงผลเป็นบทเรียนเชิงปฏิบัติแรก ๆ เพราะภาพความละเอียดเต็มมักใหญ่กว่าหน้าจอ</p>
@@ -1023,7 +1292,7 @@ void loop() {
       title: "LINE Chatbot with Dialogflow & Apps Script",
       meta: "A real inventory-tracking bot: Dialogflow intents, an Apps Script webhook, Sheets as the database, and Flex Message cards.",
       body: `
-        <p>A guide to the full pipeline behind a real inventory-tracking LINE chatbot (<a href="https://github.com/Ray0737/Line_Chat_bot" target="_blank" rel="noopener">Ray0737/Line_Chat_bot</a>) - room booking, activity logs, and admin item registration, all running through five services chained together.</p>
+        <p>A guide to the full pipeline behind a real inventory-tracking LINE chatbot (<a href="https://github.com/eai-spsm/M.4-Classwork" target="_blank" rel="noopener">eai-spsm/M.4-Classwork</a>) - room booking, activity logs, and admin item registration, all running through five services chained together.</p>
 
         <h3>System Architecture</h3>
         <p>A LINE chatbot is rarely just "one program" - it's a chain of services that each do one job, and understanding the chain is the key to debugging it later: if the bot doesn't reply, check each link until you find where the message stopped.</p>
@@ -1083,7 +1352,7 @@ void loop() {
         <p>Dialogflow sits deliberately in the middle: more flexible than hard-coded keyword rules, far more predictable and cheaper to run than a full LLM. A command like <code>Check,5</code> needs one exact, predictable outcome every time, not a creative response - which is exactly why an inventory bot uses intent-matching instead of a general-purpose LLM. ML-based matching is the right tool whenever the set of things a bot needs to do is fixed and known in advance (booking, ordering, FAQs); LLMs are for when the conversation itself is the open-ended part.</p>
 
         <div class="comp-links">
-          <a href="https://github.com/Ray0737/Line_Chat_bot" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-github"></i><span>View on GitHub</span></a>
+          <a href="https://github.com/eai-spsm/M.4-Classwork" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-github"></i><span>View on GitHub</span></a>
         </div>
       `,
     },
@@ -1093,7 +1362,7 @@ void loop() {
       title: "LINE Chatbot ด้วย Dialogflow และ Apps Script",
       meta: "บอทติดตามสต็อกของจริง: intent ของ Dialogflow, webhook ของ Apps Script, Sheets เป็นฐานข้อมูล และการ์ด Flex Message",
       body: `
-        <p>แนวทางเต็ม pipeline เบื้องหลังบอท LINE ติดตามสต็อกของจริง (<a href="https://github.com/Ray0737/Line_Chat_bot" target="_blank" rel="noopener">Ray0737/Line_Chat_bot</a>) - จองห้อง บันทึกกิจกรรม และการลงทะเบียนสินค้าโดยแอดมิน ทั้งหมดวิ่งผ่านห้าบริการที่เชื่อมต่อกัน</p>
+        <p>แนวทางเต็ม pipeline เบื้องหลังบอท LINE ติดตามสต็อกของจริง (<a href="https://github.com/eai-spsm/M.4-Classwork" target="_blank" rel="noopener">eai-spsm/M.4-Classwork</a>) - จองห้อง บันทึกกิจกรรม และการลงทะเบียนสินค้าโดยแอดมิน ทั้งหมดวิ่งผ่านห้าบริการที่เชื่อมต่อกัน</p>
 
         <h3>สถาปัตยกรรมระบบ</h3>
         <p>LINE chatbot แทบไม่เคยเป็นแค่ "โปรแกรมเดียว" - มันคือชุดบริการที่แต่ละตัวทำหน้าที่เดียว และการเข้าใจห่วงโซ่นี้คือกุญแจในการดีบั๊กภายหลัง: ถ้าบอทไม่ตอบ ให้เช็คทีละจุดเชื่อมจนกว่าจะพบว่าข้อความหยุดตรงไหน</p>
@@ -1153,7 +1422,7 @@ void loop() {
         <p>Dialogflow อยู่ตรงกลางโดยตั้งใจ: ยืดหยุ่นกว่ากฎคำสำคัญที่เขียนตายตัว แต่คาดเดาผลได้และรันถูกกว่า LLM เต็มรูปแบบมาก คำสั่งอย่าง <code>Check,5</code> ต้องการผลลัพธ์เดียวที่แน่นอนและคาดเดาได้ทุกครั้ง ไม่ใช่คำตอบเชิงสร้างสรรค์ - ซึ่งเป็นเหตุผลพอดีที่บอทสต็อกใช้การจับคู่ intent แทนที่จะใช้ LLM อเนกประสงค์ การจับคู่ด้วย ML คือเครื่องมือที่ถูกต้องเมื่อชุดสิ่งที่บอทต้องทำนั้นตายตัวและรู้ล่วงหน้า (จอง, สั่งของ, FAQ); ส่วน LLM เหมาะกับตอนที่ตัวบทสนทนาเองเป็นส่วนที่เปิดกว้าง</p>
 
         <div class="comp-links">
-          <a href="https://github.com/Ray0737/Line_Chat_bot" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-github"></i><span>ดูซอร์สโค้ดบน GitHub</span></a>
+          <a href="https://github.com/eai-spsm/M.4-Classwork" target="_blank" rel="noopener" class="event-fb"><i class="bi bi-github"></i><span>ดูซอร์สโค้ดบน GitHub</span></a>
         </div>
       `,
     },
