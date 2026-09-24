@@ -6,7 +6,23 @@ const translations = {
     competitions: { en: "Competitions", th: "การแข่งขัน" },
     classwork: { en: "Reports & Docs", th: "รายงานและเอกสาร" },
     curriculum: { en: "Curriculum", th: "หลักสูตร" },
+    alumni: { en: "Alumni", th: "รุ่นพี่" },
     tools: { en: "Tool Stack", th: "เครื่องมือที่ใช้" },
+  },
+
+  alumni: {
+    eyebrow: { en: "Alumni", th: "รุ่นพี่" },
+    title: { en: "Where Our Alumni Go", th: "เส้นทางของรุ่นพี่" },
+    sub: { en: "Every generation's university placements, sorted by cohort.", th: "ผลการเข้าศึกษาต่อของรุ่นพี่ทุกรุ่น เรียงตามรุ่น" },
+    tab1: { en: "Gen 1", th: "รุ่น 1" },
+    tab2: { en: "Gen 2", th: "รุ่น 2" },
+    tab3: { en: "Gen 3", th: "รุ่น 3" },
+    tab4: { en: "Gen 4", th: "รุ่น 4" },
+    tab5: { en: "Gen 5", th: "รุ่น 5" },
+    h_no: { en: "No.", th: "ที่" },
+    h_name: { en: "Name", th: "ชื่อ-นามสกุล" },
+    h_uni: { en: "University", th: "มหาวิทยาลัย" },
+    h_fac: { en: "Faculty / Major", th: "คณะ/สาขา" },
   },
 
   home: {
@@ -29,6 +45,7 @@ const translations = {
     stats_desc: { en: "Students per gen, competitions entered, field trips, and more.", th: "นักเรียนต่อรุ่น การแข่งขัน ทัศนศึกษา และอื่น ๆ" },
     alumni_desc: { en: "Universities our graduates go on to, in Thailand and abroad.", th: "มหาวิทยาลัยที่รุ่นพี่ไปต่อ ทั้งในและต่างประเทศ" },
     contact_desc: { en: "Official channels and who built this site.", th: "ช่องทางติดต่อและผู้พัฒนาเว็บไซต์" },
+    alumni_full_list: { en: "See every generation", th: "ดูรุ่นพี่ทุกรุ่น" },
 
     sections_title: { en: "Explore", th: "สำรวจ" },
 
@@ -228,7 +245,7 @@ const translations = {
     c3_prev: { en: "Last year, a senior team took first place in this same contest.", th: "ปีที่แล้ว ทีมรุ่นพี่ได้รางวัลชนะเลิศในการแข่งขันเดียวกันนี้" },
     c3_prev_link: { en: "Last year's first place", th: "รางวัลชนะเลิศปีที่แล้ว" },
     c3_team_label: { en: "Team Ailarp - Edu_Hub", th: "ทีม Ailarp - Edu_Hub" },
-    c3_prev_team_label: { en: "Team Ailarp", th: "ทีม Ailarp" },
+    c3_prev_team_label: { en: "Team Capmoo", th: "ทีม Capmoo" },
     c2_team1_label: { en: "Team Cap Moo - ThaiAI Lens", th: "ทีม Cap Moo - ThaiAI Lens" },
     c2_team2_label: { en: "TAMROI", th: "ตามรอย" },
     ebimayo_team_label: { en: "Team Ebi Mayo", th: "ทีม Ebi Mayo" },

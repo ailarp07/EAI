@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tool Stack - Engineers</title>
+<title>Alumni - Engineers</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -25,8 +25,8 @@
       <li><a href="competitions.html" data-i18n="nav.competitions">Competitions</a></li>
       <li><a href="classwork.html" data-i18n="nav.classwork">Reports & Docs</a></li>
       <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
-      <li><a href="alumni.html" data-i18n="nav.alumni">Alumni</a></li>
-      <li><a href="tool-stack.html" class="active" data-i18n="nav.tools">Tool Stack</a></li>
+      <li><a href="alumni.html" class="active" data-i18n="nav.alumni">Alumni</a></li>
+      <li><a href="tool-stack.html" data-i18n="nav.tools">Tool Stack</a></li>
     </ul>
     <div class="nav-tools">
       <button id="langToggle" class="tool-btn lang-btn"><span>TH</span></button>
@@ -36,11 +36,11 @@
   </div>
 </nav>
 
-<section class="hero-banner" style="background-image:url('assets/img/banner-tools.jpg')">
+<section class="hero-banner" style="background-image:url('assets/img/banner-alumni.jpg')">
   <div class="container-xl">
-    <div class="eyebrow"><i class="bi bi-tools"></i><span data-i18n="tools.eyebrow">Tool Stack</span></div>
-    <h1 data-i18n="tools.title">Tool Stack</h1>
-    <p class="lead mt-3" data-i18n="tools.sub">What we actually reach for - IDEs, AI assistants, ML libraries, cloud platforms, and everything else that gets a project shipped.</p>
+    <div class="eyebrow"><i class="bi bi-mortarboard-fill"></i><span data-i18n="alumni.eyebrow">Alumni</span></div>
+    <h1 data-i18n="alumni.title">Where Our Alumni Go</h1>
+    <p class="lead mt-3" data-i18n="alumni.sub">Every generation's university placements, sorted by cohort.</p>
   </div>
 </section>
 
@@ -48,12 +48,51 @@
   <div class="container-xl">
     <a href="index.html" data-i18n="nav.home">Home</a>
     <span class="sep"><i class="bi bi-chevron-right"></i></span>
-    <span class="current" data-i18n="nav.tools">Tool Stack</span>
+    <span class="current" data-i18n="nav.alumni">Alumni</span>
   </div>
 </div>
 
-<section>
-  <div class="container-xl" id="toolStackRoot"></div>
+<section class="pt-4">
+  <div class="container-xl">
+    <div class="tab-btns">
+      <button class="tab-btn active" data-tab="gen1" data-i18n="alumni.tab1">Gen 1</button>
+      <button class="tab-btn" data-tab="gen2" data-i18n="alumni.tab2">Gen 2</button>
+      <button class="tab-btn" data-tab="gen3" data-i18n="alumni.tab3">Gen 3</button>
+      <button class="tab-btn" data-tab="gen4" data-i18n="alumni.tab4">Gen 4</button>
+      <button class="tab-btn" data-tab="gen5" data-i18n="alumni.tab5">Gen 5</button>
+    </div>
+
+    <div class="tab-panel active" data-panel="gen1">
+      <div class="table-wrap"><table class="report-table">
+        <thead><tr><th data-i18n="alumni.h_no">No.</th><th data-i18n="alumni.h_name">Name</th><th data-i18n="alumni.h_uni">University</th><th data-i18n="alumni.h_fac">Faculty / Major</th></tr></thead>
+        <tbody id="alumniGen1"></tbody>
+      </table></div>
+    </div>
+    <div class="tab-panel" data-panel="gen2">
+      <div class="table-wrap"><table class="report-table">
+        <thead><tr><th data-i18n="alumni.h_no">No.</th><th data-i18n="alumni.h_name">Name</th><th data-i18n="alumni.h_uni">University</th><th data-i18n="alumni.h_fac">Faculty / Major</th></tr></thead>
+        <tbody id="alumniGen2"></tbody>
+      </table></div>
+    </div>
+    <div class="tab-panel" data-panel="gen3">
+      <div class="table-wrap"><table class="report-table">
+        <thead><tr><th data-i18n="alumni.h_no">No.</th><th data-i18n="alumni.h_name">Name</th><th data-i18n="alumni.h_uni">University</th><th data-i18n="alumni.h_fac">Faculty / Major</th></tr></thead>
+        <tbody id="alumniGen3"></tbody>
+      </table></div>
+    </div>
+    <div class="tab-panel" data-panel="gen4">
+      <div class="table-wrap"><table class="report-table">
+        <thead><tr><th data-i18n="alumni.h_no">No.</th><th data-i18n="alumni.h_name">Name</th><th data-i18n="alumni.h_uni">University</th><th data-i18n="alumni.h_fac">Faculty / Major</th></tr></thead>
+        <tbody id="alumniGen4"></tbody>
+      </table></div>
+    </div>
+    <div class="tab-panel" data-panel="gen5">
+      <div class="table-wrap"><table class="report-table">
+        <thead><tr><th data-i18n="alumni.h_no">No.</th><th data-i18n="alumni.h_name">Name</th><th data-i18n="alumni.h_uni">University</th><th data-i18n="alumni.h_fac">Faculty / Major</th></tr></thead>
+        <tbody id="alumniGen5"></tbody>
+      </table></div>
+    </div>
+  </div>
 </section>
 
 <footer class="foot">
@@ -79,8 +118,8 @@
 </footer>
 
 <script src="assets/js/translations.js"></script>
-<script src="assets/js/tools-data.js"></script>
-<script src="assets/js/tools.js"></script>
+<script src="assets/js/alumni-data.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/alumni.js"></script>
 </body>
 </html>
