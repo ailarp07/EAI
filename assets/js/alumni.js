@@ -43,19 +43,44 @@
   const max = bars.length ? bars[0][1] : 1;
   const totalStudents = allStudents.filter((s) => s.uni).length;
 
+  function facBreakdown(bucket) {
+    const tally = {};
+    (bucketMembers[bucket] || []).forEach((s) => {
+      const fac = s.fac || "Not specified";
+      tally[fac] = (tally[fac] || 0) + 1;
+    });
+    return Object.entries(tally).sort((a, b) => b[1] - a[1]);
+  }
+
   const chartEl = document.getElementById("uniChart");
   if (chartEl) {
     chartEl.innerHTML = bars
       .map(([label, count]) => {
         const widthPct = Math.round((count / max) * 100);
         const share = Math.round((count / totalStudents) * 100);
-        return `<div class="bar-row" data-code="${label}">
-          <span class="bar-label">${label}</span>
-          <div class="bar-track"><div class="bar-fill" style="width:${widthPct}%"></div></div>
-          <span class="bar-count">${count}<span class="pct">${share}%</span></span>
+        const facs = facBreakdown(label)
+          .map(([fac, n]) => `<li><i class="bi bi-dot"></i><div><b>${fac}</b>${n > 1 ? `<span> - ${n} students</span>` : ""}</div></li>`)
+          .join("");
+        return `<div class="bar-item">
+          <button class="bar-row" data-code="${label}">
+            <span class="bar-label">${label}</span>
+            <div class="bar-track"><div class="bar-fill" style="width:${widthPct}%"></div></div>
+            <span class="bar-count">${count}<span class="pct">${share}%</span></span>
+            <i class="bi bi-chevron-down bar-chevron"></i>
+          </button>
+          <div class="bar-detail"><ul class="bar-fac-list">${facs}</ul></div>
         </div>`;
       })
       .join("");
+
+    chartEl.querySelectorAll(".bar-row").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const item = btn.closest(".bar-item");
+        const detail = item.querySelector(".bar-detail");
+        const isOpen = item.classList.toggle("open");
+        detail.style.maxHeight = isOpen ? detail.scrollHeight + "px" : "0px";
+      });
+    });
   }
 
   // ---- search: filters bar highlight + shows a match count across all gens ----
