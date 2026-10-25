@@ -1551,3 +1551,14 @@ a.tcard:hover .tn { color: inherit; }
   .blue .cells.sep .cell.yr2 h3, .blue .cells.sep .cell.yr2 > p { align-self: start; }
   body { padding-bottom: 64px; }
 }
+
+/* phone and tablet: the top bar holds only the site name and a Q&A button; the dots float at the bottom right */
+.nav a.nav-qa { display: none; }
+@media (max-width: 900px) {
+  .nav a.nav-qa { display: inline-flex; margin-left: auto; opacity: 1; padding: 6px 14px; font-size: .78rem; border-radius: 8px; background: #fff; color: var(--blue); line-height: 1; transition: background .16s var(--ease); }
+  .nav[data-tone="white"] a.nav-qa { background: var(--blue); color: #fff; }
+  .nav a.nav-qa:hover, .nav a.nav-qa:focus-visible { background: #dcdce8; color: #14163f; }
+  .nav[data-tone="white"] a.nav-qa:hover { background: #3b3f86; color: #fff; }
+  .nav .npanel .nr a.nav-btn { display: none; }
+  .nav .npanel .nr { justify-content: center; gap: 22px; }
+}
