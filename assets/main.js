@@ -91,3 +91,14 @@ document.addEventListener('click', e => {
     if (first >= 0 && !panels.some((p, i) => !p.hidden && p.querySelector('tbody tr:not(.dim)'))) tabs[first].click();
   });
 })();
+
+// phone nav: menu button opens and closes the link panel
+(function () {
+  const nav = document.querySelector('.nav');
+  const btn = nav && nav.querySelector('.nav-toggle');
+  if (!btn) return;
+  const set = open => { nav.classList.toggle('menu-open', open); btn.setAttribute('aria-expanded', open); };
+  btn.addEventListener('click', () => set(!nav.classList.contains('menu-open')));
+  nav.querySelectorAll('.npanel a').forEach(a => a.addEventListener('click', () => set(false)));
+  addEventListener('resize', () => { if (innerWidth > 900) set(false); });
+})();
