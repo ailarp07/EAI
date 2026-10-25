@@ -50,10 +50,10 @@ const SUBS = {
 };
 const OFFICIAL_BI = { Facebook: 'facebook', Instagram: 'instagram', TikTok: 'tiktok', 'LINE Openchat': 'line', GitHub: 'github', Website: 'globe' };
 // extra links that only the phone menu shows
-const NAVEXTRA = [['ci.html', 'CI', 'palette'], ['docs.html#articles', 'Articles', 'medium'], ['https://spsm20-my.sharepoint.com/:f:/g/personal/024329_spsm_ac_th/IgDw9z82yVOeQYJz6jOnt_ykAazdCh2dPsaIH8VWcLLRIJM?e=9gAvi4', 'Photos', 'images', true]];
+const NAVEXTRA = [['tools.html', 'Tools', 'tools'], ['ci.html', 'CI', 'palette'], ['docs.html#articles', 'Articles', 'medium'], ['https://spsm20-my.sharepoint.com/:f:/g/personal/024329_spsm_ac_th/IgDw9z82yVOeQYJz6jOnt_ykAazdCh2dPsaIH8VWcLLRIJM?e=9gAvi4', 'Photos', 'images', true]];
 // cache-busting tag for the stylesheet and script, changes on every build
 const VER = Date.now().toString(36);
-const NAV = [['index', 'Home'], ['about', 'About'], ['join', 'Join'], ['alumni', 'Alumni'], ['works', 'Works'], ['docs', 'Docs'], ['tools', 'Tools'], ['moment', 'Moment'], ['env', 'Env']];
+const NAV = [['index', 'Home'], ['about', 'About'], ['join', 'Join'], ['alumni', 'Alumni'], ['works', 'Works'], ['docs', 'Docs'], ['moment', 'Moment'], ['env', 'Env']];
 const FOOT = [['index', 'Home'], ['about', 'About'], ['join', 'Join'], ['alumni', 'Alumni'], ['works', 'Works'], ['docs', 'Docs'], ['tools', 'Tools'], ['ci', 'CI'], ['moment', 'Moment'], ['env', 'Env']];
 const LINE = 'https://bit.ly/3jFACxV';
 
