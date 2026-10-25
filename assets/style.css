@@ -1510,3 +1510,44 @@ a.tcard:hover .tn { color: inherit; }
   .nav .nl a:hover .nav-ic, .nav .nl a:focus-visible .nav-ic, .nav .nl a.on .nav-ic { background: rgba(127, 127, 127, .45); }
   .nav .nl a .nav-ic { transition: background .16s var(--ease); }
 }
+
+/* ===== phone: floating menu button, smaller footer icons, year cards one per row ===== */
+@media (max-width: 900px) {
+  /* the button floats at the bottom right and follows the reader */
+  .nav .nav-toggle { position: fixed; right: 14px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 60; width: 52px; height: 52px; margin: 0; border-radius: 50%; grid-template-columns: repeat(3, 4px); grid-template-rows: repeat(3, 4px); gap: 5px; color: #fff; background: rgba(18, 18, 26, .94); border: 1.5px solid rgba(255, 255, 255, .6); box-shadow: 0 8px 22px rgba(0, 0, 0, .35); }
+  .theme-red .nav .nav-toggle { background: #f5423d; border-color: #fff; }
+  .theme-green .nav .nav-toggle { background: #8acd6e; border-color: #14163f; color: #14163f; }
+  .nav .nav-toggle:hover, .nav .nav-toggle:focus-visible, .nav.menu-open .nav-toggle { background: #fff; color: #14163f; border-color: #fff; }
+  /* the panel opens above the button, always dark */
+  .nav .npanel { position: fixed; top: auto; left: 10px; right: 10px; bottom: calc(80px + env(safe-area-inset-bottom, 0px)); z-index: 59; max-height: calc(100vh - 110px); background: #121218; color: #fff; border: 1px solid rgba(255, 255, 255, .14); box-shadow: 0 18px 44px rgba(0, 0, 0, .45); }
+  .nav[data-tone="white"] .npanel { border: 1px solid rgba(255, 255, 255, .14); }
+  .nav.menu-open { background: transparent; }
+  .nav[data-tone="white"].menu-open { background: var(--white); }
+  .nav .nr .nav-btn { background: #fff; color: #14163f; }
+  .nav .nr .nav-so { color: #fff; }
+}
+
+@media (max-width: 600px) {
+  footer .soc .icon, footer .soc .icon.bi-ic { width: 18px; height: 18px; }
+  footer .soc { gap: 10px 16px; }
+  footer .soc a { padding: 4px; }
+
+  /* about: three years, one card per row, digit on the left */
+  #years .cells.three.sep { grid-template-columns: 1fr; gap: 10px; }
+  .blue .cells.sep .cell.yr2 { display: grid; grid-template-columns: 78px 1fr; grid-template-areas: "top top" "num head" "num desc" "subj subj"; column-gap: 12px; align-items: start; padding: 14px 16px 16px; }
+  .cell.yr2 .rtop { grid-area: top; margin-bottom: 8px; }
+  .cell.yr2 .rtop small { font-size: .68rem; }
+  .cell.yr2 .rtop .icon { width: 20px; height: 20px; }
+  .cell.yr2 .rnum { grid-area: num; margin: 0; }
+  .blue .cells.sep .cell.yr2 .rnum small { font-size: .62rem; margin-bottom: 0; }
+  .blue .cells.sep .cell.yr2 .rnum b { font-size: 3.6rem; }
+  .cell.yr2 .rl { display: none; }
+  .blue .cells.sep .cell.yr2 h3 { grid-area: head; font-size: .95rem; margin: 2px 0 2px; }
+  .blue .cells.sep .cell.yr2 > p { grid-area: desc; margin: 0; font-size: .74rem; }
+  .blue .cells.sep .cell.yr2 .subj { grid-area: subj; margin-top: 10px; padding-top: 0; font-size: .7rem; gap: 2px; }
+}
+@media (max-width: 600px) {
+  .blue .cells.sep .cell.yr2 { grid-template-rows: auto auto 1fr auto; }
+  .blue .cells.sep .cell.yr2 h3, .blue .cells.sep .cell.yr2 > p { align-self: start; }
+  body { padding-bottom: 64px; }
+}

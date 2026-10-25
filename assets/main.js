@@ -101,4 +101,5 @@ document.addEventListener('click', e => {
   btn.addEventListener('click', () => set(!nav.classList.contains('menu-open')));
   nav.querySelectorAll('.npanel a').forEach(a => a.addEventListener('click', () => set(false)));
   addEventListener('resize', () => { if (innerWidth > 900) set(false); });
+  document.addEventListener('click', e => { if (nav.classList.contains('menu-open') && !e.target.closest('.npanel') && !e.target.closest('.nav-toggle')) set(false); });
 })();
