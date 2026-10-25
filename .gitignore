@@ -1,0 +1,15 @@
+# originals that the pages do not use (the site uses the resized copies)
+assets/img/class/
+assets/img/life/*.jpg
+assets/img/post/*.jpg
+assets/img/*-IMG_*.jpg
+!assets/img/1-IMG_2967.jpg
+!assets/img/52-IMG_5110.jpg
+assets/img/ev*.jpg
+assets/img/CAD.png
+assets/img/final task.png
+# local tooling
+node_modules/
+.DS_Store
+Thumbs.db
+_t.html
