@@ -1218,3 +1218,9 @@ a.tcard:hover .tm img { background: #fff; border-radius: 8px; padding: 4px; box-
 .blue a.tcard:hover .tn { color: var(--blue); }
 a.tcard:hover .tn { color: inherit; }
 .theme-red .blue a.tcard:hover, .theme-red .blue a.tcard:hover .tm .icon, .theme-red .blue a.tcard:hover .tn { color: #f5423d; }
+
+/* nav: wider bar for the longer link list */
+.nav .wrap { max-width: 1680px; padding: 0 32px; }
+.nav .nl { gap: 24px; }
+@media (max-width: 1500px) { .nav .nl { gap: 18px; } .nav .nl a { font-size: .78rem; } }
+@media (max-width: 1280px) { .nav .nr .nav-so { display: none; } }

@@ -49,7 +49,7 @@ const SUBS = {
   'tools.html': 'What we reach for to get a project shipped.',
 };
 const OFFICIAL_BI = { Facebook: 'facebook', Instagram: 'instagram', TikTok: 'tiktok', 'LINE Openchat': 'line', GitHub: 'github', Website: 'globe' };
-const NAV = [['index', 'Home'], ['about', 'About'], ['join', 'Join'], ['works', 'Works'], ['docs', 'Docs'], ['moment', 'Moment'], ['env', 'Env']];
+const NAV = [['index', 'Home'], ['about', 'About'], ['join', 'Join'], ['alumni', 'Alumni'], ['works', 'Works'], ['docs', 'Docs'], ['tools', 'Tools'], ['moment', 'Moment'], ['env', 'Env']];
 const FOOT = [['index', 'Home'], ['about', 'About'], ['join', 'Join'], ['alumni', 'Alumni'], ['works', 'Works'], ['docs', 'Docs'], ['tools', 'Tools'], ['ci', 'CI'], ['moment', 'Moment'], ['env', 'Env']];
 const LINE = 'https://bit.ly/3jFACxV';
 
@@ -78,7 +78,7 @@ const sprite = `<svg width="0" height="0" style="position:absolute" aria-hidden=
 // Bootstrap Icons (MIT), self-hosted in assets/bi, added to the sprite as bi-<name>
 const UBI = { 'ISE CU': 'gear-wide-connected', 'CEDT CU': 'cpu', 'FIBO KMUTT': 'robot', 'RAI KMITL': 'motherboard', 'AERO KMITL': 'airplane', 'SIIT TU': 'tools', Tsinghua: 'rulers', Zhejiang: 'bezier2' };
 const biBody = n => { const s = fs.readFileSync(path.join(OUT, 'assets/bi', n + '.svg'), 'utf8'); return s.slice(s.indexOf('>', s.indexOf('<svg')) + 1, s.lastIndexOf('</svg>')); };
-const NAVBI = { index: 'house', about: 'mortarboard', join: 'door-open', works: 'trophy', moment: 'camera', ci: 'palette', docs: 'journal-text', env: 'people', alumni: 'signpost-split' };
+const NAVBI = { index: 'house', about: 'mortarboard', join: 'door-open', works: 'trophy', moment: 'camera', ci: 'palette', docs: 'journal-text', env: 'people', alumni: 'signpost-split', tools: 'tools' };
 const JOINBI = ['list-ul', 'info-circle', 'pc-display', 'person-workspace', 'cup-hot', 'play-circle', 'clock', 'train-front', 'bus-front', 'water', 'bicycle', 'shop', 'geo-alt', 'facebook', 'tiktok', 'globe', 'clipboard', 'check2', 'plus-lg', 'eye', 'medium', 'github', 'line', 'chevron-down', 'arrow-up-right', 'instagram', 'images', 'camera', 'cash-coin', 'laptop', 'shield-lock', 'award', 'lightbulb', 'building', 'rocket-takeoff', 'code-slash', 'folder2-open', 'list-check', 'calendar-event', 'signpost-split', 'cpu', 'calendar-plus', 'graph-up-arrow', 'door-open', 'trophy', 'calculator', 'lightning-charge', 'translate', 'chat-dots', 'book', 'house-door', 'globe2', 'people', 'mortarboard'];
 const toolIconNames = new Set();
 for (const c of TOOLS) { toolIconNames.add((c.fallback || '').replace(/^bi-/, '')); for (const t of c.tools) if (t.icon) toolIconNames.add(t.icon.replace(/^bi-/, '')); }
@@ -435,7 +435,7 @@ const uniBar = list => {
   return bar + legend + '<div class="fnote">' + biN('info-circle') + '<p><b>Heads up.</b> This data may not be fully accurate, and we keep updating it as results come in.</p></div>';
 };
 page({
-  file: 'alumni.html', title: 'University Path - Redstone Developer', active: 'about',
+  file: 'alumni.html', title: 'University Path - Redstone Developer', active: 'alumni',
   hero: { mid: true, photo: 'assets/img/life/web/20240805_155414.jpg', title: 'University Path' },
   body: [
     sec('white', head('By university', uniList.reduce((a, [, u]) => a + u.n, 0) + ' alumni with a placement, as one 100% bar: one tick is one percent. Over 72% got in through TCAS Round 1. The rest of the ' + alumniAll.length + ' have not announced yet. ') + uniBar(uniList), 'by-uni'),
@@ -455,7 +455,7 @@ const toolMedia = (t, c) => {
 };
 const toolCard = (t, c) => (t.url ? '<a class="tcard" href="' + t.url + '" target="_blank" rel="noopener">' : '<div class="tcard">') + '<span class="tm">' + toolMedia(t, c) + '</span><span class="tn">' + t.name + '</span>' + (t.url ? '</a>' : '</div>');
 page({
-  file: 'tools.html', title: 'Tool stack - Redstone Developer', active: 'docs',
+  file: 'tools.html', title: 'Tool stack - Redstone Developer', active: 'tools',
   hero: { mid: true, photo: 'assets/img/1-IMG_2967.jpg', title: T.tools.title.en },
   body: TOOLS.map((c, i) => sec(i % 2 ? 'blue' : 'white', '<div class="split tsplit"><div class="side"><div class="tcat"><svg class="icon bi-ic"><use href="#bi-' + (catIcon[c.key] || 'box') + '"/></svg></div><h2>' + T.tools[c.key].en + '</h2><p class="muted">' + c.tools.length + ' tools</p></div><div class="tgrid">' + c.tools.map(t => toolCard(t, c)).join('') + '</div></div>', c.key, i % 2 ? '' : (i ? 'ruled' : ''))).join('\n'),
 });
