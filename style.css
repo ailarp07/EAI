@@ -643,7 +643,8 @@ footer{background:#0b0b0b;color:#fff;padding:3.2rem 0 1.6rem}
 @media(max-width:1100px){.hcards{grid-template-columns:repeat(4,minmax(0,138px))}}
 @media(max-width:600px){
   .home .statement{padding-top:5rem;padding-bottom:4.2rem}
-  .hcards{grid-template-columns:1fr 1fr;gap:.4rem}
+  .hmain{margin-bottom:1.8rem}
+  .hcards{grid-template-columns:1fr 1fr;gap:.4rem;margin-top:1.8rem}
   .hc{flex-direction:row;align-items:center;justify-content:flex-start;gap:.6rem;min-height:0;padding:.6rem .7rem}
   .hc:last-child{grid-column:1/-1}
   .hci{width:20px;height:20px;flex:none}.hca{display:none}
