@@ -369,6 +369,13 @@ a.dc:hover{background:var(--w1)}
 .nbox p{font-size:14px;line-height:1.55;color:var(--w7)}
 .nbox .btn{margin-top:.4rem;border:0;font-family:inherit;cursor:pointer;outline:none}
 
+/* 404 page */
+.nf{min-height:calc(100svh - var(--nav-h));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;padding:7rem 1rem 4rem;text-align:center}
+.nf h1{font-size:clamp(72px,16vw,140px);line-height:1;color:var(--red)}
+.nf-t{font-size:20px;font-weight:700}
+.nf-s{font-size:14px;color:var(--w5);max-width:26em}
+.nf-b{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:1rem}
+
 /* footer */
 footer{background:#0b0b0b;color:#fff;padding:3.2rem 0 1.6rem}
 .f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2rem}
