@@ -19,6 +19,10 @@
       +'</div>';
     mx.appendChild(x);
   }
+  // nav: transparent over the home hero, solid white once the page scrolls
+  var navEl=document.querySelector('.nav');
+  function navSolid(){if(navEl)navEl.classList.toggle('solid',window.scrollY>24)}
+  window.addEventListener('scroll',navSolid,{passive:true});navSolid();
   // fade sections up as they scroll into view
   var rv=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.2});rv.forEach(function(e){io.observe(e)})}else{rv.forEach(function(e){e.classList.add('in')})}

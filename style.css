@@ -127,6 +127,17 @@ html[lang=th] .iam-s{letter-spacing:0;line-height:1.35}
 .arr:focus:not(:focus-visible){outline:none}
 .arr:first-child{margin-left:-.4rem}
 
+/* home hero: photo background with a dark filter, white text and a wavy bottom edge */
+.home .statement{background:linear-gradient(rgba(8,8,8,.74),rgba(8,8,8,.86)),url(assets/img/statement-bg.jpg) center 82%/cover no-repeat;color:#fff}
+.home .statement p{color:#d6d3cd}
+.home .statement em{color:#fff}
+.home .statement .chip{color:#fff}
+.home .statement .chip:hover{color:#b9b5ae}
+.home .statement .cue{color:#fff;opacity:.85;bottom:5.4rem}
+.home .statement .cue:hover{opacity:1;color:#fff}
+.statement .wave{position:absolute;left:0;bottom:-1px;width:100%;height:84px;display:block}
+@media(max-width:600px){.statement .wave{height:44px}.home .statement .cue{bottom:3.4rem}}
+
 /* home: full-screen scroll sections with soft snap, content fades up as it enters */
 html.home{scroll-snap-type:y proximity;scroll-padding-top:var(--nav-h)}
 .home .statement,.home .cd,.home #after,.home #wins{min-height:calc(100vh - var(--nav-h));min-height:calc(100svh - var(--nav-h));scroll-snap-align:start}
@@ -504,4 +515,44 @@ footer{background:#0b0b0b;color:#fff;padding:3.2rem 0 1.6rem}
   .f-grid h4{font-size:13px}
   .f-grid a{font-size:13px;padding:.18rem 0}
   .f-bot{font-size:11.5px;margin-top:1.6rem}
+}
+
+/* home nav over the hero: transparent glass pills on the photo, solid white once you scroll (kept last so it wins) */
+.home{--hero-pad:calc(var(--nav-h) + 1.6rem)}
+.home body{padding-top:0}
+.home .statement{min-height:100vh;min-height:100svh;padding-top:var(--hero-pad)}
+.nav{transition:background .3s,border-color .3s}
+.home .nav:not(.solid):not(.open){background:transparent;backdrop-filter:none;border-bottom-color:transparent}
+.home .nav:not(.solid):not(.open) .pill{background:rgba(255,255,255,.16);color:#fff;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.home .nav:not(.solid):not(.open) .pill:hover{background:rgba(255,255,255,.3)}
+.home .nav:not(.solid):not(.open) .pill .ic{filter:invert(1);opacity:1}
+.home .nav:not(.solid):not(.open) .pill.on{background:#fff;color:var(--ink)}
+.home .nav:not(.solid):not(.open) .pill.on .ic{filter:none}
+@media(max-width:600px){.home{--hero-pad:calc(var(--nav-h) + 1rem)}}
+
+/* home career section: photo background, dark filter, white text, waves above and below (kept last so it wins) */
+.home #after{position:relative;min-height:125vh;min-height:125svh;padding:9rem 0;background:linear-gradient(rgba(8,8,8,.74),rgba(8,8,8,.86)),url(assets/img/career-bg.jpg) center 45%/cover no-repeat;color:#fff}
+.home #after .wave{position:absolute;left:0;width:100%;height:120px;display:block;pointer-events:none}
+.home #after .wave:not(.wtop){bottom:-1px}
+.home #after .wtop{top:-1px}
+.home #after .iam-s{color:#d6d3cd}
+.home #after .ph{color:#fff}
+.home #after .ico-s .big{filter:invert(1)}
+.home #after .sb{color:#fff}
+.home #after .sb span+span::before{color:#a9a6a0}
+.home #after .pick{background:rgba(255,255,255,.35)}
+.home #after .pick:hover{background:rgba(255,255,255,.75)}
+.home #after .pick.on{background:#fff}
+.home #after .arr .ic{filter:invert(1);opacity:.6}
+.home #after .arr:hover .ic{opacity:1}
+@media(max-width:600px){.home #after{min-height:112svh;padding:6.5rem 0}.home #after .wave{height:64px}}
+
+/* phone polaroids: 8 around the countdown, none over the text (kept last so it wins) */
+@media(max-width:600px){
+  .home .cd{min-height:max(calc(100svh - var(--nav-h)),760px)}
+  .p3,.p6,.p9,.p12{display:block}
+  .p3{left:25%;right:auto;top:17%;bottom:auto;--r:-4deg}
+  .p9{right:25%;left:auto;top:19%;bottom:auto;--r:5deg}
+  .p6{left:25%;right:auto;top:auto;bottom:14%;--r:4deg}
+  .p12{right:25%;left:auto;top:auto;bottom:16%;--r:-5deg}
 }
