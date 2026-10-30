@@ -21,8 +21,15 @@
   }
   // nav: transparent over the home hero, solid white once the page scrolls
   var navEl=document.querySelector('.nav');
-  function navSolid(){if(navEl)navEl.classList.toggle('solid',window.scrollY>24)}
-  window.addEventListener('scroll',navSolid,{passive:true});navSolid();
+  // solid white nav everywhere except while it sits over a dark photo section (home hero and career section); the wave edges count as white
+  var darkSecs=document.documentElement.classList.contains('home')?document.querySelectorAll('.statement,#after'):[];
+  function navSolid(){
+    if(!navEl)return;
+    var y=navEl.offsetHeight/2,over=false;
+    darkSecs.forEach(function(s){var r=s.getBoundingClientRect(),top=s.id==='after'?80:0;if(r.top+top<=y&&r.bottom-80>=y)over=true});
+    navEl.classList.toggle('solid',!over);
+  }
+  window.addEventListener('scroll',navSolid,{passive:true});window.addEventListener('resize',navSolid);window.addEventListener('load',navSolid);navSolid();
   // fade sections up as they scroll into view
   var rv=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.2});rv.forEach(function(e){io.observe(e)})}else{rv.forEach(function(e){e.classList.add('in')})}
