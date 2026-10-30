@@ -361,6 +361,14 @@ a.dc:hover{background:var(--w1)}
 .fx em{font-style:normal;color:var(--w5);font-variant-numeric:tabular-nums}
 @media(max-width:600px){.fx li{font-size:12px}}
 
+/* unofficial-site notice */
+.notice{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:1rem;background:rgba(8,8,8,.55)}
+.nbox{display:flex;flex-direction:column;align-items:center;gap:.8rem;max-width:380px;padding:1.8rem 1.6rem;border-radius:var(--radius);background:var(--paper);text-align:center}
+.nbox .ic{width:60px;height:60px;opacity:1}
+.nbox h2{font-size:19px;line-height:1.25}
+.nbox p{font-size:14px;line-height:1.55;color:var(--w7)}
+.nbox .btn{margin-top:.4rem;border:0;font-family:inherit;cursor:pointer;outline:none}
+
 /* footer */
 footer{background:#0b0b0b;color:#fff;padding:3.2rem 0 1.6rem}
 .f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2rem}

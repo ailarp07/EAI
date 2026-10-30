@@ -19,6 +19,21 @@
       +'</div>';
     mx.appendChild(x);
   }
+  // unofficial-site notice: once per browser session, on every page
+  var seen=false;try{seen=sessionStorage.getItem('eai-notice')}catch(e){}
+  if(!seen){
+    var nb=document.createElement('div');nb.className='notice';nb.setAttribute('role','dialog');nb.setAttribute('aria-modal','true');nb.setAttribute('aria-labelledby','nt');
+    nb.innerHTML='<div class="nbox"><img class="ic" src="assets/ph/info.svg" alt=""><h2 id="nt" data-th="นี่ไม่ใช่เว็บไซต์ทางการ">This is not an official website</h2>'
+      +'<p data-th="เว็บไซต์นี้ไม่ใช่เว็บไซต์ทางการของโรงเรียนหรือวิชาเอก เป็นเพียงงานที่นักเรียนของวิชาเอกสร้างขึ้นใหม่">This is only a recreation made by a student of the major. It is not the official website of the school or the major.</p>'
+      +'<button class="btn" type="button"><span data-th="รับทราบ">Acknowledge</span></button></div>';
+    document.body.appendChild(nb);
+    var nclose=function(){nb.remove();document.removeEventListener('keydown',nkey);try{sessionStorage.setItem('eai-notice','1')}catch(e){}};
+    var nkey=function(e){if(e.key==='Escape')nclose()};
+    nb.querySelector('button').onclick=nclose;
+    nb.onclick=function(e){if(e.target===nb)nclose()};
+    document.addEventListener('keydown',nkey);
+    nb.querySelector('button').focus();
+  }
   // nav: transparent over the home hero, solid white once the page scrolls
   var navEl=document.querySelector('.nav');
   // solid white nav everywhere except while it sits over a dark photo section (home hero and career section); the wave edges count as white
