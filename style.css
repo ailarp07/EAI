@@ -353,6 +353,14 @@ a.dc:hover{background:var(--w1)}
 .ev .ev-l .ic{width:11px;height:11px}
 @media(max-width:600px){.ev{flex-direction:column}.evi{width:100%;aspect-ratio:3/2;min-height:0}.evb{justify-content:flex-start}}
 
+/* universities: faculty breakdown under each big university */
+.fx{list-style:none;margin:.6rem 0 0;padding:0}
+.fx li{display:flex;justify-content:space-between;gap:1rem;padding:.28rem 0;border-top:1px solid var(--w2);font-size:13px;color:var(--w7)}
+.fx li:last-child{border-bottom:1px solid var(--w2)}
+.lg .fx span{margin:0;font-size:inherit;color:inherit}
+.fx em{font-style:normal;color:var(--w5);font-variant-numeric:tabular-nums}
+@media(max-width:600px){.fx li{font-size:12px}}
+
 /* footer */
 footer{background:#0b0b0b;color:#fff;padding:3.2rem 0 1.6rem}
 .f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2rem}
