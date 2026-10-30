@@ -88,7 +88,7 @@ html[lang=th] .statement p{letter-spacing:0;line-height:1.45}
 .p7{right:22%;top:5%;--r:5deg}.p8{right:10%;top:18%;--r:-6deg}.p9{right:23%;top:38%;--r:4deg}.p10{right:3%;top:44%;--r:-4deg}.p11{right:13%;top:62%;--r:6deg}.p12{right:24%;top:70%;--r:-5deg}
 
 /* sections */
-.sec{padding:3rem 0 3.5rem}
+.sec{padding:3.4rem 0 4rem}
 .sec-head{display:flex;align-items:center;gap:.7rem;margin-bottom:1.5rem}
 .sec-head h2{flex:1;font-size:clamp(20px,2.4vw,28px);line-height:1.2}
 .sec-head .ic{width:22px;height:22px;opacity:1}
@@ -174,7 +174,7 @@ html[lang=th] .bigs{letter-spacing:0;line-height:1.45}
 .page-h h1{font-size:clamp(26px,4vw,34px);line-height:1.15}
 .sub{display:flex;align-items:center;gap:.45rem;margin-top:.9rem;font-size:13px;color:var(--w5)}
 .sub .ic{width:13px;height:13px}
-.blk{padding:.4rem 0 3.2rem}
+.blk{padding:.4rem 0 4.6rem}
 .h-row{display:flex;align-items:center;gap:.7rem;margin-bottom:.6rem}
 .h-row h2{font-size:15px}
 .ico{flex:none;width:46px;height:46px;border-radius:var(--radius);background:var(--w1);display:grid;place-items:center;transition:var(--tr)}
@@ -225,8 +225,8 @@ html[lang=th] .bigs{letter-spacing:0;line-height:1.45}
 .tw th{font-weight:400;text-align:left;color:var(--w5);padding:.5rem .6rem .5rem 0;border-bottom:1px solid var(--w2);white-space:nowrap}
 .tw td{padding:.5rem .6rem .5rem 0;border-bottom:1px solid var(--w2);vertical-align:top}
 
-.tw tr.sum td{font-weight:700;background:var(--w1);padding-left:.6rem}
-.tw tr.sum td:first-child{border-radius:6px 0 0 6px}
+.tw tr.tsum td{font-weight:700;background:var(--w1);padding-left:.6rem}
+.tw tr.tsum td:first-child{border-radius:6px 0 0 6px}
 
 /* alumni page */
 .bt{display:flex;justify-content:space-between;align-items:baseline}
@@ -465,7 +465,7 @@ footer{background:#0b0b0b;color:#fff;padding:3.2rem 0 1.6rem}
   .back{font-size:12px;margin-bottom:1.1rem}
   .sub{font-size:12px}
   .lead{font-size:12.5px;margin-bottom:.8rem}
-  .blk{padding:.3rem 0 2rem}
+  .blk{padding:.3rem 0 3.1rem}
   .h-row h2{font-size:14px}
   .ico{width:38px;height:38px}.ico .ic{width:17px;height:17px}
   .ico.s{width:28px;height:28px}.ico.s .ic{width:13px;height:13px}
@@ -492,8 +492,9 @@ footer{background:#0b0b0b;color:#fff;padding:3.2rem 0 1.6rem}
   .row.work p.tl,.row.work p.tn,.wm{font-size:12px}
   .lk a{font-size:12px}
   .sum b{font-size:24px}.sum span{font-size:12px}
-  .cg{--s:clamp(10px,3vw,18px);gap:2px}
-  .gl b{font-size:9.5px}.gl em{font-size:10.5px}
+  .cg{--s:clamp(9px,3.6vw,16px);--gap:2px;gap:9px}
+  .gl{margin-top:.4rem}
+  .gl b{font-size:9px}.gl em{font-size:10px}
   .lg b{font-size:13.5px}.lg span,.lg p{font-size:12px}
   .oth{font-size:12px}.note{font-size:11.5px}
   .ro td,.ro th{font-size:11.5px}
