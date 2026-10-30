@@ -59,9 +59,9 @@ a:hover>.ic,button:hover>.ic{opacity:1}
 
 /* statement */
 .statement{padding:3.5rem 0 2.5rem}
-.statement p{font-size:clamp(21px,3.3vw,46px);line-height:1.22;letter-spacing:-.01em;color:var(--w5)}
+.statement p{font-size:clamp(20px,2.8vw,40px);line-height:1.22;letter-spacing:-.01em;color:var(--w5)}
 .statement em{color:var(--ink)}
-html[lang=th] .statement p{letter-spacing:0;line-height:1.45}
+html[lang=th] .statement p{letter-spacing:0;line-height:1.5;font-size:clamp(18px,2.35vw,33px)}
 .chips{display:flex;flex-wrap:wrap;gap:.5rem 2rem;margin-top:1.6rem}
 .chip{font-size:13px;font-weight:700;color:var(--w7);transition:var(--tr)}
 .chip:hover{color:var(--red)}
@@ -524,7 +524,7 @@ footer{background:#0b0b0b;color:#fff;padding:3.2rem 0 1.6rem}
   .mx-links .mb{width:56px;height:56px;margin:.8rem auto}
   .mx-links b{font-size:14px}
   .mx-soc a{width:46px;height:46px}.mx-soc img{width:22px;height:22px}
-  .statement p{font-size:18px}
+  .statement p,html[lang=th] .statement p{font-size:17px}
   .statement{padding:1.6rem 0 1.4rem}
   .chip{font-size:12px}
   .chips{gap:.4rem .9rem;margin-top:1.1rem}
@@ -680,3 +680,12 @@ html.hero-dark .nav:not(.solid):not(.open) .pill.on .ic{filter:none}
   .hero-c.hv .wave{height:52px!important}
 }
 
+/* page transition: quick dip to white between pages (cross-document View Transitions; other browsers just switch pages) */
+@view-transition{navigation:auto}
+html{background:#fff}
+.nav{view-transition-name:nav}
+::view-transition-old(root){animation:vt-out .14s ease-in both}
+::view-transition-new(root){animation:vt-in .24s ease-out .12s both}
+@keyframes vt-out{to{opacity:0}}
+@keyframes vt-in{from{opacity:0}}
+@media(prefers-reduced-motion:reduce){@view-transition{navigation:none}}
