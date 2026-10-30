@@ -37,11 +37,11 @@
   // nav: transparent over the home hero, solid white once the page scrolls
   var navEl=document.querySelector('.nav');
   // solid white nav everywhere except while it sits over a dark photo section (home hero and career section); the wave edges count as white
-  var darkSecs=document.documentElement.classList.contains('home')?document.querySelectorAll('.statement,#after'):[];
+  var dc=document.documentElement.classList,darkSecs=dc.contains('home')?document.querySelectorAll('.statement,#after'):dc.contains('hero-page')?document.querySelectorAll('.hero-c'):[];
   function navSolid(){
     if(!navEl)return;
     var y=navEl.offsetHeight/2,over=false;
-    darkSecs.forEach(function(s){var r=s.getBoundingClientRect(),top=s.id==='after'?80:0;if(r.top+top<=y&&r.bottom-80>=y)over=true});
+    darkSecs.forEach(function(s){var r=s.getBoundingClientRect(),top=s.id==='after'?80:0,bot=s.classList.contains('hero-c')?0:80;if(r.top+top<=y&&r.bottom-bot>=y)over=true});
     navEl.classList.toggle('solid',!over);
   }
   window.addEventListener('scroll',navSolid,{passive:true});window.addEventListener('resize',navSolid);window.addEventListener('load',navSolid);navSolid();
