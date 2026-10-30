@@ -424,3 +424,83 @@ footer{background:#0b0b0b;color:#fff;padding:3.2rem 0 1.6rem}
   .sec{padding:2.2rem 0 2.5rem}
 
 }
+
+/* phone shrink: one last pass so everything is smaller on a phone (kept at the end so it wins) */
+@media(max-width:600px){
+  body{font-size:13px}
+  .wrap{padding:0 1rem}
+  .narrow{width:calc(100% - 2rem)}
+  :root{--nav-h:54px}
+  .pill{font-size:13px}
+  .right .pill{padding:.4rem .7rem;font-size:13px}
+  .right .pill.icon{padding:.4rem .55rem}
+  .pill .ic{width:15px;height:15px}
+  .menu .pill{font-size:clamp(22px,7vw,28px)}
+  .menu .pill .chev{width:13px;height:13px}
+  .dd-menu a{font-size:14px}
+  .mx-links a{min-height:200px;padding:.85rem}
+  .mx-links .mb{width:56px;height:56px;margin:.8rem auto}
+  .mx-links b{font-size:14px}
+  .mx-soc a{width:46px;height:46px}.mx-soc img{width:22px;height:22px}
+  .statement p,.bigs{font-size:18px}
+  .statement{padding:1.6rem 0 1.4rem}
+  .chip{font-size:12px}
+  .chips{gap:.4rem .9rem;margin-top:1.1rem}
+  .cd h2{font-size:21px}
+  .cd-s{font-size:12.5px}
+  .cd-t{font-size:12px}
+  .clock b{font-size:19px}.clock span{font-size:11px}
+  .clock div{padding:.7rem .15rem .55rem;border-radius:11px}
+  .pol{width:74px}
+  .btn{font-size:12.5px;padding:.48rem .95rem}
+  .btn .ic{width:13px;height:13px}
+  .sec{padding:1.6rem 0 1.8rem}
+  .sec-head{margin-bottom:1rem;gap:.5rem}
+  .sec-head h2{font-size:17px}.sec-head .ic{width:17px;height:17px}
+  .iam-s{font-size:20px}
+  .ico-s .big{width:52px;height:52px}
+  .pick{width:7px;height:7px}.pick.on{width:22px}
+  .cw{font-size:calc(var(--s)*var(--k)*.88px)}
+  .page-h h1{font-size:22px}
+  .back{font-size:12px;margin-bottom:1.1rem}
+  .sub{font-size:12px}
+  .lead{font-size:12.5px;margin-bottom:.8rem}
+  .blk{padding:.3rem 0 2rem}
+  .h-row h2{font-size:14px}
+  .ico{width:38px;height:38px}.ico .ic{width:17px;height:17px}
+  .ico.s{width:28px;height:28px}.ico.s .ic{width:13px;height:13px}
+  .row{gap:.75rem}.rows{gap:.85rem}
+  .row h3{font-size:14px}.row p{font-size:12.5px}
+  .row p.ink{font-size:13px}
+  .chips2 span{font-size:11px}
+  .q{font-size:13px}.faq details p,.a p{font-size:12.5px}
+  .tw table{font-size:12px}
+  .tb{font-size:12px}
+  .body{font-size:13px}
+  .dc{min-height:190px;padding:.85rem}
+  .dc .big{height:64px;margin:.3rem 0 .6rem}
+  .dc .big .ic{width:36px;height:36px}
+  .dc h3{font-size:13.5px}.dc p,.dc .m{font-size:12px}
+  .tc{min-height:78px;padding:.6rem .25rem}
+  .tc .lg,.tc .fb{width:22px;height:22px}
+  .tc span{font-size:11px}
+  .ev h3{font-size:14px}.ev p{font-size:12.5px}.evd{font-size:12px}
+  .evb{padding:.85rem}
+  .ig{border-radius:6px}
+  .work h3{font-size:14.5px}
+  .row.work p.ab,.row.work p.res{font-size:12.5px}
+  .row.work p.tl,.row.work p.tn,.wm{font-size:12px}
+  .lk a{font-size:12px}
+  .sum b{font-size:24px}.sum span{font-size:12px}
+  .cg{--s:clamp(10px,3vw,18px);gap:2px}
+  .gl b{font-size:9.5px}.gl em{font-size:10.5px}
+  .lg b{font-size:13.5px}.lg span,.lg p{font-size:12px}
+  .oth{font-size:12px}.note{font-size:11.5px}
+  .ro td,.ro th{font-size:11.5px}
+  footer{padding:2rem 0 1.2rem}
+  .f-brand b{font-size:19px}
+  .f-grid{gap:1.4rem}
+  .f-grid h4{font-size:13px}
+  .f-grid a{font-size:13px;padding:.18rem 0}
+  .f-bot{font-size:11.5px;margin-top:1.6rem}
+}
