@@ -691,3 +691,17 @@ html{background:#fff}
 @keyframes vt-out{to{opacity:0}}
 @keyframes vt-in{from{opacity:0}}
 @media(prefers-reduced-motion:reduce){@view-transition{navigation:none}}
+
+/* alumni roster: one person per row, profile icon, name / university / faculty on separate lines */
+.ro,.ro tbody{display:block;table-layout:auto}
+.ro thead{display:none}
+.ro tbody tr{display:grid;grid-template-columns:34px minmax(0,1fr);column-gap:.9rem;align-items:start;padding:.8rem .6rem;margin:0 -.6rem;border-bottom:1px solid var(--w2);border-radius:var(--radius);transition:var(--tr)}
+.ro tbody tr:hover{background:var(--w1)}
+.ro tbody tr::before{content:"";grid-column:1;grid-row:1/4;width:34px;height:34px;background:var(--w5);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 256 256%22 fill=%22currentColor%22%3E%3Cpath d=%22M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z%22/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 256 256%22 fill=%22currentColor%22%3E%3Cpath d=%22M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z%22/%3E%3C/svg%3E") center/contain no-repeat}
+.ro td{display:block;padding:0;border:0;grid-column:2;overflow-wrap:anywhere}
+.ro td.no{display:none}
+.ro td:nth-child(2){font-size:14px;font-weight:700;color:var(--ink)}
+.ro td:nth-child(3){font-size:13px;color:var(--w7);margin-top:.1rem}
+.ro td:nth-child(4){font-size:13px;color:var(--w5);margin-top:.05rem}
+@media(max-width:600px){.ro tbody tr::before{width:30px;height:30px}.ro tbody tr{grid-template-columns:30px minmax(0,1fr);column-gap:.7rem}.ro td:nth-child(2){font-size:13.5px}.ro td:nth-child(3),.ro td:nth-child(4){font-size:12px}}
+
