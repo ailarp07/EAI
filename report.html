@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Classwork report | EAI</title>
+<meta name="description" content="EAI classwork report.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EAI">
+<meta property="og:title" content="About | EAI">
+<meta property="og:description" content="About the EAI major: what it teaches, the three-year plan, curriculum and graduation requirements.">
+<meta property="og:url" content="https://eai-gamma.vercel.app/about.html">
+<meta property="og:image" content="https://eai-gamma.vercel.app/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#C41616">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preload" href="assets/fonts/lineseedsansth_rg.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <nav class="menu" id="menu" aria-label="Main">
+      <a class="pill" href="index.html"><img class="ic" src="assets/ph/house.svg" alt=""><span data-th="หน้าแรก">Home</span></a>
+      <a class="pill" href="join-us.html"><img class="ic" src="assets/ph/door-open.svg" alt=""><span data-th="สมัครเรียน">Apply</span></a>
+      <div class="dd">
+        <button class="pill" type="button" aria-expanded="false"><img class="ic" src="assets/ph/info.svg" alt=""><span data-th="เกี่ยวกับ">About</span><img class="ic chev" src="assets/ph/caret-down.svg" alt=""></button>
+        <div class="dd-menu"><div>
+          <a href="about.html"><img class="ic" src="assets/ph/info.svg" alt=""><span data-th="เกี่ยวกับวิชาเอก">About</span></a>
+          <a href="universities.html"><img class="ic" src="assets/ph/chart-bar.svg" alt=""><span data-th="สถิติมหาวิทยาลัย">Universities Stats</span></a>
+          <a href="alumni.html"><img class="ic" src="assets/ph/graduation-cap.svg" alt=""><span data-th="ศิษย์เก่า">Alumni</span></a>
+          <a href="works.html"><img class="ic" src="assets/ph/folder-open.svg" alt=""><span data-th="ผลงาน">Works</span></a>
+        </div></div>
+      </div>
+      <div class="dd">
+        <button class="pill" type="button" aria-expanded="false"><img class="ic" src="assets/ph/images.svg" alt=""><span data-th="ช่วงเวลา">Moment</span><img class="ic chev" src="assets/ph/caret-down.svg" alt=""></button>
+        <div class="dd-menu"><div>
+          <a href="life.html"><img class="ic" src="assets/ph/camera.svg" alt=""><span data-th="ชีวิตที่ EAI">Life at EAI</span></a>
+          <a href="events.html"><img class="ic" src="assets/ph/calendar-dots.svg" alt=""><span data-th="กิจกรรม">Events</span></a>
+        </div></div>
+      </div>
+      <div class="dd">
+        <button class="pill on" type="button" aria-expanded="false"><img class="ic" src="assets/ph/notebook.svg" alt=""><span data-th="เอกสาร">Document</span><img class="ic chev" src="assets/ph/caret-down.svg" alt=""></button>
+        <div class="dd-menu"><div>
+          <a href="docs.html"><img class="ic" src="assets/ph/notebook.svg" alt=""><span data-th="เอกสารประกอบ">Material</span></a>
+          <a href="classwork.html"><img class="ic" src="assets/ph/books.svg" alt=""><span data-th="รายงานงานในชั้นเรียน">Classwork Report</span></a>
+          <a href="tools.html"><img class="ic" src="assets/ph/wrench.svg" alt=""><span data-th="เครื่องมือ">Tools</span></a>
+        </div></div>
+      </div>
+    </nav>
+    <div class="right">
+      <a class="pill icon" href="https://bit.ly/3jFACxV" target="_blank" rel="noopener" aria-label="LINE Openchat" title="LINE Openchat"><img class="ic" src="assets/bi/line.svg" alt=""></a>
+      <a class="pill icon" href="https://www.instagram.com/e.ai_official/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><img class="ic" src="assets/ph/instagram-logo.svg" alt=""></a>
+      <a class="pill icon" href="https://github.com/eai-spsm" target="_blank" rel="noopener" aria-label="GitHub organisation" title="GitHub"><img class="ic" src="assets/ph/github-logo.svg" alt=""></a>
+      <button class="pill" id="lang" type="button" aria-label="Switch language"><img class="ic" src="assets/ph/translate.svg" alt=""><span id="lang-t">TH</span></button>
+      <button class="pill menu-btn" id="burger" type="button" aria-label="Menu" aria-expanded="false"><img class="ic" src="assets/ph/list.svg" alt=""></button>
+    </div>
+  </div>
+</header>
+
+<main class="narrow">
+  <section class="page-h">
+    <a class="back" href="classwork.html" id="backLink"><img class="ic bk" src="assets/ph/arrow-up-right.svg" alt=""><span data-th="กลับไปรายงานงานในชั้นเรียน">Back to Classwork Report</span></a>
+    <h1 id="rTitle">Loading...</h1>
+    <p class="sub" id="rDate"></p>
+    <p class="lead" id="rMeta"></p>
+  </section>
+  <article class="report-article" id="rBody"></article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <b data-th="วิชาเอก EAI">EAI Major</b>
+        <p data-th="วิศวกรรมปัญญาประดิษฐ์">Artificial Intelligence Engineering</p>
+        <p data-th="โรงเรียนสาธิต มศว ประสานมิตร (ฝ่ายมัธยม)">Satit Prasarnmit Demonstration School (Secondary)</p>
+      </div>
+      <div>
+        <h4 data-th="สำรวจ">Explore</h4>
+        <a href="index.html"><img class="ic" src="assets/ph/house.svg" alt=""><span data-th="หน้าแรก">Home</span></a>
+        <a href="join-us.html"><img class="ic" src="assets/ph/door-open.svg" alt=""><span data-th="สมัครเรียน">Apply</span></a>
+        <a href="about.html"><img class="ic" src="assets/ph/info.svg" alt=""><span data-th="เกี่ยวกับ">About</span></a>
+        <a href="universities.html"><img class="ic" src="assets/ph/chart-bar.svg" alt=""><span data-th="สถิติมหาวิทยาลัย">Universities Stats</span></a>
+        <a href="alumni.html"><img class="ic" src="assets/ph/graduation-cap.svg" alt=""><span data-th="ศิษย์เก่า">Alumni</span></a>
+        <a href="works.html"><img class="ic" src="assets/ph/folder-open.svg" alt=""><span data-th="ผลงาน">Works</span></a>
+      </div>
+      <div>
+        <h4 data-th="เพิ่มเติม">More</h4>
+        <a href="life.html"><img class="ic" src="assets/ph/camera.svg" alt=""><span data-th="ชีวิตที่ EAI">Life at EAI</span></a>
+          <a href="events.html"><img class="ic" src="assets/ph/calendar-dots.svg" alt=""><span data-th="กิจกรรม">Events</span></a>
+        <a href="docs.html"><img class="ic" src="assets/ph/notebook.svg" alt=""><span data-th="เอกสารประกอบ">Material</span></a>
+        <a href="classwork.html"><img class="ic" src="assets/ph/books.svg" alt=""><span data-th="รายงานงานในชั้นเรียน">Classwork Report</span></a>
+        <a href="tools.html"><img class="ic" src="assets/ph/wrench.svg" alt=""><span data-th="เครื่องมือ">Tools</span></a>
+      </div>
+      <div>
+        <h4 data-th="ติดต่อเรา">Contact</h4>
+        <a href="https://www.facebook.com/eaispsm" target="_blank" rel="noopener"><img class="ic" src="assets/ph/facebook-logo.svg" alt="">Facebook</a>
+        <a href="https://www.instagram.com/e.ai_official/" target="_blank" rel="noopener"><img class="ic" src="assets/ph/instagram-logo.svg" alt="">Instagram</a>
+        <a href="https://www.tiktok.com/@e.ai_official" target="_blank" rel="noopener"><img class="ic" src="assets/ph/tiktok-logo.svg" alt="">TikTok</a>
+        <a href="https://github.com/eai-spsm" target="_blank" rel="noopener"><img class="ic" src="assets/ph/github-logo.svg" alt="">GitHub</a>
+        <a href="https://bit.ly/3jFACxV" target="_blank" rel="noopener"><img class="ic" src="assets/bi/line.svg" alt=""><span data-th="LINE โอเพนแชท">LINE Openchat</span></a>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span data-th="<b>© 2026 EAI</b> · สุขุมวิท 23 วัฒนา กรุงเทพฯ"><b>© 2026 EAI</b> · Sukhumvit 23, Watthana, Bangkok</span>
+      <span data-th="<b>ไม่เป็นทางการ</b> ผลงานที่นักเรียนสร้างขึ้น ไม่ใช่เว็บไซต์ทางการของโรงเรียนหรือวิชาเอก"><b>Unofficial.</b> A student creation, not an official website of the school or the major.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+
+<script src="assets/reports-data.js"></script>
+<script src="assets/report.js"></script>
+</body>
+</html>
