@@ -45,6 +45,18 @@
     navEl.classList.toggle('solid',!over);
   }
   window.addEventListener('scroll',navSolid,{passive:true});window.addEventListener('resize',navSolid);window.addEventListener('load',navSolid);navSolid();
+  // photo viewer for the justified grid: click to enlarge, arrows / Esc to move and close, caption shows title and position
+  var jgs=[].slice.call(document.querySelectorAll('.jg a'));
+  if(jgs.length){
+    var lb=null,li=0,grp=[];
+    var show=function(i){li=(i+grp.length)%grp.length;var a=grp[li],f=a.parentNode,t=f.querySelector('figcaption b');lb.querySelector('img').src=a.href;lb.querySelector('.cp').textContent=(t?t.textContent:'')+' #'+(li+1)+' / '+grp.length};
+    var shut=function(){if(lb){lb.remove();lb=null;document.body.style.overflow='';document.removeEventListener('keydown',key)}};
+    var key=function(e){if(e.key==='Escape')shut();else if(e.key==='ArrowRight')show(li+1);else if(e.key==='ArrowLeft')show(li-1)};
+    jgs.forEach(function(a){a.onclick=function(e){e.preventDefault();grp=[].slice.call(a.closest('.jg').querySelectorAll('a'));lb=document.createElement('div');lb.className='lb';lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');
+      lb.innerHTML='<button class="cl" type="button" aria-label="Close">&times;</button><button class="pv" type="button" aria-label="Previous">&#8249;</button><img alt=""><div class="cp"></div><button class="nx" type="button" aria-label="Next">&#8250;</button>';
+      lb.onclick=function(ev){if(ev.target===lb)shut()};lb.querySelector('.cl').onclick=shut;lb.querySelector('.pv').onclick=function(){show(li-1)};lb.querySelector('.nx').onclick=function(){show(li+1)};
+      document.body.appendChild(lb);document.body.style.overflow='hidden';document.addEventListener('keydown',key);show(grp.indexOf(a))}});
+  }
   // fade sections up as they scroll into view
   var rv=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.2});rv.forEach(function(e){io.observe(e)})}else{rv.forEach(function(e){e.classList.add('in')})}
