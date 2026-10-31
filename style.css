@@ -844,3 +844,4 @@ html.hero-mid a.dc:hover h3{color:var(--red)}
 .hero-c.ph{justify-content:center}
 .hero-c.ph .hero-c-in{grid-template-columns:auto auto;justify-content:center;text-align:left;margin-left:auto;margin-right:auto}
 .hero-c.ph .hero-c-in>.sub{justify-content:flex-start}
+@media(max-width:600px){.hero-c.ph .hero-ico{width:32px;height:32px}.hero-c.ph .hero-c-in{column-gap:.65rem}.hero-c.ph h1{font-size:20px}.hero-c.ph .sub{font-size:11.5px;margin-top:.3rem}}
