@@ -674,8 +674,11 @@ html.hero-dark .nav:not(.solid):not(.open) .pill.on{background:#fff;color:var(--
 html.hero-dark .nav:not(.solid):not(.open) .pill.on .ic{filter:none}
 @media(max-width:1100px){.hero-c-i .hn:not(.n1):not(.n5){display:none}.hero-c-i .n1{left:3%!important}.hero-c-i .n5{right:3%!important}}
 @media(max-width:900px){
-  .hero-c-i .hn:not(.n1){display:none!important}
-  .hero-c-i .n1{left:auto!important;right:6%!important;top:calc(var(--nav-h) + .1rem)!important;width:30px;height:30px}
+  .hero-c-i .hn:not(.n1):not(.n2):not(.n3){display:none!important}
+  .hero-c-i .n1,.hero-c-i .n2,.hero-c-i .n3{display:block!important;width:44px;height:44px}
+  .hero-c-i .n1{left:auto!important;right:7%!important;top:19%!important;width:46px;height:46px}
+  .hero-c-i .n2{left:30%!important;right:auto!important;top:calc(var(--nav-h) - .9rem)!important;width:36px;height:36px}
+  .hero-c-i .n3{left:6%!important;right:auto!important;top:12%!important;width:48px;height:48px}
 }
 @media(max-width:600px){
   .hero-c.hv .hero-c-in{padding-bottom:calc(52px + 1.2rem)}
